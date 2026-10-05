@@ -1,0 +1,13 @@
+
+.review-shell-with-nav{max-width:980px;margin:0 auto;display:grid;gap:14px}
+.review-progress-text{font-size:12px;color:var(--muted,#8f99ab);font-weight:700;margin-left:auto}
+.review-step-actions{margin-top:2px;margin-bottom:2px}
+.review-saved-note{border:1px solid var(--border,#273145);background:var(--panel,#111722);border-radius:12px;padding:11px 14px;font-size:12px;color:var(--muted,#8f99ab)}
+.review-saved-note b{color:var(--text,#f4f7fb)}
+.review-rating-row .rate[disabled]{cursor:not-allowed;opacity:.5}
+.review-rating-row .rate.selected{opacity:1;box-shadow:inset 0 0 0 2px currentColor}
+.review-navigator .quiz-num-btn.review-rate-1:not(.current){border-color:var(--danger,#ef5b5b)}
+.review-navigator .quiz-num-btn.review-rate-2:not(.current){border-color:var(--warning,#f1b64b)}
+.review-navigator .quiz-num-btn.review-rate-3:not(.current){border-color:var(--primary,#745cff)}
+.review-navigator .quiz-num-btn.review-rate-4:not(.current){border-color:var(--accent,#31c48d)}
+@media(max-width:700px){.review-progress-text{display:none}}

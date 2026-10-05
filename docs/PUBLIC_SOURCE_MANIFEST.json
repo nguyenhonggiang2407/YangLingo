@@ -1,0 +1,56 @@
+{
+  "source": "YangLingo v41 source",
+  "purpose": "Clean public source; fresh installation only",
+  "excluded": [
+    {
+      "path": "config.local.php",
+      "reason": "private runtime configuration"
+    },
+    {
+      "path": "setup_1111.php",
+      "reason": "legacy setup with fixed account"
+    },
+    {
+      "path": "lib/Databaseold.php",
+      "reason": "unused legacy database class"
+    },
+    {
+      "path": "storage/installed.lock",
+      "reason": "runtime installation state/log/session/cache"
+    }
+  ],
+  "sanitized": [
+    {
+      "path": "database/migrations/009_toeic_vocabulary_expansion.sql",
+      "changes": [
+        "Personal learner selector replaced with learner@example.test",
+        "Both personal INSERT operations require a non-null owner/set",
+        "Fresh-install-only comment added; original production migration unchanged"
+      ]
+    },
+    {
+      "path": "database/seeds/009_seed_report.json",
+      "changes": [
+        "Personal email replaced with learner@example.test"
+      ]
+    },
+    {
+      "path": "tests/migration_audit_test.php",
+      "changes": [
+        "Personal identifier fragment replaced with generic personal-email pattern"
+      ]
+    }
+  ],
+  "added": [
+    "storage/.gitkeep",
+    "docs/PROJECT_OVERVIEW.md",
+    "docs/CONTENT_LICENSES.md",
+    "docs/PUBLIC_SOURCE_MANIFEST.json"
+  ],
+  "license": "Existing LICENSE retained without modification",
+  "rewritten": [
+    "README.md",
+    ".gitignore",
+    "DATABASE_MIGRATION_GUIDE.md"
+  ]
+}

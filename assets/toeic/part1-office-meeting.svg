@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Office meeting illustration</title>
+  <desc id="desc">A presenter writes on a whiteboard while three colleagues sit around a meeting table.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eaf0f8"/><stop offset="1" stop-color="#cbd8e9"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b8d8f2" stop-opacity=".9"/><stop offset="1" stop-color="#e8f4fb" stop-opacity=".55"/></linearGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#bg)"/>
+  <rect x="38" y="40" width="884" height="500" rx="20" fill="#f8fafc" stroke="#9fb0c6" stroke-width="4"/>
+  <rect x="70" y="72" width="250" height="210" rx="12" fill="url(#glass)" stroke="#8aa6bd" stroke-width="3"/>
+  <path d="M195 72v210M70 177h250" stroke="#92aec5" stroke-width="3"/>
+  <rect x="500" y="88" width="350" height="220" rx="12" fill="#fff" stroke="#788ba3" stroke-width="5"/>
+  <path d="M548 142h205M548 176h158M548 212h224" stroke="#6b7f95" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="441" cy="160" r="36" fill="#c88f6a"/>
+  <path d="M405 208q36-25 72 0v110h-72z" fill="#315f86"/>
+  <path d="M466 222l58-45" stroke="#c88f6a" stroke-width="16" stroke-linecap="round"/>
+  <path d="M518 179l16-5" stroke="#34495e" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="510" cy="405" rx="270" ry="84" fill="#a36f48"/>
+  <ellipse cx="510" cy="390" rx="270" ry="72" fill="#c99462"/>
+  <g>
+    <circle cx="315" cy="330" r="32" fill="#a96f55"/><path d="M278 370q37-22 74 0v85h-74z" fill="#586a82"/>
+    <circle cx="515" cy="325" r="32" fill="#d6a178"/><path d="M478 365q37-22 74 0v90h-74z" fill="#7b5b8c"/>
+    <circle cx="700" cy="335" r="32" fill="#8c5f48"/><path d="M663 375q37-22 74 0v82h-74z" fill="#3f7163"/>
+  </g>
+  <g fill="#edf2f7" stroke="#7d8fa5" stroke-width="3"><rect x="370" y="355" width="100" height="60" rx="6"/><rect x="564" y="354" width="100" height="60" rx="6"/></g>
+  <rect x="92" y="455" width="130" height="58" rx="8" fill="#547f5f"/><path d="M110 455q10-50 35-55q10 32 27 0q30 14 29 55" fill="#74a87a"/>
+</svg>

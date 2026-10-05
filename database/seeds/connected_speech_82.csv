@@ -1,0 +1,83 @@
+﻿pattern_key,title,phrase,spoken_form,category
+link-fill-it-out,Linking: fill it out,fill it out,fill_it_out,linking
+link-turn-it-off,Linking: turn it off,turn it off,turn_it_off,linking
+link-call-me-back,Linking: call me back,call me back,call_me_back,linking
+link-send-it-over,Linking: send it over,send it over,send_it_over,linking
+link-check-it-again,Linking: check it again,check it again,check_it_again,linking
+link-take-it-away,Linking: take it away,take it away,take_it_away,linking
+link-look-at-it,Linking: look at it,look at it,look_at_it,linking
+link-fill-it-in,Linking: fill it in,fill it in,fill_it_in,linking
+link-hand-it-in,Linking: hand it in,hand it in,hand_it_in,linking
+link-put-it-on,Linking: put it on,put it on,put_it_on,linking
+link-read-it-out,Linking: read it out,read it out,read_it_out,linking
+link-leave-it-here,Linking: leave it here,leave it here,leave_it_here,linking
+link-work-on-it,Linking: work on it,work on it,work_on_it,linking
+link-move-it-up,Linking: move it up,move it up,move_it_up,linking
+link-book-a-room,Linking: book a room,book a room,book_a_room,linking
+link-need-an-answer,Linking: need an answer,need an answer,need_an_answer,linking
+link-join-us-later,Linking: join us later,join us later,join_us_later,linking
+link-ask-about-it,Linking: ask about it,ask about it,ask_about_it,linking
+link-arrive-at-eight,Linking: arrive at eight,arrive at eight,arrive_at_eight,linking
+link-finish-it-early,Linking: finish it early,finish it early,finish_it_early,linking
+weak-to-0,Weak form: to,I need to call the client.,I need tə call the client.,weak_form
+weak-for-1,Weak form: for,This seat is for Mr. Lee.,This seat is fər Mr. Lee.,weak_form
+weak-of-2,Weak form: of,a copy of the report,a copy əv the report,weak_form
+weak-and-3,Weak form: and,sales and marketing,sales ən marketing,weak_form
+weak-can-4,Weak form: can,I can send it today.,I kən send it today.,weak_form
+weak-was-5,Weak form: was,The file was updated.,The file wəz updated.,weak_form
+weak-were-6,Weak form: were,The rooms were ready.,The rooms wər ready.,weak_form
+weak-are-7,Weak form: are,The forms are online.,The forms ər online.,weak_form
+weak-at-8,Weak form: at,Meet me at the station.,Meet me ət the station.,weak_form
+weak-as-9,Weak form: as,as soon as possible,əz soon əz possible,weak_form
+weak-than-10,Weak form: than,It is cheaper than before.,It is cheaper thən before.,weak_form
+weak-from-11,Weak form: from,The train leaves from platform two.,The train leaves frəm platform two.,weak_form
+weak-have-12,Weak form: have,They have finished already.,They həv finished already.,weak_form
+weak-has-13,Weak form: has,She has sent the email.,She həz sent the email.,weak_form
+weak-them-14,Weak form: them,Please send them today.,Please send əm today.,weak_form
+weak-you-15,Weak form: you,Can you check this?,Can yə check this?,weak_form
+assim-meet-you,Assimilation: meet you,meet you,meetcha,assimilation
+assim-cant-you,Assimilation: can't you,can't you,cancha,assimilation
+assim-wont-you,Assimilation: won't you,won't you,woncha,assimilation
+assim-havent-you,Assimilation: haven't you,haven't you,havencha,assimilation
+assim-should-you,Assimilation: should you,should you,shouldja,assimilation
+assim-couldnt-you,Assimilation: couldn't you,couldn't you,couldncha,assimilation
+assim-last-year,Assimilation: last year,last year,las(t) year,assimilation
+assim-this-year,Assimilation: this year,this year,thish year,assimilation
+assim-green-park,Assimilation: green park,green park,greem park,assimilation
+assim-ten-people,Assimilation: ten people,ten people,tem people,assimilation
+assim-good-boy,Assimilation: good boy,good boy,goob boy,assimilation
+assim-in-paris,Assimilation: in Paris,in Paris,im Paris,assimilation
+assim-wouldnt-you,Assimilation: wouldn't you,wouldn't you,wouldncha,assimilation
+assim-what-you,Assimilation: what you,what you,whatcha,assimilation
+contract-i-ll,Contraction: i'll,I will call you later.,I'll call you later.,contraction
+contract-we-ll,Contraction: we'll,We will send the invoice.,We'll send the invoice.,contraction
+contract-they-ll,Contraction: they'll,They will arrive at noon.,They'll arrive at noon.,contraction
+contract-he-ll,Contraction: he'll,He will join the meeting.,He'll join the meeting.,contraction
+contract-she-ll,Contraction: she'll,She will check the booking.,She'll check the booking.,contraction
+contract-i-ve,Contraction: i've,I have finished the report.,I've finished the report.,contraction
+contract-we-ve,Contraction: we've,We have received the order.,We've received the order.,contraction
+contract-they-ve,Contraction: they've,They have changed the schedule.,They've changed the schedule.,contraction
+contract-you-ve,Contraction: you've,You have selected the right option.,You've selected the right option.,contraction
+contract-he-s,Contraction: he's,He has left the office.,He's left the office.,contraction
+contract-she-s,Contraction: she's,She is waiting outside.,She's waiting outside.,contraction
+contract-they-d,Contraction: they'd,They would prefer Friday.,They'd prefer Friday.,contraction
+contract-we-d,Contraction: we'd,We would like more details.,We'd like more details.,contraction
+contract-i-d,Contraction: i'd,I would recommend the earlier train.,I'd recommend the earlier train.,contraction
+contract-should-ve,Contraction: should've,You should have checked the date.,You should've checked the date.,contraction
+contract-could-ve,Contraction: could've,We could have booked online.,We could've booked online.,contraction
+contract-would-ve,Contraction: would've,They would have arrived earlier.,They would've arrived earlier.,contraction
+contract-might-ve,Contraction: might've,The parcel might have been delayed.,The parcel might've been delayed.,contraction
+contract-must-ve,Contraction: must've,She must have missed the message.,She must've missed the message.,contraction
+contract-can-t,Contraction: can't,I cannot attend tomorrow.,I can't attend tomorrow.,contraction
+reduction-extra-because,Reduction: because,because,'cause,reduction
+reduction-extra-probably,Reduction: probably,probably,probly,reduction
+reduction-extra-comfortable,Reduction: comfortable,comfortable,comfterble,reduction
+reduction-extra-family,Reduction: family,family,famly,reduction
+reduction-extra-different,Reduction: different,different,diffrent,reduction
+reduction-extra-every,Reduction: every,every,evry,reduction
+reduction-extra-interesting,Reduction: interesting,interesting,intresting,reduction
+reduction-extra-camera,Reduction: camera,camera,camra,reduction
+reduction-extra-restaurant,Reduction: restaurant,restaurant,rest-rant,reduction
+reduction-extra-next-day,Reduction: next day,next day,nex day,reduction
+reduction-extra-facts-and,Reduction: facts and figures,facts and figures,fac(t)s n figures,reduction
+reduction-extra-used-to,Reduction: used to,used to,usta,reduction

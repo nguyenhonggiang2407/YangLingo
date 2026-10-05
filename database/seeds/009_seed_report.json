@@ -1,0 +1,32 @@
+{
+  "target_email": "learner@example.test",
+  "existing_reference_unique_terms": 3589,
+  "candidate_items": 804,
+  "type_counts": {
+    "VOCABULARY": 264,
+    "COLLOCATION": 200,
+    "LISTENING": 340
+  },
+  "topic_counts": {
+    "Office Administration": 48,
+    "Human Resources": 47,
+    "Finance Accounting": 43,
+    "Purchasing Logistics": 43,
+    "Sales Marketing": 42,
+    "Travel Hospitality": 37,
+    "Facilities Maintenance": 35,
+    "Manufacturing Production": 29,
+    "IT Technical Support": 37,
+    "Projects Meetings": 34,
+    "Legal Contracts": 25,
+    "Retail Customer Service": 17,
+    "Events Conferences": 27,
+    "Workplace Communication": 150,
+    "Scheduling Meetings": 30,
+    "Customer Service Listening": 20,
+    "TOEIC Question Response": 100,
+    "TOEIC Announcements": 40
+  },
+  "csv": "database/seeds/009_toeic_vocabulary_expansion.csv",
+  "migration": "database/migrations/009_toeic_vocabulary_expansion.sql"
+}

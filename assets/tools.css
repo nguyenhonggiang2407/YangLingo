@@ -1,0 +1,57 @@
+/* YangLingo production polish: accessibility, calmer EdTech palette, responsive fixes. */
+:root{
+  --bg:#08110f;--panel:#0f1a17;--panel2:#15231f;--panel3:#1a2b26;--line:#294039;
+  --text:#eef7f3;--muted:#9fb2aa;--primary:#3fbf91;--primary2:#7be0ba;--accent:#e4ad5b;
+  --warning:#e7b75f;--danger:#ef7b82;--blue:#67b7e8;--radius:18px;
+}
+html[data-theme=light]{--bg:#f5f8f6;--panel:#fff;--panel2:#f0f5f2;--panel3:#e8f0ec;--line:#d8e3dd;--text:#17211d;--muted:#62736b;--primary:#167a5b;--primary2:#246f59;--accent:#9b671f;--blue:#2d719d}
+body{font-family:"Be Vietnam Pro",Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(63,191,145,.28)}
+.skip-link{position:fixed;left:12px;top:-60px;z-index:9999;background:var(--text);color:var(--bg);padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800;transition:top .15s}.skip-link:focus{top:12px}
+:where(a,button,input,textarea,select,[tabindex]):focus-visible{outline:3px solid color-mix(in srgb,var(--primary) 55%,transparent);outline-offset:2px}
+.btn.primary{background:linear-gradient(135deg,#2fa878,var(--primary));box-shadow:0 8px 24px rgba(63,191,145,.16)}
+.logo{background:linear-gradient(135deg,#2fa878,#61c8a2);box-shadow:0 10px 26px rgba(63,191,145,.18)}
+.user-menu #avatar{background:linear-gradient(135deg,#2fa878,#4f9fd1)}
+.nav>a.active{box-shadow:inset 3px 0 0 var(--primary)}
+.topbar{background:color-mix(in srgb,var(--bg) 90%,transparent)}
+.hero-panel{background:radial-gradient(circle at 82% 16%,rgba(103,183,232,.12),transparent 34%),radial-gradient(circle at 0 100%,rgba(63,191,145,.12),transparent 36%),linear-gradient(135deg,#10201b,#0d1714);border-color:#294039}
+.hero-panel .eyebrow{color:var(--primary2)}
+.progress i{background:linear-gradient(90deg,var(--primary),var(--blue))}
+.set-card:hover,.quiz-catalog-card:hover{border-color:rgba(63,191,145,.48)}
+input:focus,textarea:focus,select:focus{border-color:rgba(63,191,145,.72);box-shadow:0 0 0 3px rgba(63,191,145,.1)}
+
+/* Authentication / public first impression */
+.auth-screen{background:var(--bg)}
+.auth-art{background:radial-gradient(circle at 16% 20%,rgba(63,191,145,.18),transparent 30%),radial-gradient(circle at 85% 82%,rgba(103,183,232,.12),transparent 34%),linear-gradient(145deg,#0b1713,#0f1d19);border-right:1px solid var(--line)}
+.auth-art .hero h1{max-width:760px}.auth-art .hero em{font-style:normal;color:var(--primary2)}
+.hero-pills span{border-color:rgba(123,224,186,.22);background:rgba(255,255,255,.035)}
+.auth-box{box-shadow:0 34px 90px rgba(0,0,0,.24)}
+.auth-tabs button.active{color:var(--text);border-color:var(--primary)}
+.privacy-note{line-height:1.6}
+
+/* Avoid dead-feeling UI while data loads. */
+.loading{min-height:260px}.spinner{border-color:color-mix(in srgb,var(--line) 60%,transparent);border-top-color:var(--primary)}
+.toast{box-shadow:0 18px 50px rgba(0,0,0,.25)}
+
+/* Tables and dense admin controls stay usable on small screens. */
+.table-wrap{max-width:100%;overflow:auto;-webkit-overflow-scrolling:touch}.cards-table,.admin-users{border-collapse:separate;border-spacing:0}
+.cards-table th,.admin-users th{position:sticky;top:0;background:var(--panel);z-index:1}
+.modal{max-height:min(92vh,900px);overflow:auto}
+
+/* Safer readable wrapping for imported English/Vietnamese content. */
+.view,.panel,.question-card,.set-card,.flash-face{overflow-wrap:anywhere}.term-cell b,.flash-face h2{word-break:normal}
+
+/* More accessible disabled state. */
+button:disabled,.btn[aria-disabled="true"]{cursor:not-allowed;opacity:.48;transform:none!important}
+
+@media(max-width:760px){
+  .top-left p{display:none}.top-left h2{font-size:15px}.topbar{gap:8px}.view{padding-bottom:76px}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat-card{min-width:0}
+  .auth-side{padding:18px}.auth-box{width:100%;max-width:520px;padding:22px}
+}
+@media(max-width:390px){.stats-grid{grid-template-columns:1fr}.rating-row{grid-template-columns:1fr}.page-actions{width:100%}.page-actions .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Mistake notebook */
+.mistake-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.mistake-card h2{margin:10px 0 2px;font-size:1.35rem}.mistake-card .ipa{color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.mistake-card blockquote{margin:12px 0;padding:10px 12px;border-left:3px solid var(--accent);background:var(--surface-2,rgba(127,127,127,.08));border-radius:8px}.mistake-card .section-title{align-items:center}.mistake-card .badge{text-transform:capitalize}

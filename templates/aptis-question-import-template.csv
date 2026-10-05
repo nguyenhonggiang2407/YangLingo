@@ -1,0 +1,5 @@
+module,type,topic,difficulty,prompt,passage,options,correct_answer,explanation,audio_text,time_limit_seconds,source_note,is_active
+grammar,mcq,Tenses,B1,She ___ here since 2024.,,works|worked|has worked,has worked,Use present perfect with since.,,,My Aptis bank,1
+listening,mcq,Daily life,B1,Where will they meet?,,At the station|At the library|At the cafe,At the library,Listen for the final agreed location.,They first suggest the cafe but finally agree to meet at the library.,,My Aptis bank,1
+speaking,speaking,Opinion,B2,Do you think students should use AI for language learning?,,,,,,60,My Aptis bank,1
+writing,writing,Formal email,B2,Write a formal email asking to change your class schedule.,,,,,,1200,My Aptis bank,1
