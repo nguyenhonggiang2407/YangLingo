@@ -6,6 +6,8 @@ YangLingo is a PHP and MySQL English-learning web application. It brings vocabul
 
 [Trải nghiệm bản demo](https://yangcute.helioho.st/) · [Tổng quan dự án](docs/PROJECT_OVERVIEW.md) · [Kiến trúc](docs/ARCHITECTURE.md)
 
+![Buổi luyện ngắn với book Student English và ba cách luyện](docs/images/practice.png)
+
 Người xem demo có thể **tự đăng ký tài khoản riêng** để trải nghiệm. Thông tin tài khoản cá nhân và cấu hình hosting không nằm trong repository này.
 
 ## Bài toán
