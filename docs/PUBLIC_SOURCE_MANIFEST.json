@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v46 source",
+  "source": "YangLingo v47 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -56,5 +56,6 @@
   "v42": "Escaped IPA below terms; pronunciation only after reveal in active recall/listening; open-data attribution and licenses. Personal card edits/backups excluded.",
   "v44": "Preserve the existing LISTENING card type in both editor and server normalization; Vietnamese labels for all seven types; isolated local database regression test. Personal book revisions excluded.",
   "v45": "Primary US pronunciation references for six individually checked terms; existing IPA preserved. Private Book 4 edits and database excluded.",
-  "v46": "Reviewed card-category labels and inline IPA prompt concealment, with primary pronunciation references. Private Book5 owner content preserved outside this repository."
+  "v46": "Reviewed card-category labels and inline IPA prompt concealment, with primary pronunciation references. Private Book5 owner content preserved outside this repository.",
+  "v47": "Align cache versions for app, pronunciation and practice so browser caches cannot reuse the pre-guard helper. No owner learning data changed."
 }
