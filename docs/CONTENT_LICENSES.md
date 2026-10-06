@@ -14,3 +14,7 @@
 Trong tài liệu và metadata kiểm tra để chuẩn bị bản public, chưa thấy thông báo giấy phép phân phối lại riêng cho các PDF/Sheet nói trên và phần dẫn xuất. Source giữ tài nguyên để tính năng tham chiếu hiện có hoạt động; không thêm tuyên bố cấp phép mới cho tài nguyên đó. Khi tái sử dụng hoặc phân phối học liệu, cần kiểm tra quyền đối với nguồn tương ứng.
 
 TOEIC, Aptis và HELEN xác định ngữ cảnh hoặc nguồn. Repository không khẳng định là sản phẩm chính thức hoặc được đơn vị tổ chức kỳ thi chứng nhận. Mức CEFR của book English mới là gợi ý biên soạn.
+
+## Phiên âm IPA bổ sung
+
+IPA-dict `en_US.txt` (General American) có nguồn chuyển đổi cmudict-ipa; đối chiếu âm và trọng âm với CMUdict. Các phiên bản được ghim và thông báo giấy phép đầy đủ nằm trong [trang ghi nguồn IPA](../pronunciation-sources.html) và `assets/licenses/`. Dữ liệu cũ có thể có nguồn khác; giao diện không tự gắn US cho IPA chưa ghi giọng. Kế hoạch đối chiếu theo card ID và database cá nhân được giữ ngoài repository.

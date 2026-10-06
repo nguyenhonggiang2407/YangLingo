@@ -190,3 +190,14 @@ html[data-theme=light] .connected-rule-card,html[data-theme=light] .mistake-card
 .review-shell-with-nav{gap:12px}.review-shell-with-nav .study-top{margin-bottom:0}.review-shell-with-nav .active-recall-bar{margin-bottom:2px}.review-shell-with-nav .review-progress-track{margin-bottom:0}
 .recall-input-wrap{display:block;width:100%;max-width:600px;margin:8px auto 0}.recall-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}.recall-feedback{min-height:18px}.recall-input-row input{width:100%}
 @media(max-width:760px){.study-guidance{align-items:flex-start;padding:13px 15px}.study-guidance .eyebrow{font-size:8px!important;letter-spacing:.7px}.study-guidance .btn{font-size:11px;padding:8px 10px;min-height:34px}.study-guidance p{font-size:11px}.recall-input-row{flex-wrap:wrap}.recall-input-row input{min-width:170px}.focus-session{gap:9px;flex-wrap:wrap}.focus-session>span{font-size:12px}.focus-session small{font-size:10px;flex-basis:100%;order:3}}
+
+/* Stored IPA stays below its term. Long compound notations wrap on phones. */
+.yl-ipa{display:flex;align-items:baseline;gap:8px;margin:6px 0 12px;color:var(--muted);font-size:15px;line-height:1.5;text-align:left;max-width:100%}
+.yl-ipa-label{flex-shrink:0;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--primary)}
+.yl-ipa-value{min-width:0;overflow-wrap:anywhere;font-family:Arial,"Segoe UI",sans-serif;font-weight:400}
+.flash-face .yl-ipa{justify-content:center;text-align:center;flex-wrap:wrap}
+.flash-face h2+.yl-ipa{margin-top:0}
+.term-cell .yl-ipa,.lesson-word-main .yl-ipa{font-size:13px;margin-bottom:5px}
+.pl-feedback .yl-ipa{margin-top:0}
+.fill-target{font-size:22px;margin:0}
+@media(max-width:600px){.yl-ipa{font-size:14px;gap:6px}.flash-face .yl-ipa{margin-bottom:10px}}

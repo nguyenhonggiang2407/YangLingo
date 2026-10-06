@@ -6,6 +6,7 @@ const vm = require('node:vm');
 const path = require('node:path');
 const source = fs.readFileSync(path.join(__dirname, '../assets/app.js'), 'utf8');
 const reviewSource = source.slice(source.indexOf('async function reviewView('), source.indexOf('function localDateString('));
+const clozeSource = source.slice(source.indexOf('function clozeWord('), source.indexOf('async function reviewView('));
 const normalizeSource = source.slice(source.indexOf('function normalize('), source.indexOf('\n', source.indexOf('function normalize(')));
 const statSource = source.slice(source.indexOf('function stat('), source.indexOf('\n', source.indexOf('function stat(')));
 const navSource = source.slice(source.indexOf('function handleNavClick('), source.indexOf('\n', source.indexOf('function handleNavClick(')));
@@ -33,6 +34,7 @@ const sandbox = {
   lessonQuery:()=> ({}), lessonPlanHtml:()=> '', bindLessonPlan(){}, speak(){}, toast(){}, loadSideStats:async()=> {},
   esc:(value='')=>String(value).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])),
   fmt:value=>String(value||0),
+  ipaHtml:require('../assets/pronunciation.js').render,
   api:async(action,options)=>{calls.push({action,options});if(action==='study_cards')return cards;if(action==='review_rate')return {};throw new Error('Unexpected API '+action);},
   setView(markup){
     html=markup;renders++;nodes.clear();nodes.set('#modal-root',{firstElementChild:null});
@@ -47,7 +49,7 @@ const sandbox = {
   $$:selector=>selector.startsWith('[data-')?[...nodes.entries()].filter(([key])=>key.startsWith(selector.slice(0,-1)+'=')).map(([,el])=>el):[]
 };
 vm.createContext(sandbox);
-vm.runInContext(normalizeSource+'\n'+statSource+'\n'+navSource+'\n'+focusSource+'\n'+nextLessonSource+'\n'+lessonPlanSource+'\n'+reviewSource, sandbox);
+vm.runInContext(normalizeSource+'\n'+statSource+'\n'+navSource+'\n'+focusSource+'\n'+nextLessonSource+'\n'+lessonPlanSource+'\n'+clozeSource+'\n'+reviewSource, sandbox);
 (async()=>{
   const sixLessons=Array.from({length:6},(_,i)=>({key:'unit:'+(i+1),kind:'unit',value:i+1,title:'Bài '+(i+1),status:'new',card_count:10}));
   const unfinishedPlan=sandbox.lessonPlanHtml(sixLessons,sixLessons[0],'review');
@@ -73,6 +75,7 @@ vm.runInContext(normalizeSource+'\n'+statSource+'\n'+navSource+'\n'+focusSource+
   await sandbox.reviewView();
   assert.equal(calls[0].options.query.limit,10,'unselected review requests a small batch');
   assert.match(html,/Nhớ từ tiếng Anh/);
+  assert.doesNotMatch(html,/prɪˈzɜːv|>preserve</,'recall does not put answer IPA or the hidden answer term in the DOM');
   assert.equal(nodes.get('[data-rate="3"]').disabled,true,'rating requires revealing the answer');
   // Invoking the handler directly must also honor the reveal guard.
   await nodes.get('[data-rate="3"]').onclick();
@@ -83,6 +86,7 @@ vm.runInContext(normalizeSource+'\n'+statSource+'\n'+navSource+'\n'+focusSource+
   assert.equal(nodes.get('[data-rate="3"]').disabled,false);
   assert.match(nodes.get('#recall-feedback').innerHTML,/Bạn đã viết đúng từ/,'recall uses the actual source answer');
   assert.equal(nodes.get('#flashcard')['aria-pressed'],'true');
+  assert.match(nodes.get('.flash-face.back').innerHTML,/<h2>preserve<\/h2>\s*<span class="yl-ipa">/,'revealed IPA is placed below the term');
   await nodes.get('[data-rate="3"]').click();
   assert.equal(calls.filter(x=>x.action==='review_rate').length,1);
   assert.equal(calls.find(x=>x.action==='review_rate').options.data.card_id,7,'source card identity is retained');
@@ -116,5 +120,13 @@ vm.runInContext(normalizeSource+'\n'+statSource+'\n'+navSource+'\n'+focusSource+
   finishRating({});await pendingSave;
   assert.equal(renders,latestRenders,'a pending rating cannot redraw an old review after a new lesson is loaded');
   assert.ok(booksSource.includes('Number(!!b.is_new)-Number(!!a.is_new)'),'new books are discoverable before source books');
+  for(const mode of ['cloze','audio']){
+    storage.set('yl_recall_mode',mode);await sandbox.reviewView();
+    assert.doesNotMatch(html,/prɪˈzɜːv|>preserve</,mode+' keeps answer IPA and hidden answer out of the prompt DOM');
+    nodes.get('#reveal-card').click();
+    assert.match(nodes.get('.flash-face.back').innerHTML,/prɪˈzɜːv/,mode+' shows stored IPA after reveal');
+  }
+  storage.set('yl_recall_mode','flip');await sandbox.reviewView();
+  assert.match(html,/prɪˈzɜːv/,'word-to-meaning mode may show IPA with the visible word');
   console.log('PASS: recall, rating guards, named routing, async navigation, session ownership, mobile navigation, new book priority, read-only library');
 })().catch(error=>{console.error(error);process.exitCode=1;});

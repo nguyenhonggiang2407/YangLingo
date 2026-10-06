@@ -18,6 +18,7 @@ Người học thường lưu từ vựng ở một nơi, làm bài luyện ở 
 
 - **Thư viện flashcard theo book và bài:** nghĩa Việt, ví dụ Anh–Việt, ghi chú cách dùng và lịch ôn SRS riêng. Book đóng gói được nhận diện theo nguồn để tránh tạo lại book và reset tiến độ khi đồng bộ.
 - **Student English · Học tập & công việc:** book riêng gồm **120 thẻ / 12 bài / 10 thẻ mỗi bài**, từ giảng đường và bài nhóm đến email, thực tập, phỏng vấn, quản lý thời gian và đời sống số. Mỗi bài có mục tiêu và gợi ý luyện nói. A2–B1 là mức gợi ý biên soạn.
+- **Phiên âm dưới từ:** hiển thị nguyên IPA và nhãn US/UK đã lưu, giữ ký hiệu của thẻ cũ. Bài gõ/nghe chỉ hiện IPA sau khi kiểm tra hoặc xem đáp án. [Nguồn, phiên bản và giấy phép](pronunciation-sources.html) được đóng gói riêng; không tải toàn bộ từ điển hay tệp âm thanh.
 - **Ba cách luyện từ:** nhớ từ nghĩa Việt, điền từ vào câu, nghe rồi viết. Chọn 5 hoặc 10 thẻ, phối hợp cả ba cách, xem giải thích và thử lại từ chưa nhớ. Âm thanh dùng giọng đọc của trình duyệt; thiết bị chưa hỗ trợ chuyển sang luyện nhớ từ.
 - **Thử dùng từ trong 30 giây:** gợi ý, câu mẫu, đồng hồ và tự kiểm tra giúp người học nói về tình huống của mình. Phần này không chấm phát âm. Kết quả buổi luyện từ lưu trong trình duyệt theo tài khoản; lịch SRS cập nhật qua luồng ôn bài.
 - **Kế hoạch hôm nay, Mistake Book và phân tích điểm yếu:** ưu tiên thẻ đến hạn, học lại và lỗi tái diễn trước khi thêm kiến thức, kèm lý do cho người học.
@@ -77,6 +78,8 @@ php tests/migration_audit_test.php
 php tests/static_audit.php
 node --check assets/practice-lab.js
 node tests/learning_ux_test.cjs
+node tests/pronunciation_ux_test.cjs
+node tests/practice_state_test.cjs
 ```
 
 Cài đặt mới của bản công khai đã được kiểm tra với PHP 8.0.30/PDO và MariaDB 10.4.32: **14 migration, gồm migration 009, và 12 SQL content seed chạy thành công** trên database trống trước khi tạo tài khoản. Sau đó cài đủ 13 book trong catalog; book Everyday English có 60 thẻ và Student English có 120 thẻ. Chạy lại schema/đồng bộ không nhân đôi book hoặc làm đổi thẻ/SRS của dữ liệu kiểm tra đã có.
@@ -92,5 +95,7 @@ Repository không bao gồm cấu hình thật, database export, phiên đăng n
 ## Giấy phép và học liệu
 
 Giữ nguyên [LICENSE](LICENSE) MIT đã có. PDF/Google Sheet được cung cấp trước đó có nguồn ghi trong tài liệu; không mặc nhiên coi mọi học liệu bên ngoài là MIT. Xem [nguồn và giấy phép học liệu](docs/CONTENT_LICENSES.md) và [manifest bản công khai](docs/PUBLIC_SOURCE_MANIFEST.json).
+
+IPA bổ sung dùng dữ liệu General American của [IPA-dict](https://github.com/open-dict-data/ipa-dict), nguồn chuyển đổi cmudict-ipa và đối chiếu CMUdict. Giữ đủ thông báo giấy phép MIT/CMU trong `assets/licenses/`, cùng phiên bản nguồn ở [trang ghi nguồn](pronunciation-sources.html). Bản công khai không chứa database hay kế hoạch chỉnh thẻ riêng của người dùng.
 
 TOEIC và Aptis mô tả dạng luyện tập; YangLingo không phải dịch vụ thi hoặc chấm điểm chính thức.
