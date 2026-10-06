@@ -18,7 +18,8 @@ Người học thường lưu từ vựng ở một nơi, làm bài luyện ở 
 
 - **Thư viện flashcard theo book và bài:** nghĩa Việt, ví dụ Anh–Việt, ghi chú cách dùng và lịch ôn SRS riêng. Book đóng gói được nhận diện theo nguồn để tránh tạo lại book và reset tiến độ khi đồng bộ.
 - **Student English · Học tập & công việc:** book riêng gồm **120 thẻ / 12 bài / 10 thẻ mỗi bài**, từ giảng đường và bài nhóm đến email, thực tập, phỏng vấn, quản lý thời gian và đời sống số. Mỗi bài có mục tiêu và gợi ý luyện nói. A2–B1 là mức gợi ý biên soạn.
-- **Phiên âm dưới từ:** hiển thị nguyên IPA và nhãn US/UK đã lưu, giữ ký hiệu của thẻ cũ. Bài gõ/nghe chỉ hiện IPA sau khi kiểm tra hoặc xem đáp án. [Nguồn, phiên bản và giấy phép](pronunciation-sources.html) được đóng gói riêng; không tải toàn bộ từ điển hay tệp âm thanh.
+- **Phiên âm dưới từ:** hiển thị nguyên IPA và nhãn US/UK đã lưu, giữ ký hiệu của thẻ cũ. Bài gõ/nghe chỉ hiện IPA sau khi kiểm tra hoặc xem đáp án; ký hiệu IPA dạng `/.../` nhận diện được trong nghĩa cũ cũng được che ở phần gợi ý. [Nguồn, phiên bản và giấy phép](pronunciation-sources.html) được đóng gói riêng; không tải toàn bộ từ điển hay tệp âm thanh.
+- **Nhãn thẻ rõ ràng:** phân biệt từ vựng, cụm từ, cấu trúc câu, ngữ pháp và bài nghe trong lượt ôn, giúp người học hiểu mình đang cần nhớ từ hay cả cách dùng.
 - **Ba cách luyện từ:** nhớ từ nghĩa Việt, điền từ vào câu, nghe rồi viết. Chọn 5 hoặc 10 thẻ, phối hợp cả ba cách, xem giải thích và thử lại từ chưa nhớ. Âm thanh dùng giọng đọc của trình duyệt; thiết bị chưa hỗ trợ chuyển sang luyện nhớ từ.
 - **Thử dùng từ trong 30 giây:** gợi ý, câu mẫu, đồng hồ và tự kiểm tra giúp người học nói về tình huống của mình. Phần này không chấm phát âm. Kết quả buổi luyện từ lưu trong trình duyệt theo tài khoản; lịch SRS cập nhật qua luồng ôn bài.
 - **Kế hoạch hôm nay, Mistake Book và phân tích điểm yếu:** ưu tiên thẻ đến hạn, học lại và lỗi tái diễn trước khi thêm kiến thức, kèm lý do cho người học.

@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
 const source = fs.readFileSync(path.join(__dirname, '../assets/app.js'), 'utf8');
+const cardTypeSource = source.slice(source.indexOf('function cardTypeLabel('), source.indexOf('\n', source.indexOf('function cardTypeLabel(')));
 const reviewSource = source.slice(source.indexOf('async function reviewView('), source.indexOf('function localDateString('));
 const clozeSource = source.slice(source.indexOf('function clozeWord('), source.indexOf('async function reviewView('));
 const normalizeSource = source.slice(source.indexOf('function normalize('), source.indexOf('\n', source.indexOf('function normalize(')));
@@ -13,7 +14,7 @@ const navSource = source.slice(source.indexOf('function handleNavClick('), sourc
 const focusSource = source.slice(source.indexOf('function focusSession('), source.indexOf('\n', source.indexOf('function focusSession(')));
 const nextLessonSource=source.slice(source.indexOf('function nextLesson('),source.indexOf('\n',source.indexOf('function nextLesson(')));
 const lessonPlanSource=source.slice(source.indexOf('function lessonPlanHtml('),source.indexOf('function startPlanLesson('));
-const cards = [{id:7,set_title:'Original book',term:'preserve',definition:'giữ nguyên',ipa:'/prɪˈzɜːv/'},{id:8,set_title:'Original book',term:'learn',definition:'học'}];
+const cards = [{id:7,set_title:'Original book',term:'preserve',definition:'giữ nguyên /prɪˈzɜːv/',ipa:'/prɪˈzɜːv/'},{id:8,set_title:'Original book',term:'learn',definition:'học'}];
 const nodes = new Map(), listeners = new Map(), storage = new Map(), sessions = new Map(), calls = [];
 let html = '',renders=0;
 function element(attrs='') {
@@ -35,6 +36,7 @@ const sandbox = {
   esc:(value='')=>String(value).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])),
   fmt:value=>String(value||0),
   ipaHtml:require('../assets/pronunciation.js').render,
+  promptMeaning:require('../assets/pronunciation.js').hideFromPrompt,
   api:async(action,options)=>{calls.push({action,options});if(action==='study_cards')return cards;if(action==='review_rate')return {};throw new Error('Unexpected API '+action);},
   setView(markup){
     html=markup;renders++;nodes.clear();nodes.set('#modal-root',{firstElementChild:null});
@@ -49,7 +51,7 @@ const sandbox = {
   $$:selector=>selector.startsWith('[data-')?[...nodes.entries()].filter(([key])=>key.startsWith(selector.slice(0,-1)+'=')).map(([,el])=>el):[]
 };
 vm.createContext(sandbox);
-vm.runInContext(normalizeSource+'\n'+statSource+'\n'+navSource+'\n'+focusSource+'\n'+nextLessonSource+'\n'+lessonPlanSource+'\n'+clozeSource+'\n'+reviewSource, sandbox);
+vm.runInContext(cardTypeSource+'\n'+normalizeSource+'\n'+statSource+'\n'+navSource+'\n'+focusSource+'\n'+nextLessonSource+'\n'+lessonPlanSource+'\n'+clozeSource+'\n'+reviewSource, sandbox);
 (async()=>{
   const sixLessons=Array.from({length:6},(_,i)=>({key:'unit:'+(i+1),kind:'unit',value:i+1,title:'Bài '+(i+1),status:'new',card_count:10}));
   const unfinishedPlan=sandbox.lessonPlanHtml(sixLessons,sixLessons[0],'review');

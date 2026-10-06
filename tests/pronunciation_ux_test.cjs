@@ -11,6 +11,9 @@ const esc = (value = '') => String(value).replace(/[&<>'"]/g, c => ({
 
 assert.equal(pronunciation.render(null), '');
 assert.equal(pronunciation.render('  '), '');
+assert.equal(pronunciation.hideFromPrompt('Lên tàu/xe/máy bay'), 'Lên tàu/xe/máy bay');
+assert.doesNotMatch(pronunciation.hideFromPrompt('V1 /riːd/, V2 /red/, -ed /t/ hoặc /ɪd/'), /\/(?:riːd|red|t|ɪd)\//);
+assert.equal(pronunciation.hideFromPrompt(null), '');
 for (const value of ['/ˈmeɪ.dʒɚ/', 'US /ˈmeɪ.dʒɚ/', 'UK /ˈmeɪ.dʒə/']) {
   const html = pronunciation.render(value);
   assert.ok(html.includes(value), 'stored notation is preserved');
@@ -27,9 +30,9 @@ const appSource = fs.readFileSync(path.join(__dirname, '../assets/app.js'), 'utf
 const fillSource = appSource.slice(appSource.indexOf('async function randomFillView('), appSource.indexOf('function normalize('));
 const normalizeSource = appSource.slice(appSource.indexOf('function normalize('), appSource.indexOf('\n', appSource.indexOf('function normalize(')));
 async function testFill() {
-  const card = { id:17, set_id:9, term:'preserve', definition:'giữ nguyên', ipa:malicious, example_en:'We preserve these notes.' };
+  const card = { id:17, set_id:9, term:'preserve', definition:'giữ nguyên /prɪˈzɜːv/', ipa:malicious, example_en:'We preserve these notes.' };
   let html = ''; const nodes = new Map(); const calls = [];
-  const sandbox = { esc, ipaHtml:pronunciation.render, shuffle:items=>items, getPracticeCards:async()=>[card],
+  const sandbox = { esc, ipaHtml:pronunciation.render, promptMeaning:pronunciation.hideFromPrompt, shuffle:items=>items, getPracticeCards:async()=>[card],
     noCards(){throw Error('unexpected empty');}, resultHtml:()=>'',setTimeout(){},
     api:async(action,options)=>{calls.push({action,options});},
     $:selector=>nodes.get(selector),setView(markup){html=markup;nodes.clear();for(const m of markup.matchAll(/id="([^"]+)"/g))nodes.set('#'+m[1],{value:'',innerHTML:'',focus(){}});}
@@ -37,7 +40,7 @@ async function testFill() {
   vm.createContext(sandbox);vm.runInContext(normalizeSource+'\n'+fillSource,sandbox);
   await sandbox.randomFillView();
   assert.ok(html.includes('__________'));
-  assert.ok(!html.includes('preserve') && !html.includes('US /x/'), 'fill prompt has neither target spelling nor IPA');
+  assert.ok(!html.includes('preserve') && !html.includes('US /x/') && !html.includes('/prɪˈzɜːv/'), 'fill prompt has neither target spelling nor IPA');
   nodes.get('#fill-answer').value='preserve';await nodes.get('#check-fill').onclick();
   const feedback=nodes.get('#fill-feedback').innerHTML;
   assert.match(feedback,/<p class="fill-target"><b>preserve<\/b><\/p><span class="yl-ipa">/);
@@ -49,7 +52,7 @@ const practiceSource=fs.readFileSync(path.join(__dirname,'../assets/practice-lab
 function practiceEnvironment(mode) {
   const views=[],nodes=new Map(),values=new Map();
   values.set('ylPractice:v1:7',JSON.stringify({version:1,selection:{method:mode}}));
-  const cards=Array.from({length:5},(_,i)=>({id:i+1,term:'targetword'+i,definition:'Nghĩa '+i,ipa:malicious,example_en:'The targetword'+i+' is useful.'}));
+  const cards=Array.from({length:5},(_,i)=>({id:i+1,term:'targetword'+i,definition:'Nghĩa '+i+' /prɪˈzɜːv/',ipa:malicious,example_en:'The targetword'+i+' is useful.'}));
   const setView=html=>{views.push(html);nodes.clear();for(const hit of html.matchAll(/id="([^"]+)"/g))nodes.set('#'+hit[1],{value:'',innerHTML:'',textContent:'',isConnected:true,focus(){},addEventListener(name,fn){this['on'+name]=fn;}});};
   const speechSynthesis={cancel(){},speak(){},getVoices:()=>[]};
   const SpeechSynthesisUtterance=function(text){this.text=text;};
@@ -63,7 +66,7 @@ async function testPractice(mode,reveal) {
   env.nodes.get('#pl-form').onsubmit({preventDefault(){}});
   await new Promise(resolve=>setImmediate(resolve));await new Promise(resolve=>setImmediate(resolve));
   const prompt=env.views.at(-1);
-  assert.ok(!prompt.includes('targetword')&&!prompt.includes('US /x/'),mode+' prompt has no spelling or IPA');
+  assert.ok(!prompt.includes('targetword')&&!prompt.includes('US /x/')&&!prompt.includes('/prɪˈzɜːv/'),mode+' prompt has no spelling or IPA');
   if(reveal)env.nodes.get('#pl-reveal').onclick();
   else {const session=JSON.parse(env.values.get('ylPractice:v1:7')).session;env.nodes.get('#pl-answer').value=session.cards[session.queue[0].index].term;env.nodes.get('#pl-answer-form').onsubmit({preventDefault(){}});}
   const feedback=env.nodes.get('#pl-feedback').innerHTML;

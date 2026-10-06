@@ -14,5 +14,15 @@
     return text ? '<span class="yl-ipa"><span class="yl-ipa-label">IPA</span>' +
       '<span class="yl-ipa-value">' + escape(text) + '</span></span>' : '';
   }
-  return { render };
+  // Older cards sometimes embed IPA in their meaning instead of the IPA field.
+  // Conceal only recognized slash-delimited notation in unanswered prompts;
+  // keep ordinary Vietnamese alternatives such as tàu/xe/máy bay intact.
+  function hideFromPrompt(value) {
+    return String(value ?? '').replace(/\/([^/\r\n]+)\//g, (whole, body) => {
+      const text = body.trim();
+      const phonetic = /[\u0250-\u02ffθð]/u.test(text) || /^(?:[ptkbdgfvszhmnlrwjiueao]|red)$/.test(text);
+      return phonetic ? '(xem cách đọc khi lật thẻ)' : whole;
+    });
+  }
+  return { render, hideFromPrompt };
 });
