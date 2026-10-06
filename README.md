@@ -86,6 +86,8 @@ Cài đặt mới của bản công khai đã được kiểm tra với PHP 8.0.
 
 Kiểm tra tích hợp bằng `php tests/db_integration_test.php` cần cấu hình trỏ đến database thử nghiệm riêng; có thể áp dụng schema/migration/seed. Báo cáo lịch sử ở `TEST_REPORT.md` và `docs/` ghi phạm vi của từng phiên bản. Các kết quả này kiểm tra phần mềm, không đo mức tiến bộ tiếng Anh của người dùng.
 
+Kiểm tra hồi quy loại thẻ bằng `php tests/card_type_preservation_test.php` dùng các biến môi trường `YL_TEST_DB_HOST`, `YL_TEST_DB_PORT`, `YL_TEST_DB_NAME`, `YL_TEST_DB_USER`, `YL_TEST_DB_PASS`. Database phải nằm trên máy cục bộ, có schema hiện hành và tên kết thúc bằng `_qa` hoặc `_test`. Kiểm tra không đọc cấu hình production; dữ liệu thử nằm trong transaction và được rollback. Phạm vi: tạo/chỉnh sửa cả 7 loại thẻ, giữ audio và định danh, từ chối chủ sở hữu khác. Bản v44 sửa lỗi thẻ `LISTENING` bị chuẩn hóa thành từ vựng khi lưu; biểu mẫu hiển thị nhãn tiếng Việt với đúng giá trị loại thẻ.
+
 ## Bảo mật và dữ liệu
 
 Mã nguồn có password hashing, giới hạn thử đăng nhập, phiên phía máy chủ, CSRF, phân quyền và truy vấn PDO có tham số. Dữ liệu học cá nhân gắn với chủ sở hữu. Import giới hạn kích thước/số phần tử và kiểm tra đường dẫn trong archive. Chi tiết: [SECURITY.md](SECURITY.md).
