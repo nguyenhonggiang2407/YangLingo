@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v44 source",
+  "source": "YangLingo v45 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -54,5 +54,6 @@
     "DATABASE_MIGRATION_GUIDE.md"
   ],
   "v42": "Escaped IPA below terms; pronunciation only after reveal in active recall/listening; open-data attribution and licenses. Personal card edits/backups excluded.",
-  "v44": "Preserve the existing LISTENING card type in both editor and server normalization; Vietnamese labels for all seven types; isolated local database regression test. Personal book revisions excluded."
+  "v44": "Preserve the existing LISTENING card type in both editor and server normalization; Vietnamese labels for all seven types; isolated local database regression test. Personal book revisions excluded.",
+  "v45": "Primary US pronunciation references for six individually checked terms; existing IPA preserved. Private Book 4 edits and database excluded."
 }
