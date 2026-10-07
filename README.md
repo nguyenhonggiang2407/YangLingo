@@ -18,6 +18,7 @@ Người học thường lưu từ vựng ở một nơi, làm bài luyện ở 
 
 - **Thư viện flashcard theo book và bài:** nghĩa Việt, ví dụ Anh–Việt, ghi chú cách dùng và lịch ôn SRS riêng. Book đóng gói được nhận diện theo nguồn để tránh tạo lại book và reset tiến độ khi đồng bộ.
 - **Student English · Học tập & công việc:** book riêng gồm **120 thẻ / 12 bài / 10 thẻ mỗi bài**, từ giảng đường và bài nhóm đến email, thực tập, phỏng vấn, quản lý thời gian và đời sống số. Mỗi bài có mục tiêu và gợi ý luyện nói. A2–B1 là mức gợi ý biên soạn.
+- **Daily Essentials · 64 từ & cụm dùng ngay:** book riêng **8 bài × 8 thẻ** cho lớp học, ở chung, đi chợ, đi xe và nhắn tin. Có ví dụ Anh–Việt, ghi chú cách dùng và gợi ý nói; 39 từ đơn có IPA Anh–Mỹ được ghi nguồn. [Nội dung và cách học](docs/DAILY_ESSENTIALS.md).
 - **Phiên âm dưới từ:** hiển thị nguyên IPA và nhãn US/UK đã lưu, giữ ký hiệu của thẻ cũ. Bài gõ/nghe chỉ hiện IPA sau khi kiểm tra hoặc xem đáp án; ký hiệu IPA dạng `/.../` nhận diện được trong nghĩa cũ cũng được che ở phần gợi ý. [Nguồn, phiên bản và giấy phép](pronunciation-sources.html) được đóng gói riêng; không tải toàn bộ từ điển hay tệp âm thanh.
 - **Nhãn thẻ rõ ràng:** phân biệt từ vựng, cụm từ, cấu trúc câu, ngữ pháp và bài nghe trong lượt ôn, giúp người học hiểu mình đang cần nhớ từ hay cả cách dùng.
 - **Sổ tay & cách học:** ghi chú riêng theo tài khoản, câu tự viết, tìm kiếm, ghim, lưu trữ và khôi phục. Tám mục hướng dẫn ngắn có câu tự kiểm tra và nguồn tham khảo; đáp án mở sau khi người học bấm xem. [Cách dùng và giới hạn](docs/LEARNING_NOTEBOOK.md).
@@ -73,6 +74,7 @@ Một số kiểm tra không cần database:
 ```bash
 php tests/student_life_work_book_test.php
 php tests/everyday_english_book_test.php
+php tests/daily_essentials_book_test.php
 php tests/srs_test.php
 php tests/adaptive_test.php
 php tests/importer_test.php
@@ -88,6 +90,8 @@ node tests/practice_state_test.cjs
 Cài đặt mới của bản công khai v49 đã được kiểm tra với PHP 8.0.30/PDO và MariaDB 10.4.32: **15 migration, gồm migration 009 và sổ tay 016, cùng 12 SQL content seed chạy thành công** trên database trống trước khi tạo tài khoản. Chạy lại schema và khởi động ứng dụng không nhân đôi dữ liệu; sổ tay lưu và đọc lại tiếng Việt đúng. Kiểm tra catalog trước đó đã cài đủ 13 book: Everyday English có 60 thẻ, Student English có 120 thẻ; đồng bộ lại giữ nguyên book/thẻ/SRS của dữ liệu kiểm tra.
 
 Kiểm tra tích hợp bằng `php tests/db_integration_test.php` cần cấu hình trỏ đến database thử nghiệm riêng; có thể áp dụng schema/migration/seed. Báo cáo lịch sử ở `TEST_REPORT.md` và `docs/` ghi phạm vi của từng phiên bản. Các kết quả này kiểm tra phần mềm, không đo mức tiến bộ tiếng Anh của người dùng.
+
+Daily Essentials có **41 kiểm tra tích hợp thực** trên database MariaDB riêng: catalog chỉ đọc, book 64 thẻ/8 bài, nội dung bài và gợi ý nói, cài lặp/cài đồng thời giữ cùng ID, phân biệt tài khoản và giữ dữ liệu cũ. Chạy `php tests/daily_essentials_install_test.php` với `YL_TEST_CONFIG_PATH` trỏ tới một tệp cấu hình thử nghiệm cục bộ; tên database phải kết thúc bằng `_qa` hoặc `_test`. Kiểm tra tạo tài khoản hư cấu riêng rồi dọn chúng bằng ID và email; không chạy với cấu hình host thật.
 
 Kiểm tra hồi quy loại thẻ bằng `php tests/card_type_preservation_test.php` dùng các biến môi trường `YL_TEST_DB_HOST`, `YL_TEST_DB_PORT`, `YL_TEST_DB_NAME`, `YL_TEST_DB_USER`, `YL_TEST_DB_PASS`. Database phải nằm trên máy cục bộ, có schema hiện hành và tên kết thúc bằng `_qa` hoặc `_test`. Kiểm tra không đọc cấu hình production; dữ liệu thử nằm trong transaction và được rollback. Phạm vi: tạo/chỉnh sửa cả 7 loại thẻ, giữ audio và định danh, từ chối chủ sở hữu khác. Bản v44 sửa lỗi thẻ `LISTENING` bị chuẩn hóa thành từ vựng khi lưu; biểu mẫu hiển thị nhãn tiếng Việt với đúng giá trị loại thẻ.
 

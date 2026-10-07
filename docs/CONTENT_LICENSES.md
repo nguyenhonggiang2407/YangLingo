@@ -24,3 +24,7 @@ Một số cách đọc được kiểm tra riêng trên trang phát âm chính 
 ## Hướng dẫn học trong sổ tay
 
 `assets/learning-notebook.js` chứa phần hướng dẫn và ví dụ Anh–Việt do dự án biên soạn. Quy tắc được đối chiếu với ABC Education, British Council và Oxford Learner’s Dictionaries; tự kiểm tra và học giãn cách tham khảo tổng quan Dunlosky và cộng sự (2013), liên kết ở từng mục. Chỉ diễn giải ngắn và dẫn nguồn; không phân phối lại nội dung đầy đủ của các nhà xuất bản. Giấy phép phần mềm dự án không cấp quyền đối với các trang tham khảo.
+
+## Daily Essentials
+
+Book JSON `daily-essentials-a1-a2` có 64 thẻ với nghĩa, ví dụ, ghi chú và gợi ý nói tự biên soạn, được cấp phép MIT trong `assets/licenses/DAILY-ESSENTIALS-ORIGINAL-LICENSE.txt`. Hai mươi mục IPA được chọn từ dữ liệu mở giữ cả ba thông báo giấy phép gốc. Mười chín cách đọc ngắn được ghi nguồn riêng từ Cambridge và Collins theo đúng nghĩa/từ loại; không sao chép ví dụ, định nghĩa hoặc âm thanh của các nhà xuất bản. Nguồn từng từ nằm trong `assets/flashbooks/daily-essentials-pronunciation-sources.json`. Không tạo IPA cho 25 cụm/mẫu câu bằng cách ghép phiên âm từ đơn.

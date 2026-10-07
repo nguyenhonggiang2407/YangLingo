@@ -110,6 +110,10 @@ final class Repository {
             $book=$this->studentLifeFlashbook();
             $settings['size']=(int)$book['lesson_size'];$settings['lessons']=$book['lessons'];
         }
+        if(($set['source_type']??'')==='daily_essentials_a1_a2_book'){
+            $book=$this->dailyEssentialsFlashbook();
+            $settings['size']=(int)$book['lesson_size'];$settings['lessons']=$book['lessons'];
+        }
         return $settings;
     }
     private function lessonCardIds(int $uid,int $setId,int $unit,int $size=20): array {
@@ -1071,6 +1075,46 @@ final class Repository {
         }
         return $rows;
     }
+    private function dailyEssentialsFlashbook(): array {
+        static $book=null;
+        if($book!==null)return $book;
+        $path=dirname(__DIR__).'/assets/flashbooks/daily-essentials-a1-a2.json';
+        $raw=is_file($path)?file_get_contents($path):false;
+        if($raw===false)throw new RuntimeException('Không đọc được book Daily Essentials.');
+        try{$data=json_decode($raw,true,512,JSON_THROW_ON_ERROR);}catch(JsonException $e){throw new RuntimeException('Dữ liệu book Daily Essentials không hợp lệ.',0,$e);}
+        if(!is_array($data)||($data['schema_version']??0)!==1||($data['code']??'')!=='daily-essentials-a1-a2'||($data['source_type']??'')!=='daily_essentials_a1_a2_book'||($data['lesson_size']??0)!==8||!is_array($data['lessons']??null)||count($data['lessons'])!==8)throw new RuntimeException('Cấu trúc book Daily Essentials không hợp lệ.');
+        $terms=[];
+        foreach($data['lessons'] as $lesson){
+            if(!is_array($lesson)||!is_array($lesson['cards']??null)||count($lesson['cards'])!==8)throw new RuntimeException('Mỗi bài Daily Essentials cần đủ 8 thẻ.');
+            foreach(['title','objective','speaking_prompt','speaking_model'] as $field)if(!is_string($lesson[$field]??null)||trim($lesson[$field])==='')throw new RuntimeException('Thiếu nội dung bài Daily Essentials: '.$field.'.');
+            foreach($lesson['cards'] as $card){
+                if(!is_array($card))throw new RuntimeException('Thẻ Daily Essentials không hợp lệ.');
+                foreach(['term','definition','part_of_speech','example_en','example_vi','explanation','cefr','card_type'] as $field)if(!is_string($card[$field]??null)||trim($card[$field])==='')throw new RuntimeException('Thiếu nội dung thẻ Daily Essentials: '.$field.'.');
+                if(mb_strlen($card['term'])>255||!in_array($card['cefr'],['A1','A2'],true)||!in_array($card['card_type'],['VOCABULARY','COLLOCATION','SENTENCE_PATTERN','LISTENING_CHUNK'],true))throw new RuntimeException('Nội dung thẻ Daily Essentials không hợp lệ.');
+                if(mb_stripos($card['example_en'],$card['term'])===false)throw new RuntimeException('Ví dụ cần chứa đúng từ hoặc cụm từ đang học.');
+                if(isset($card['ipa'])&&(!is_string($card['ipa'])||mb_strlen($card['ipa'])>255||!preg_match('/^US \/[^\/\r\n]+\/$/u',$card['ipa'])||!preg_match('/^[A-Za-z]+$/D',$card['term'])))throw new RuntimeException('Phiên âm Daily Essentials không hợp lệ.');
+                $key=$this->flashcardBookTermKey($card['term']);if(isset($terms[$key]))throw new RuntimeException('Book Daily Essentials có thẻ trùng.');$terms[$key]=true;
+            }
+        }
+        $book=$data;return $book;
+    }
+    private function dailyEssentialsFlashbookRows(): array {
+        $book=$this->dailyEssentialsFlashbook();$rows=[];
+        foreach($book['lessons'] as $i=>$lesson){
+            foreach($lesson['cards'] as $card){
+                $rows[]=array_merge([
+                    'ipa'=>'','part_of_speech'=>'','card_type'=>'VOCABULARY','difficulty'=>($card['cefr']==='A2'?2:1),
+                    'pattern'=>'','collocations'=>'','word_family'=>''
+                ],$card,[
+                    'category'=>$lesson['title'],'topic'=>'Daily Essentials','subtopic'=>$lesson['title'],'toeic_part'=>'',
+                    'notes'=>'Bài '.($i+1).' · '.$lesson['objective'].' Hãy thử nói hai câu về tình huống của bạn.',
+                    'audio_text'=>$card['example_en'],'tags'=>'daily-essentials,a1-a2,lesson-'.($i+1),
+                    'source'=>'YangLingo Daily Essentials · A1–A2'
+                ]);
+            }
+        }
+        return $rows;
+    }
     private function flashcardBookSpecs(): array {
         $specs=[
             'helen-part1-flashcards'=>[
@@ -1107,7 +1151,7 @@ final class Repository {
                 'source_type'=>'grammar_800_book','title'=>'TOEIC Grammar 800+ – Cấu trúc & Từ dễ nhầm','subtitle'=>'Word Forms · Giới từ · Từ nối · V-ing/to V · Confusing Words','description'=>'Chuyển các bảng/cụm/nguyên tắc có tính ghi nhớ trong PDF Grammar thành flashcard: word-form cues, cụm giới từ, verb/adjective + preposition, connectors, gerund/infinitive và từ dễ nhầm.','cover'=>'GR','source_handbook_code'=>'grammar-800'
             ]
         ];
-        foreach([$this->everydayEnglishFlashbook(),$this->studentLifeFlashbook()] as $book){
+        foreach([$this->everydayEnglishFlashbook(),$this->studentLifeFlashbook(),$this->dailyEssentialsFlashbook()] as $book){
         $specs[$book['code']]=[
             'source_type'=>$book['source_type'],'title'=>$book['title'],'subtitle'=>$book['subtitle'],
             'description'=>$book['description'],'cover'=>$book['cover'],'source_handbook_code'=>'',
@@ -1133,6 +1177,7 @@ final class Repository {
             'grammar-800-flashcards'=>$this->packagedFlashbookRows('toeic-grammar-800-flashcards.csv',220),
             'everyday-english-a1-a2'=>$this->everydayEnglishFlashbookRows(),
             'student-life-work-a2-b1'=>$this->studentLifeFlashbookRows(),
+            'daily-essentials-a1-a2'=>$this->dailyEssentialsFlashbookRows(),
             default=>throw new InvalidArgumentException('Flashcard Book không hợp lệ.')
         };
     }

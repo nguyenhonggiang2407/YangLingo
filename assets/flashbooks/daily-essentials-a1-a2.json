@@ -1,0 +1,763 @@
+{
+  "schema_version": 1,
+  "code": "daily-essentials-a1-a2",
+  "source_type": "daily_essentials_a1_a2_book",
+  "title": "Daily Essentials · 64 từ & cụm dùng ngay",
+  "subtitle": "64 thẻ · 8 bài nhỏ · hướng A1–A2",
+  "description": "8 bài nhỏ cho lớp học, ở chung, đi chợ, đi xe và nhắn tin. Mỗi bài có 8 từ/cụm, ví dụ Anh–Việt và gợi ý nói. Chọn một bài, thử nhớ rồi dùng trong câu của bạn.",
+  "cover": "DE",
+  "category": "Sinh hoạt & hội thoại",
+  "folder_name": "English cho sinh viên",
+  "level": "A1–A2",
+  "lesson_size": 8,
+  "estimated_minutes": 8,
+  "lessons": [
+    {
+      "title": "Vào lớp & mượn đồ",
+      "objective": "Hỏi một chỗ ngồi, mượn đồ học và nói rõ khi chưa hiểu.",
+      "speaking_prompt": "Đóng vai bạn mới vào lớp: hỏi chỗ ngồi, xin mượn bút chì và nói một điều chưa hiểu.",
+      "speaking_model": "Is this seat taken? May I sit here? Can I borrow your pencil? I don't understand the last question on this page.",
+      "cards": [
+        {
+          "term": "page",
+          "definition": "Trang sách / trang tài liệu",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "Please open your book to page twelve.",
+          "example_vi": "Hãy mở sách đến trang mười hai.",
+          "explanation": "Page đếm được: a page, two pages. Dùng on page twelve khi nói nội dung nằm ở trang 12; open the book to page twelve là mở tới trang đó.",
+          "ipa": "US /ˈpeɪdʒ/"
+        },
+        {
+          "term": "pencil",
+          "definition": "Bút chì",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "I keep a pencil in my bag.",
+          "example_vi": "Tôi để một chiếc bút chì trong túi.",
+          "explanation": "A pencil là một bút chì; pencils là số nhiều. Write in pencil là viết bằng bút chì; pen là bút mực, không phải pencil.",
+          "ipa": "US /ˈpɛnsəɫ/"
+        },
+        {
+          "term": "eraser",
+          "definition": "Cục tẩy / gôm",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "My eraser is next to your notebook.",
+          "example_vi": "Cục tẩy của tôi ở cạnh vở của bạn.",
+          "explanation": "Eraser thường dùng trong Anh–Mỹ cho cục tẩy; Anh–Anh thường gọi là rubber. Một cục tẩy là an eraser vì từ bắt đầu bằng âm nguyên âm.",
+          "ipa": "US /ɪˈreɪ.sɚ/"
+        },
+        {
+          "term": "borrow",
+          "definition": "Mượn",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "Can I borrow your pencil for a minute?",
+          "example_vi": "Tôi mượn bút chì của bạn một lát được không?",
+          "explanation": "Borrow something from someone là mượn của ai, nhận vật về phía mình. Đừng dùng borrow me a pencil để nhờ người khác cho mượn; khi đó dùng lend me a pencil.",
+          "ipa": "US /ˈbɑːr.oʊ/"
+        },
+        {
+          "term": "lend",
+          "definition": "Cho mượn",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "I can lend you my notes until tomorrow.",
+          "example_vi": "Tôi có thể cho bạn mượn ghi chép của mình đến ngày mai.",
+          "explanation": "Lend someone something hoặc lend something to someone là cho ai mượn. Quá khứ và phân từ là lent; lend khác borrow ở hướng đưa/nhận vật.",
+          "ipa": "US /ˈɫɛnd/"
+        },
+        {
+          "term": "May I sit here?",
+          "definition": "Tôi ngồi đây được không?",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A1",
+          "example_en": "May I sit here? I can't see the board from the back.",
+          "example_vi": "Tôi ngồi đây được không? Tôi không nhìn rõ bảng từ phía sau.",
+          "explanation": "May I sit here? là cách hỏi xin phép lịch sự. Can I sit here? thân mật hơn; đáp Yes, of course hoặc Sorry, this seat is taken tùy tình huống."
+        },
+        {
+          "term": "Is this seat taken?",
+          "definition": "Chỗ này đã có người ngồi / giữ chỗ chưa?",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A2",
+          "example_en": "Is this seat taken? I need a place to sit.",
+          "example_vi": "Chỗ này đã có người ngồi chưa? Tôi cần một chỗ để ngồi.",
+          "explanation": "Is this seat taken? hỏi liệu chỗ đã dành cho ai. Taken ở đây không phải mang đi; đáp No, you can sit here khi chỗ còn trống."
+        },
+        {
+          "term": "I don't understand",
+          "definition": "Tôi chưa hiểu / không hiểu",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A1",
+          "example_en": "I don't understand the last question.",
+          "example_vi": "Tôi chưa hiểu câu hỏi cuối cùng.",
+          "explanation": "I don't understand + điều gì nói bạn chưa hiểu nội dung. I didn't hear that lại là chưa nghe rõ; hãy chọn câu khớp với điều đang gặp khó khăn."
+        }
+      ]
+    },
+    {
+      "title": "Ở chung & việc nhà",
+      "objective": "Mô tả đồ dùng và thống nhất một việc nhỏ khi sống chung.",
+      "speaking_prompt": "Nói với bạn ở chung về nơi để cốc/khăn và nhờ giảm tiếng nhạc; nhận làm một việc nhà.",
+      "speaking_model": "My roommate and I keep the kitchen tidy. The cups are on the shelf. Could you turn down the music? I'll take out the trash after dinner.",
+      "cards": [
+        {
+          "term": "roommate",
+          "definition": "Người ở cùng phòng / bạn ở chung",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "My roommate and I share a small kitchen.",
+          "example_vi": "Tôi và bạn ở chung dùng chung một căn bếp nhỏ.",
+          "explanation": "A roommate là người ở cùng phòng hoặc, trong nhiều ngữ cảnh Anh–Mỹ, cùng nhà. My roommate's bag nói túi của một bạn ở chung; roommates là nhiều người.",
+          "ipa": "US /ˈruːm.meɪt/"
+        },
+        {
+          "term": "shelf",
+          "definition": "Kệ / ngăn kệ",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "The clean cups are on the top shelf.",
+          "example_vi": "Những chiếc cốc sạch ở trên ngăn kệ trên cùng.",
+          "explanation": "On a shelf là ở trên một ngăn kệ. Số nhiều của shelf là shelves, đổi f thành ves; bookshelf là kệ sách.",
+          "ipa": "US /ˈʃɛɫf/"
+        },
+        {
+          "term": "towel",
+          "definition": "Khăn lau / khăn tắm",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "I hang my towel behind the bathroom door.",
+          "example_vi": "Tôi treo khăn của mình sau cửa phòng tắm.",
+          "explanation": "A towel là một chiếc khăn dùng để lau khô. Bath towel là khăn tắm; paper towel là khăn giấy lau, không phải mọi loại khăn giấy đều gọi là bath towel.",
+          "ipa": "US /taʊəl/"
+        },
+        {
+          "term": "laundry",
+          "definition": "Quần áo cần giặt / việc giặt quần áo",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "We do the laundry on Sunday afternoon.",
+          "example_vi": "Chúng tôi giặt quần áo vào chiều Chủ nhật.",
+          "explanation": "Do the laundry là giặt quần áo. Laundry thường không đếm được trong nghĩa việc giặt/đồ giặt; a load of laundry là một mẻ giặt.",
+          "ipa": "US /ˈɫɔndɹi/"
+        },
+        {
+          "term": "tidy",
+          "definition": "Gọn gàng, ngăn nắp",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "Let's keep the kitchen tidy.",
+          "example_vi": "Chúng ta giữ bếp gọn gàng nhé.",
+          "explanation": "Tidy mô tả nơi/đồ vật ngăn nắp; a tidy room là phòng gọn. Tidy cũng dùng như động từ dọn cho gọn, như tidy your desk; untidy là bừa bộn.",
+          "ipa": "US /ˈtaɪdi/"
+        },
+        {
+          "term": "turn down",
+          "definition": "Giảm âm lượng / giảm mức hoạt động",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A2",
+          "example_en": "Could you turn down the music while I study?",
+          "example_vi": "Bạn giảm tiếng nhạc lúc tôi học được không?",
+          "explanation": "Turn down the music và turn the music down đều dùng được. Với đại từ, nói turn it down; turn down an offer lại là từ chối lời đề nghị, một nghĩa khác."
+        },
+        {
+          "term": "take out the trash",
+          "definition": "Mang rác ra đổ / đưa rác ra ngoài",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A2",
+          "example_en": "I'll take out the trash after dinner.",
+          "example_vi": "Tôi sẽ mang rác ra ngoài sau bữa tối.",
+          "explanation": "Take out the trash là một việc nhà; trash thường không đếm được trong Anh–Mỹ. Anh–Anh hay dùng rubbish; đừng thêm s vào trash để nói lượng rác."
+        },
+        {
+          "term": "keep the door closed",
+          "definition": "Giữ cửa đóng",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A2",
+          "example_en": "Please keep the door closed while I study.",
+          "example_vi": "Hãy giữ cửa đóng trong lúc tôi học.",
+          "explanation": "Keep + vật + tính từ nói duy trì trạng thái, như keep the door closed. Close the door là hành động đóng cửa; closed mô tả cửa ở trạng thái đóng."
+        }
+      ]
+    },
+    {
+      "title": "Đi chợ cho bữa ăn",
+      "objective": "Nói cần mua gì, bao nhiêu và hỏi độ tươi của một món.",
+      "speaking_prompt": "Lên danh sách cho một bữa ăn: nói hai món, hỏi số lượng và một câu về độ tươi.",
+      "speaking_model": "We need bread, rice and vegetables. How many eggs do you need? I can buy four eggs and a kilo of tomatoes. Is the bread fresh?",
+      "cards": [
+        {
+          "term": "bread",
+          "definition": "Bánh mì",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "We need some bread for lunch.",
+          "example_vi": "Chúng ta cần một ít bánh mì cho bữa trưa.",
+          "explanation": "Bread thường không đếm được. A slice of bread là một lát; a loaf of bread là một ổ. Không dùng two breads để đếm hai lát bánh mì thông thường.",
+          "ipa": "US /ˈbɹɛd/"
+        },
+        {
+          "term": "rice",
+          "definition": "Gạo; cơm tùy ngữ cảnh",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "I buy rice at the small shop near my room.",
+          "example_vi": "Tôi mua gạo ở cửa hàng nhỏ gần phòng mình.",
+          "explanation": "Rice thường không đếm được, có thể chỉ gạo hoặc cơm. A bag of rice là một túi gạo; cooked rice chỉ rõ cơm đã nấu.",
+          "ipa": "US /ˈɹaɪs/"
+        },
+        {
+          "term": "egg",
+          "definition": "Trứng; một quả trứng",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "There is one egg left in the fridge.",
+          "example_vi": "Trong tủ lạnh còn một quả trứng.",
+          "explanation": "Egg đếm được: an egg, two eggs. Dùng an trước egg vì âm đầu là nguyên âm; egg còn có thể không đếm được khi nói thành phần trứng trong món ăn.",
+          "ipa": "US /ˈɛɡ/"
+        },
+        {
+          "term": "vegetable",
+          "definition": "Rau / một loại rau",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "We buy vegetables at the market.",
+          "example_vi": "Chúng tôi mua rau ở chợ.",
+          "explanation": "Vegetable là danh từ đếm được; vegetables thường nói rau nói chung. A vegetable dish là món rau; không dịch vegetable thành trái cây, vốn là fruit.",
+          "ipa": "US /ˈvɛdʒtəbəɫ/"
+        },
+        {
+          "term": "bottle",
+          "definition": "Chai",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "Please put the empty bottle in this bag.",
+          "example_vi": "Hãy cho chai rỗng vào túi này.",
+          "explanation": "A bottle of water là một chai nước; bottle đếm được còn water thường không đếm được. A water bottle có thể chỉ chai/bình để đựng nước, chưa nói đang có nước bên trong.",
+          "ipa": "US /ˈbɑtəɫ/"
+        },
+        {
+          "term": "a kilo of",
+          "definition": "Một ki-lô-gam / một ký…",
+          "part_of_speech": "noun phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A2",
+          "example_en": "We need a kilo of tomatoes for the soup.",
+          "example_vi": "Chúng ta cần một ký cà chua để nấu súp.",
+          "explanation": "A kilo of + thứ được cân nói một ki-lô-gam. Kilo là cách nói ngắn của kilogram; với số lớn hơn một, dùng two kilos of rice."
+        },
+        {
+          "term": "How many do you need?",
+          "definition": "Bạn cần bao nhiêu (món / đơn vị)?",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A1",
+          "example_en": "How many do you need? I can buy four eggs.",
+          "example_vi": "Bạn cần bao nhiêu? Tôi có thể mua bốn quả trứng.",
+          "explanation": "How many do you need? dùng khi món đếm được đã rõ trong cuộc nói chuyện. Với lượng không đếm được, như gạo, hỏi How much do you need?"
+        },
+        {
+          "term": "Is it fresh?",
+          "definition": "Nó có tươi không?",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A2",
+          "example_en": "Is it fresh? I want to use it for dinner tonight.",
+          "example_vi": "Nó có tươi không? Tôi muốn dùng nó cho bữa tối nay.",
+          "explanation": "Is it fresh? hỏi độ tươi của một món/nguyên liệu đã được nhắc. Với danh từ số nhiều, đổi thành Are they fresh?; fresh không tự có nghĩa món đã được nấu."
+        }
+      ]
+    },
+    {
+      "title": "Đi tàu & xe buýt",
+      "objective": "Nói về vé, chỗ lên xuống và hỏi thời gian đi lại.",
+      "speaking_prompt": "Kể một hành trình ngắn: vé ở đâu, lên xe ở đâu, xuống ở đâu và mất bao lâu.",
+      "speaking_model": "I have my ticket. The entrance is near the exit. Our train leaves from platform three. We get on the bus here and get off after the bridge. How long does it take?",
+      "cards": [
+        {
+          "term": "ticket",
+          "definition": "Vé",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "I keep my train ticket in my jacket pocket.",
+          "example_vi": "Tôi để vé tàu trong túi áo khoác.",
+          "explanation": "A ticket for + chuyến/sự kiện là vé cho việc đó. A one-way ticket là vé một chiều trong Anh–Mỹ; ticket còn có nghĩa giấy phạt trong ngữ cảnh khác.",
+          "ipa": "US /ˈtɪk.ɪt/"
+        },
+        {
+          "term": "platform",
+          "definition": "Sân ga / khu vực lên xuống tàu",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "Our train leaves from platform three.",
+          "example_vi": "Tàu của chúng ta khởi hành từ sân ga số ba.",
+          "explanation": "Platform ở đây là khu vực đợi và lên xuống tàu; on the platform là ở trên sân ga. Platform còn là nền tảng công nghệ hoặc bục, nên xem ngữ cảnh.",
+          "ipa": "US /ˈplæt.fɔːrm/"
+        },
+        {
+          "term": "entrance",
+          "definition": "Lối vào / cửa vào",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "The entrance is beside the ticket office.",
+          "example_vi": "Lối vào ở cạnh quầy bán vé.",
+          "explanation": "The entrance to + nơi là lối vào nơi đó. Trong thẻ này entrance là danh từ, nhấn âm đầu; động từ entrance nghĩa làm mê mẩn có cách đọc khác.",
+          "ipa": "US /ˈen.trəns/"
+        },
+        {
+          "term": "exit",
+          "definition": "Lối ra / cửa ra",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "We meet near the station exit.",
+          "example_vi": "Chúng tôi gặp nhau gần cửa ra của nhà ga.",
+          "explanation": "Exit trong câu là danh từ lối ra, đối lập entrance là lối vào. Exit cũng là động từ rời khỏi; emergency exit chỉ lối thoát hiểm, không phải mọi exit đều là cửa khẩn cấp.",
+          "ipa": "US /ˈek.sɪt/"
+        },
+        {
+          "term": "get on",
+          "definition": "Lên xe buýt / tàu…",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A1",
+          "example_en": "We get on the bus near the library.",
+          "example_vi": "Chúng tôi lên xe buýt gần thư viện.",
+          "explanation": "Get on thường dùng với bus, train hoặc plane. Với ô tô nhỏ/taxi, thường dùng get in; get on còn có nghĩa khác khi đi kèm những từ khác."
+        },
+        {
+          "term": "get off",
+          "definition": "Xuống xe buýt / tàu…",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A1",
+          "example_en": "We get off the bus after the bridge.",
+          "example_vi": "Chúng tôi xuống xe buýt sau cây cầu.",
+          "explanation": "Get off the bus là xuống xe; get off at + điểm dừng nói xuống ở đâu. Với ô tô/taxi, thường dùng get out of, khác mẫu dành cho bus/train."
+        },
+        {
+          "term": "the next bus",
+          "definition": "Chuyến xe buýt tiếp theo",
+          "part_of_speech": "noun phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A1",
+          "example_en": "The next bus arrives in ten minutes.",
+          "example_vi": "Chuyến xe buýt tiếp theo đến sau mười phút nữa.",
+          "explanation": "The next bus nói chuyến tiếp theo trong lịch/chuyến đang xét. In ten minutes là sau mười phút nữa; for ten minutes nói khoảng thời gian kéo dài."
+        },
+        {
+          "term": "How long does it take?",
+          "definition": "Việc đó mất bao lâu?",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A2",
+          "example_en": "How long does it take? I need to arrive before nine.",
+          "example_vi": "Đi mất bao lâu? Tôi cần đến trước chín giờ.",
+          "explanation": "How long does it take? hỏi thời lượng khi hành trình/việc đã rõ. Có thể thêm to get there; khác How far là hỏi khoảng cách."
+        }
+      ]
+    },
+    {
+      "title": "Thời gian gần gũi",
+      "objective": "Phân biệt hôm qua, hôm nay, ngày mai và nói một kế hoạch ngắn.",
+      "speaking_prompt": "Nói một việc hôm qua, một việc hôm nay và một việc ngày mai; hẹn trả lời sau.",
+      "speaking_model": "Yesterday I studied in the morning. Today I have an early class. I'll be home this evening. I'll call you later, or tomorrow if you are busy.",
+      "cards": [
+        {
+          "term": "today",
+          "definition": "Hôm nay",
+          "part_of_speech": "adverb",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "I have two classes today.",
+          "example_vi": "Hôm nay tôi có hai buổi học.",
+          "explanation": "Today là trạng từ thời gian trong câu, không cần on trước nó. Today's plan dùng sở hữu để nói kế hoạch hôm nay; chọn thời động từ theo ý định nói.",
+          "ipa": "US /təˈdeɪ/"
+        },
+        {
+          "term": "tomorrow",
+          "definition": "Ngày mai",
+          "part_of_speech": "adverb",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "We have an English test tomorrow.",
+          "example_vi": "Ngày mai chúng tôi có bài kiểm tra tiếng Anh.",
+          "explanation": "Tomorrow không cần on hoặc in phía trước. Tomorrow morning là sáng mai; không dùng in tomorrow morning trong cụm thời gian thông thường.",
+          "ipa": "US /təˈmɔːr.oʊ/"
+        },
+        {
+          "term": "yesterday",
+          "definition": "Hôm qua",
+          "part_of_speech": "adverb",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "I left my umbrella in class yesterday.",
+          "example_vi": "Hôm qua tôi để quên ô trong lớp.",
+          "explanation": "Yesterday thường đi với một hành động đã xảy ra; left là quá khứ của leave trong câu. Yesterday evening là tối qua, không thêm on trước cụm này.",
+          "ipa": "US /ˈjɛstərˌdeɪ/"
+        },
+        {
+          "term": "early",
+          "definition": "Sớm / trước giờ thường lệ",
+          "part_of_speech": "adverb",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "The library opens early on weekdays.",
+          "example_vi": "Thư viện mở cửa sớm vào các ngày trong tuần.",
+          "explanation": "Early là trạng từ trong opens early, và cũng là tính từ trong an early class. Earlier là sớm hơn; không thêm ly thành earlyly.",
+          "ipa": "US /ˈɝɫi/"
+        },
+        {
+          "term": "later",
+          "definition": "Lát nữa / vào lúc sau",
+          "part_of_speech": "adverb",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "I'll call you later after my class.",
+          "example_vi": "Tôi sẽ gọi bạn sau, khi học xong.",
+          "explanation": "Later nói vào lúc sau; late nói muộn/trễ. I'll do it later là sẽ làm sau, khác I'm late là tôi đang trễ.",
+          "ipa": "US /ˈleɪ.t̬ɚ/"
+        },
+        {
+          "term": "in the morning",
+          "definition": "Vào buổi sáng",
+          "part_of_speech": "adverb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A1",
+          "example_en": "I pack my lunch in the morning.",
+          "example_vi": "Tôi chuẩn bị bữa trưa mang theo vào buổi sáng.",
+          "explanation": "In the morning là buổi sáng nói chung. Khi có this/tomorrow, nói this morning hoặc tomorrow morning, không giữ in the trước những từ ấy."
+        },
+        {
+          "term": "this evening",
+          "definition": "Tối nay / chiều tối nay",
+          "part_of_speech": "adverb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A1",
+          "example_en": "I'm staying home this evening.",
+          "example_vi": "Tối nay tôi ở nhà.",
+          "explanation": "This evening nói buổi tối của ngày hiện tại, không cần in/on phía trước. Tonight rộng hơn và có thể bao gồm đêm; evening thường là khoảng chiều tối."
+        },
+        {
+          "term": "in a minute",
+          "definition": "Sau một lát / khoảng một phút nữa",
+          "part_of_speech": "adverb phrase",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A1",
+          "example_en": "I'll be ready in a minute.",
+          "example_vi": "Tôi sẽ sẵn sàng trong một lát nữa.",
+          "explanation": "In a minute thường là lời nói sẽ làm rất sớm, không luôn là đúng 60 giây. For a minute lại mô tả việc kéo dài một phút; chọn theo ý thời gian."
+        }
+      ]
+    },
+    {
+      "title": "Nhắn tin & kết nối",
+      "objective": "Xin đường dẫn, nói về tệp và kiểm tra một cuộc gọi trực tuyến.",
+      "speaking_prompt": "Đóng vai đang học online: kiểm tra âm thanh, xin đường dẫn và nói về một vấn đề kết nối.",
+      "speaking_model": "Can you hear me? Please send me the link. I got your message, but my phone is offline. The connection is weak. I need to charge my phone before I open the file.",
+      "cards": [
+        {
+          "term": "message",
+          "definition": "Tin nhắn / lời nhắn",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "I got your message after class.",
+          "example_vi": "Tôi nhận được tin nhắn của bạn sau giờ học.",
+          "explanation": "A message là một tin/lời nhắn; send someone a message là gửi cho ai. Message cũng dùng như động từ nhắn tin; thẻ này học nghĩa danh từ.",
+          "ipa": "US /ˈmes.ɪdʒ/"
+        },
+        {
+          "term": "link",
+          "definition": "Đường dẫn / liên kết",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "The link opens our class timetable.",
+          "example_vi": "Đường dẫn mở thời khóa biểu của lớp chúng ta.",
+          "explanation": "A link to + trang/tài liệu nói liên kết dẫn đến đâu. Click a link là bấm liên kết; link ở đây là danh từ, khác động từ link A to B là nối A với B.",
+          "ipa": "US /ˈɫɪŋk/"
+        },
+        {
+          "term": "file",
+          "definition": "Tệp / tập tin",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "I saved the file with a short name.",
+          "example_vi": "Tôi lưu tệp bằng một tên ngắn.",
+          "explanation": "A file là một tệp, như a PDF file. A folder chứa các tệp; file cũng là động từ nộp/lưu hồ sơ trong ngữ cảnh khác, không phải nghĩa của thẻ này.",
+          "ipa": "US /ˈfaɪɫ/"
+        },
+        {
+          "term": "charge",
+          "definition": "Sạc pin",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "I need to charge my phone before class.",
+          "example_vi": "Tôi cần sạc điện thoại trước giờ học.",
+          "explanation": "Charge a phone là sạc điện thoại; charger là bộ sạc. Charge còn có nghĩa tính tiền hoặc buộc tội tùy ngữ cảnh; ở đây không dịch thành phí dịch vụ.",
+          "ipa": "US /ˈtʃɑɹdʒ/"
+        },
+        {
+          "term": "offline",
+          "definition": "Không kết nối mạng / ngoại tuyến",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "My phone is offline, so I can't open the page.",
+          "example_vi": "Điện thoại tôi không kết nối mạng nên tôi không mở được trang.",
+          "explanation": "Offline là không kết nối mạng/hệ thống trong câu. Work offline dùng như trạng từ làm việc khi không có kết nối; online là trạng thái ngược lại.",
+          "ipa": "US /ˌɑːfˈlaɪn/"
+        },
+        {
+          "term": "send me",
+          "definition": "Gửi cho tôi…",
+          "part_of_speech": "verb phrase",
+          "card_type": "SENTENCE_PATTERN",
+          "cefr": "A1",
+          "example_en": "Please send me the link before class.",
+          "example_vi": "Hãy gửi đường dẫn cho tôi trước giờ học.",
+          "explanation": "Send me + vật/thông tin là gửi cho tôi thứ đó; send the link to me cũng dùng được. Please hoặc Could you làm lời nhờ lịch sự hơn.",
+          "pattern": "Please send me + vật / thông tin."
+        },
+        {
+          "term": "Can you hear me?",
+          "definition": "Bạn có nghe thấy tôi không?",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A1",
+          "example_en": "Can you hear me? My microphone is on.",
+          "example_vi": "Bạn có nghe thấy tôi không? Micro của tôi đang bật.",
+          "explanation": "Can you hear me? kiểm tra âm thanh, không hỏi người kia hiểu ý chưa. Can you understand me? hỏi khả năng hiểu; hear là nghe thấy, listen là chú ý nghe."
+        },
+        {
+          "term": "The connection is weak",
+          "definition": "Kết nối yếu / chập chờn",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A2",
+          "example_en": "The connection is weak. I'll move closer to the router.",
+          "example_vi": "Kết nối yếu. Tôi sẽ lại gần bộ phát Wi-Fi hơn.",
+          "explanation": "The connection is weak mô tả kết nối kém trong cuộc gọi/truy cập mạng. A weak signal là tín hiệu yếu; câu không tự xác định lỗi nằm ở thiết bị nào."
+        }
+      ]
+    },
+    {
+      "title": "Đủ, hết & còn lại",
+      "objective": "Nói có hoặc thiếu đồ dùng bằng mẫu phù hợp với số lượng.",
+      "speaking_prompt": "Nhìn quanh bàn/bếp và nói một thứ đủ, một thứ hết và một thứ bạn cần thêm.",
+      "speaking_model": "I'm out of paper. My bottle is empty. There's no milk, but there are some cups on the shelf. We have enough money for another bottle of water.",
+      "cards": [
+        {
+          "term": "need",
+          "definition": "Cần",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "We need two clean cups.",
+          "example_vi": "Chúng ta cần hai chiếc cốc sạch.",
+          "explanation": "Need + danh từ nói cần thứ gì; need to + động từ nói cần làm gì. I need water khác I need to drink water; không bỏ to trong mẫu thứ hai.",
+          "ipa": "US /ˈnid/"
+        },
+        {
+          "term": "enough",
+          "definition": "Đủ (một lượng cần thiết)",
+          "part_of_speech": "determiner",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "We have enough money for the bus.",
+          "example_vi": "Chúng ta có đủ tiền đi xe buýt.",
+          "explanation": "Enough đứng trước danh từ, như enough money. Với tính từ/trạng từ, đặt phía sau: big enough, quickly enough; không nói enough big trong mẫu này.",
+          "ipa": "US /əˈnʌf/"
+        },
+        {
+          "term": "empty",
+          "definition": "Trống / không có gì bên trong",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "My water bottle is empty.",
+          "example_vi": "Bình nước của tôi đã hết nước.",
+          "explanation": "An empty bottle là chai không có gì bên trong; empty cũng là động từ làm rỗng. Empty chỉ trạng thái trống, còn free có thể là sẵn để dùng hoặc miễn phí tùy ngữ cảnh.",
+          "ipa": "US /ˈemp.ti/"
+        },
+        {
+          "term": "full",
+          "definition": "Đầy / chứa đến mức không còn chỗ",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "Our bags are full of books.",
+          "example_vi": "Túi của chúng tôi đầy sách.",
+          "explanation": "Full of + vật nói đầy thứ đó. I'm full lại thường là tôi đã no sau khi ăn; fuller là dạng so sánh hơn, không dùng fully để thay tính từ full.",
+          "ipa": "US /ˈfʊɫ/"
+        },
+        {
+          "term": "another",
+          "definition": "Một… khác / thêm một…",
+          "part_of_speech": "determiner",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "I need another towel for the floor.",
+          "example_vi": "Tôi cần thêm một chiếc khăn để lau sàn.",
+          "explanation": "Another thường đứng trước danh từ đếm được số ít: another towel. Other đi với danh từ số nhiều trong other towels; an other không phải cách viết của another.",
+          "ipa": "US /əˈnʌð.ɚ/"
+        },
+        {
+          "term": "I'm out of",
+          "definition": "Tôi đã hết… / không còn…",
+          "part_of_speech": "sentence pattern",
+          "card_type": "SENTENCE_PATTERN",
+          "cefr": "A2",
+          "example_en": "I'm out of paper. Can I use one sheet of yours?",
+          "example_vi": "Tôi hết giấy rồi. Tôi dùng một tờ của bạn được không?",
+          "explanation": "I'm out of + vật/thứ cần dùng nói bạn không còn thứ đó. We're out of milk là chúng tôi hết sữa; out of ở đây không chỉ vị trí ở ngoài một nơi.",
+          "pattern": "I'm out of + thứ đã hết."
+        },
+        {
+          "term": "There's no",
+          "definition": "Không có… (một vật / lượng)",
+          "part_of_speech": "sentence pattern",
+          "card_type": "SENTENCE_PATTERN",
+          "cefr": "A1",
+          "example_en": "There's no milk in the fridge.",
+          "example_vi": "Không có sữa trong tủ lạnh.",
+          "explanation": "There's no + danh từ số ít hoặc không đếm được, như no chair/no milk. Với số nhiều, dùng There are no chairs; there's là viết tắt của there is.",
+          "pattern": "There's no + danh từ số ít / không đếm được."
+        },
+        {
+          "term": "There are some",
+          "definition": "Có một vài / một số…",
+          "part_of_speech": "sentence pattern",
+          "card_type": "SENTENCE_PATTERN",
+          "cefr": "A1",
+          "example_en": "There are some clean cups on the shelf.",
+          "example_vi": "Có một vài chiếc cốc sạch trên kệ.",
+          "explanation": "There are some + danh từ số nhiều, như some cups. Với danh từ không đếm được, dùng There is some water; are theo danh từ số nhiều, không theo some một mình.",
+          "pattern": "There are some + danh từ số nhiều."
+        }
+      ]
+    },
+    {
+      "title": "Chọn & trả lời lịch sự",
+      "objective": "Nêu điều thích hơn, chọn nơi phù hợp và hoãn một lời mời nhẹ nhàng.",
+      "speaking_prompt": "Nói bạn thích đồ uống hoặc nơi học nào, rồi chấp nhận hay hoãn một đề nghị.",
+      "speaking_model": "I prefer tea to coffee. Let's choose a quiet room with comfortable chairs. Are you busy? That's fine. Maybe later. Have you finished choosing? Not yet.",
+      "cards": [
+        {
+          "term": "prefer",
+          "definition": "Thích / chọn… hơn",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "I prefer tea to coffee.",
+          "example_vi": "Tôi thích trà hơn cà phê.",
+          "explanation": "Prefer A to B là thích A hơn B; dùng to trong mẫu này. Prefer doing A to doing B so sánh hai hoạt động; preferred/preferring có hai r.",
+          "ipa": "US /prɪˈfɝː/"
+        },
+        {
+          "term": "choose",
+          "definition": "Chọn / lựa chọn",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "You can choose a quiet place to study.",
+          "example_vi": "Bạn có thể chọn một chỗ yên tĩnh để học.",
+          "explanation": "Choose something là chọn thứ gì; choose to do là quyết định làm việc gì. Quá khứ chose, phân từ chosen; choice là danh từ sự/lựa chọn.",
+          "ipa": "US /ˈtʃuz/"
+        },
+        {
+          "term": "comfortable",
+          "definition": "Thoải mái / dễ chịu",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "This chair is comfortable for reading.",
+          "example_vi": "Chiếc ghế này ngồi đọc sách rất thoải mái.",
+          "explanation": "Comfortable mô tả cảm giác dễ chịu hoặc vật tạo cảm giác ấy. Be comfortable with + việc còn nói thấy tự tin/ổn với nó; comfort là danh từ/động từ, khác tính từ comfortable.",
+          "ipa": "US /ˈkʌm.fɚ.t̬ə.bəl/"
+        },
+        {
+          "term": "quiet",
+          "definition": "Yên tĩnh / ít tiếng ồn",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "This room is quiet in the afternoon.",
+          "example_vi": "Căn phòng này yên tĩnh vào buổi chiều.",
+          "explanation": "Quiet là tính từ; quietly là trạng từ, như speak quietly. Quite lại là khá/rất tùy ngữ cảnh và khác cách viết; không nhầm quiet room với quite room.",
+          "ipa": "US /ˈkwaɪət/"
+        },
+        {
+          "term": "busy",
+          "definition": "Bận / có nhiều việc",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "A1",
+          "example_en": "I'm busy until four, but I can talk after that.",
+          "example_vi": "Tôi bận đến bốn giờ nhưng có thể nói chuyện sau đó.",
+          "explanation": "Be busy with + danh từ hoặc busy doing + hoạt động nói bận vì việc gì. Business là danh từ kinh doanh/công việc, không phải dạng dùng thay busy.",
+          "ipa": "US /ˈbɪzi/"
+        },
+        {
+          "term": "That's fine",
+          "definition": "Được thôi / Thế cũng ổn",
+          "part_of_speech": "sentence",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A1",
+          "example_en": "That's fine. We can study in the smaller room.",
+          "example_vi": "Được thôi. Chúng ta có thể học trong phòng nhỏ hơn.",
+          "explanation": "That's fine là cách chấp nhận một phương án. Fine ở đây là ổn/chấp nhận được; không có nghĩa khoản tiền phạt như danh từ a fine."
+        },
+        {
+          "term": "Maybe later",
+          "definition": "Có lẽ để lát nữa / lúc khác nhé",
+          "part_of_speech": "adverb phrase",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A1",
+          "example_en": "Maybe later. I want to finish this page first.",
+          "example_vi": "Có lẽ để lát nữa nhé. Tôi muốn đọc xong trang này trước.",
+          "explanation": "Maybe later có thể hoãn hoặc từ chối nhẹ một lời mời; muốn rõ hơn, thêm thời gian phù hợp. Maybe là có lẽ, còn may be là hai từ trong It may be late."
+        },
+        {
+          "term": "not yet",
+          "definition": "Chưa / chưa tới lúc đó",
+          "part_of_speech": "adverb phrase",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A1",
+          "example_en": "Not yet. I'm still choosing a book.",
+          "example_vi": "Chưa. Tôi vẫn đang chọn sách.",
+          "explanation": "Not yet đáp rằng việc mong đợi vẫn chưa xảy ra. Have you finished? — Not yet khác Never là chưa bao giờ; still nhấn mạnh trạng thái còn tiếp diễn."
+        }
+      ]
+    }
+  ]
+}
