@@ -20,3 +20,7 @@ TOEIC, Aptis và HELEN xác định ngữ cảnh hoặc nguồn. Repository khô
 IPA-dict `en_US.txt` (General American) có nguồn chuyển đổi cmudict-ipa; đối chiếu âm và trọng âm với CMUdict. Các phiên bản được ghim và thông báo giấy phép đầy đủ nằm trong [trang ghi nguồn IPA](../pronunciation-sources.html) và `assets/licenses/`. Dữ liệu cũ có thể có nguồn khác; giao diện không tự gắn US cho IPA chưa ghi giọng. Kế hoạch đối chiếu theo card ID và database cá nhân được giữ ngoài repository.
 
 Một số cách đọc được kiểm tra riêng trên trang phát âm chính thức của Cambridge; danh sách liên kết nằm trong trang ghi nguồn. Chỉ lưu ký hiệu phát âm ngắn của mục đã kiểm tra. Không phân phối lại từ điển, định nghĩa, câu ví dụ hoặc tệp âm thanh của Cambridge; những liên kết này không có nghĩa toàn bộ nội dung Cambridge mang giấy phép MIT.
+
+## Hướng dẫn học trong sổ tay
+
+`assets/learning-notebook.js` chứa phần hướng dẫn và ví dụ Anh–Việt do dự án biên soạn. Quy tắc được đối chiếu với ABC Education, British Council và Oxford Learner’s Dictionaries; tự kiểm tra và học giãn cách tham khảo tổng quan Dunlosky và cộng sự (2013), liên kết ở từng mục. Chỉ diễn giải ngắn và dẫn nguồn; không phân phối lại nội dung đầy đủ của các nhà xuất bản. Giấy phép phần mềm dự án không cấp quyền đối với các trang tham khảo.

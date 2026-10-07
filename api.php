@@ -15,7 +15,16 @@ function input(): array {$ct=$_SERVER['CONTENT_TYPE']??'';if(str_contains($ct,'a
 function csrf(array $d=[]): void {$token=(string)($d['csrf']??($_SERVER['HTTP_X_CSRF_TOKEN']??''));if(!hash_equals((string)($_SESSION['csrf']??''),$token))fail('Phiên bảo mật đã hết hạn. Hãy tải lại trang.',419);}
 function i(mixed $v): ?int {if($v===null||$v==='')return null;return (int)$v;}
 function clientIp(): string { return trim((string)($_SERVER['REMOTE_ADDR']??'')); }
+function notebookPayload(array $allowed): array {
+    $data=input();csrf($data);unset($data['csrf']);
+    if(array_diff(array_keys($data),$allowed))throw new InvalidArgumentException('Trường ghi chú không hợp lệ.');
+    return $data;
+}
 function enforceMethod(string $action): void {
+    if(in_array($action,['notebook_notes','notebook_get'],true)){
+        if(($_SERVER['REQUEST_METHOD']??'GET')!=='GET')fail('Phương thức HTTP không hợp lệ.',405);
+        return;
+    }
     $getActions=['bootstrap','dashboard','profile','learning_preferences','stats','leaderboard','mistakes','folders','sets','set_get','export_set','study_lessons','study_lesson_cards','study_cards','threads','thread_get','pronunciation_recent','quizzes','quiz_get','daily_assignment','practice_packs','practice_pack_get','daily_plan','weaknesses','course_catalog','sentence_patterns','connected_speech','toeic_questions','aptis_summary','aptis_questions','adaptive_summary','adaptive_library','learner_profile','knowledge_map','collocation_challenge','mistake_lesson','flashcard_books','handbooks','handbook_get','handbook_section','handbook_practice','handbook_related','admin_stats','admin_aptis_stats','admin_users','admin_card_bank','admin_toeic_questions','admin_toeic_get','admin_quizzes','admin_quiz_get','admin_daily_sets','admin_daily_get','admin_practice_packs','admin_practice_get'];
     if(in_array($action,$getActions,true)) return;
     if(($_SERVER['REQUEST_METHOD']??'GET')!=='POST') fail('Phương thức HTTP không hợp lệ.',405);
@@ -102,6 +111,20 @@ try {
     if($action==='logout'){ $d=input();csrf($d);$auth->logout();respond(null,'Đã đăng xuất.'); }
 
     $user=$auth->requireUser();$uid=(int)$user['id'];
+    if(in_array($action,['notebook_notes','notebook_get','notebook_save','notebook_archive','notebook_pin'],true)){
+        require_once __DIR__.'/lib/LearningNotebook.php';$notebook=new LearningNotebook($db);
+        if($action==='notebook_notes'){
+            $query=$_GET;unset($query['action']);respond($notebook->list($uid,$query));
+        }
+        if($action==='notebook_get')respond($notebook->get($uid,$_GET['id']??null));
+        if($action==='notebook_save')respond($notebook->save($uid,notebookPayload(['id','title','body','own_sentence','kind','is_pinned'])),'Đã lưu ghi chú.');
+        if($action==='notebook_archive'){
+            $d=notebookPayload(['id','archived']);respond($notebook->archive($uid,$d['id']??null,$d['archived']??null),'Đã cập nhật lưu trữ.');
+        }
+        if($action==='notebook_pin'){
+            $d=notebookPayload(['id','pinned']);respond($notebook->pin($uid,$d['id']??null,$d['pinned']??null),'Đã cập nhật ghim ghi chú.');
+        }
+    }
     if($action==='dashboard')respond($repo->dashboard($uid));
     if($action==='profile')respond($repo->profile($uid));
     if($action==='learning_preferences')respond($repo->learningPreferences($uid));
@@ -257,4 +280,4 @@ try {
         }
     }
     fail('API action không tồn tại.',404);
-} catch(AuthException $e){fail($e->getMessage(),$e->status);} catch(InvalidArgumentException $e){fail($e->getMessage(),422);} catch(Throwable $e){if(function_exists('yl_log'))yl_log($e);$debug=!empty($config['debug']);fail($debug?$e->getMessage():'Đã xảy ra lỗi máy chủ. Vui lòng thử lại.',500);}
+} catch(AuthException $e){fail($e->getMessage(),$e->status);} catch(LearningNotebookException $e){fail($e->getMessage(),$e->status);} catch(InvalidArgumentException $e){fail($e->getMessage(),422);} catch(Throwable $e){if(function_exists('yl_log'))yl_log($e);$debug=!empty($config['debug']);fail($debug?$e->getMessage():'Đã xảy ra lỗi máy chủ. Vui lòng thử lại.',500);}

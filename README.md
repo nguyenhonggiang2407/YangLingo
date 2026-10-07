@@ -20,6 +20,7 @@ Người học thường lưu từ vựng ở một nơi, làm bài luyện ở 
 - **Student English · Học tập & công việc:** book riêng gồm **120 thẻ / 12 bài / 10 thẻ mỗi bài**, từ giảng đường và bài nhóm đến email, thực tập, phỏng vấn, quản lý thời gian và đời sống số. Mỗi bài có mục tiêu và gợi ý luyện nói. A2–B1 là mức gợi ý biên soạn.
 - **Phiên âm dưới từ:** hiển thị nguyên IPA và nhãn US/UK đã lưu, giữ ký hiệu của thẻ cũ. Bài gõ/nghe chỉ hiện IPA sau khi kiểm tra hoặc xem đáp án; ký hiệu IPA dạng `/.../` nhận diện được trong nghĩa cũ cũng được che ở phần gợi ý. [Nguồn, phiên bản và giấy phép](pronunciation-sources.html) được đóng gói riêng; không tải toàn bộ từ điển hay tệp âm thanh.
 - **Nhãn thẻ rõ ràng:** phân biệt từ vựng, cụm từ, cấu trúc câu, ngữ pháp và bài nghe trong lượt ôn, giúp người học hiểu mình đang cần nhớ từ hay cả cách dùng.
+- **Sổ tay & cách học:** ghi chú riêng theo tài khoản, câu tự viết, tìm kiếm, ghim, lưu trữ và khôi phục. Tám mục hướng dẫn ngắn có câu tự kiểm tra và nguồn tham khảo; đáp án mở sau khi người học bấm xem. [Cách dùng và giới hạn](docs/LEARNING_NOTEBOOK.md).
 - **Ba cách luyện từ:** nhớ từ nghĩa Việt, điền từ vào câu, nghe rồi viết. Chọn 5 hoặc 10 thẻ, phối hợp cả ba cách, xem giải thích và thử lại từ chưa nhớ. Âm thanh dùng giọng đọc của trình duyệt; thiết bị chưa hỗ trợ chuyển sang luyện nhớ từ.
 - **Thử dùng từ trong 30 giây:** gợi ý, câu mẫu, đồng hồ và tự kiểm tra giúp người học nói về tình huống của mình. Phần này không chấm phát âm. Kết quả buổi luyện từ lưu trong trình duyệt theo tài khoản; lịch SRS cập nhật qua luồng ôn bài.
 - **Kế hoạch hôm nay, Mistake Book và phân tích điểm yếu:** ưu tiên thẻ đến hạn, học lại và lỗi tái diễn trước khi thêm kiến thức, kèm lý do cho người học.
@@ -80,14 +81,17 @@ php tests/static_audit.php
 node --check assets/practice-lab.js
 node tests/learning_ux_test.cjs
 node tests/pronunciation_ux_test.cjs
+node tests/notebook_navigation_test.cjs
 node tests/practice_state_test.cjs
 ```
 
-Cài đặt mới của bản công khai đã được kiểm tra với PHP 8.0.30/PDO và MariaDB 10.4.32: **14 migration, gồm migration 009, và 12 SQL content seed chạy thành công** trên database trống trước khi tạo tài khoản. Sau đó cài đủ 13 book trong catalog; book Everyday English có 60 thẻ và Student English có 120 thẻ. Chạy lại schema/đồng bộ không nhân đôi book hoặc làm đổi thẻ/SRS của dữ liệu kiểm tra đã có.
+Cài đặt mới của bản công khai v49 đã được kiểm tra với PHP 8.0.30/PDO và MariaDB 10.4.32: **15 migration, gồm migration 009 và sổ tay 016, cùng 12 SQL content seed chạy thành công** trên database trống trước khi tạo tài khoản. Chạy lại schema và khởi động ứng dụng không nhân đôi dữ liệu; sổ tay lưu và đọc lại tiếng Việt đúng. Kiểm tra catalog trước đó đã cài đủ 13 book: Everyday English có 60 thẻ, Student English có 120 thẻ; đồng bộ lại giữ nguyên book/thẻ/SRS của dữ liệu kiểm tra.
 
 Kiểm tra tích hợp bằng `php tests/db_integration_test.php` cần cấu hình trỏ đến database thử nghiệm riêng; có thể áp dụng schema/migration/seed. Báo cáo lịch sử ở `TEST_REPORT.md` và `docs/` ghi phạm vi của từng phiên bản. Các kết quả này kiểm tra phần mềm, không đo mức tiến bộ tiếng Anh của người dùng.
 
 Kiểm tra hồi quy loại thẻ bằng `php tests/card_type_preservation_test.php` dùng các biến môi trường `YL_TEST_DB_HOST`, `YL_TEST_DB_PORT`, `YL_TEST_DB_NAME`, `YL_TEST_DB_USER`, `YL_TEST_DB_PASS`. Database phải nằm trên máy cục bộ, có schema hiện hành và tên kết thúc bằng `_qa` hoặc `_test`. Kiểm tra không đọc cấu hình production; dữ liệu thử nằm trong transaction và được rollback. Phạm vi: tạo/chỉnh sửa cả 7 loại thẻ, giữ audio và định danh, từ chối chủ sở hữu khác. Bản v44 sửa lỗi thẻ `LISTENING` bị chuẩn hóa thành từ vựng khi lưu; biểu mẫu hiển thị nhãn tiếng Việt với đúng giá trị loại thẻ.
+
+Sổ tay có kiểm tra tích hợp tại `tests/notebook_integration_test.php`, cần biến môi trường `YANG_NOTEBOOK_TEST_CONFIG` trỏ đến cấu hình database thử riêng trên máy, tên kết thúc `_qa` hoặc `_test`. Kiểm tra 115 hành vi DB/HTTP bao gồm quyền sở hữu, CSRF, validation, tìm ký hiệu theo nghĩa chữ, phân trang, lưu trữ/khôi phục và hai lần tạo đồng thời khi đã có 499 ghi chú. Dữ liệu mẫu được dọn; phần kiểm tra không tạo tiến độ SRS. Chi tiết cấu hình nằm trong đầu tệp kiểm tra. Giao diện đã được thử tạo/sửa/tải lại, ghi ký hiệu HTML như văn bản, tìm kiếm, ghim, lưu trữ/khôi phục, mở đáp án hướng dẫn và bố cục điện thoại.
 
 ## Bảo mật và dữ liệu
 

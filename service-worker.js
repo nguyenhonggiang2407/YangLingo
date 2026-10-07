@@ -1,8 +1,8 @@
-const CACHE='yanglingo-static-v47';
+const CACHE='yanglingo-static-v49';
 const STATIC=[
   './offline.html','./manifest.webmanifest','./assets/app.css','./assets/tools.css','./assets/features.js','./assets/app.js','./assets/design-system.css','./assets/interface.js','./assets/pronunciation.js','./assets/practice-lab.js','./assets/practice-lab.css',
   './assets/aptis-v5.js','./assets/adaptive.js','./assets/aptis-v5.css','./assets/quiz-navigation-v1.css','./assets/review-navigation-v1.css','./assets/review-navigation-v2.css','./assets/plan-lessons-v1.css',
-  './assets/icons/icon-192.png','./assets/icons/icon-512.png'
+  './assets/learning-notebook.js','./assets/learning-notebook.css','./assets/icons/icon-192.png','./assets/icons/icon-512.png'
 ];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(STATIC)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key!==CACHE)await caches.delete(key);await self.clients.claim();})()));
