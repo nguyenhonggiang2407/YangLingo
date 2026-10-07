@@ -108,16 +108,91 @@ async function setModal(set=null){if(!state.folders.length)await loadFolders();m
 function folderModal(folder=null){modal(folder?'Sửa folder':'Tạo folder',`<form id="folder-form" class="form-grid"><label class="field">Biểu tượng<input name="icon" value="${esc(folder?.icon||'📁')}" maxlength="8"></label><label class="field">Tên folder<input name="name" value="${esc(folder?.name||'')}" required placeholder="IELTS"></label></form>`,`<button class="btn ghost" data-close>Hủy</button><button class="btn primary" id="save-folder">Lưu</button>`);$('#save-folder').onclick=async()=>{const d=Object.fromEntries(new FormData($('#folder-form')).entries());if(folder)d.id=folder.id;try{await api(folder?'folder_update':'folder_create',{method:'POST',data:d});closeModal();toast('Đã lưu folder.');renderRoute();}catch(e){toast(e.message,'error')}};}
 async function folderManager(){await loadFolders();modal('Quản lý folder',state.folders.length?`<div class="mini-list">${state.folders.map(f=>`<div class="mini-set"><span class="set-icon">${esc(f.icon)}</span><span><b>${esc(f.name)}</b><small>${fmt(f.set_count)} bộ từ</small></span><span class="actions-inline"><button class="btn tiny soft" data-edit-folder="${f.id}">Sửa</button><button class="btn tiny danger" data-del-folder="${f.id}">Xóa</button></span></div>`).join('')}</div>`:'<p style="color:var(--muted)">Chưa có folder.</p>',`<button class="btn primary" id="modal-new-folder">＋ Folder</button>`);$('#modal-new-folder').onclick=()=>folderModal();$$('[data-edit-folder]').forEach(b=>b.onclick=()=>folderModal(state.folders.find(f=>String(f.id)===b.dataset.editFolder)));$$('[data-del-folder]').forEach(b=>b.onclick=async()=>{if(!confirm('Xóa folder? Các bộ từ bên trong vẫn được giữ.'))return;try{await api('folder_delete',{method:'POST',data:{id:b.dataset.delFolder}});closeModal();renderRoute();}catch(e){toast(e.message,'error')}});}
 
+function cardDetailHtml(card){
+  const text=value=>String(value??'').trim();
+  const term=text(card.term),example=text(card.example_en),translation=text(card.example_vi);
+  const pos=text(card.part_of_speech),level=text(card.cefr);
+  const posLabels={noun:'Danh từ',verb:'Động từ',adjective:'Tính từ',adverb:'Trạng từ',pronoun:'Đại từ',preposition:'Giới từ',conjunction:'Liên từ',interjection:'Thán từ',determiner:'Từ hạn định',article:'Mạo từ',phrase:'Cụm từ','phrasal verb':'Cụm động từ',abbreviation:'Viết tắt'};
+  const block=(label,value)=>text(value)?`<section class="card-detail-section"><h4>${esc(label)}</h4><p class="card-detail-text">${esc(text(value))}</p></section>`:'';
+  const patternLabel=pos==='verb'&&text(card.pattern).includes('→')?'Dạng động từ':'Cấu trúc';
+  return `<article class="card-detail">
+    <div class="card-detail-hero"><h2 lang="en">${esc(term)}</h2>${ipaHtml(card.ipa)}
+      <div class="card-detail-meta"><span class="admin-pill">${esc(cardTypeLabel(card.card_type||'VOCABULARY'))}</span>${pos?`<span>${esc(posLabels[pos]||pos)}</span>`:''}${level?`<span>${esc(level)}</span>`:''}</div>
+      <p class="card-detail-meaning">${esc(text(card.definition)||'Chưa có nghĩa cho thẻ này.')}</p>
+      ${term?'<button type="button" class="btn soft" id="card-detail-play-term"><span aria-hidden="true">♫</span> Nghe từ / câu</button>':''}
+    </div>
+    ${example||translation?`<section class="card-detail-section"><h4>Ví dụ</h4>${example?`<p class="card-detail-example" lang="en">${esc(example)}</p>`:''}${translation?`<p class="card-detail-translation">${esc(translation)}</p>`:''}${example?'<button type="button" class="btn tiny soft" id="card-detail-play-example"><span aria-hidden="true">♫</span> Nghe ví dụ</button>':''}</section>`:''}
+    ${block('Cách dùng & lưu ý',card.explanation)}${block(patternLabel,card.pattern)}${block('Cụm từ đi cùng',card.collocations)}${block('Họ từ',card.word_family)}
+    <p class="card-detail-tip">Đọc ví dụ, nghe lại và thử viết một câu của bạn.</p>
+  </article>`;
+}
+let activeCardDetailClose=null;
+function cardDetailsModal(card,opener=document.activeElement){
+  const owner=String(state.user?.id||'');
+  if(!owner||!card)return null;
+  activeCardDetailClose?.(false);
+  const root=modal('Chi tiết thẻ',cardDetailHtml(card),'<button type="button" class="btn ghost" id="card-detail-notebook">Mở sổ tay</button><button type="button" class="btn primary" data-close>Đóng</button>');
+  const dialog=$('.modal',root),app=$('#app'),previousInert=app?.inert,previousOverflow=document.body.style.overflow;
+  if(dialog)dialog.classList.add('card-detail-modal');
+  if(app)app.inert=true;
+  document.body.style.overflow='hidden';
+  let closed=false;
+  const removalObserver=new MutationObserver(()=>{if(!dialog?.isConnected)close(false);});
+  const close=(restoreFocus=true)=>{
+    if(closed)return;closed=true;
+    removalObserver.disconnect();
+    if(activeCardDetailClose===close)activeCardDetailClose=null;
+    window.removeEventListener('hashchange',onRouteChange);
+    window.removeEventListener('pagehide',onRouteChange);
+    if(app)app.inert=previousInert;
+    document.body.style.overflow=previousOverflow;
+    window.speechSynthesis?.cancel();
+    if(root.onclick===onClick)root.onclick=null;
+    if(root.onkeydown===onKeydown)root.onkeydown=null;
+    if(dialog?.isConnected)closeModal();
+    if(restoreFocus&&opener?.isConnected)opener.focus();
+  };
+  const onRouteChange=()=>close(false);
+  const play=value=>{
+    if(owner!==String(state.user?.id||'')){close(false);return;}
+    const target=String(value??'').trim();if(target)speak(target);
+  };
+  // Stored audio_text may deliberately contain verb forms. Each control reads its own visible text.
+  $('#card-detail-play-term',root)?.addEventListener('click',()=>play(card.term));
+  $('#card-detail-play-example',root)?.addEventListener('click',()=>play(card.example_en));
+  $('#card-detail-notebook',root)?.addEventListener('click',()=>{close(false);navigate('notebook');});
+  const onClick=e=>{if(e.target.matches('.modal-backdrop,[data-close]'))close();};
+  const onKeydown=e=>{
+    if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();return;}
+    if(e.key!=='Tab')return;
+    const controls=$$('button:not([disabled]),a[href],[tabindex="0"]',dialog).filter(el=>!el.hidden);
+    const first=controls[0],last=controls.at(-1);
+    if(!first){e.preventDefault();dialog?.focus();return;}
+    if(e.shiftKey&&(document.activeElement===first||document.activeElement===dialog)){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&(document.activeElement===last||document.activeElement===dialog)){e.preventDefault();first.focus();}
+  };
+  root.onclick=onClick;root.onkeydown=onKeydown;
+  activeCardDetailClose=close;
+  removalObserver.observe(root,{childList:true});
+  window.addEventListener('hashchange',onRouteChange);
+  window.addEventListener('pagehide',onRouteChange);
+  return root;
+}
 async function setDetail(id){
-  let page=1,query='',cardType='';
+  const owner=String(state.user?.id||''),routeTicket=routeGeneration;
+  let page=1,query='',cardType='',drawGeneration=0;
   const types=[['','Tất cả'],['VOCABULARY','Từ vựng'],['COLLOCATION','Collocations'],['SENTENCE_PATTERN','Cấu trúc câu'],['GRAMMAR','Ngữ pháp'],['LISTENING_CHUNK','Listening']];
   const draw=async()=>{
-    const s=await api('set_get',{query:{id,page,limit:60,q:query,card_type:cardType}});page=Number(s.page||1);
+    const generation=++drawGeneration;
+    const s=await api('set_get',{query:{id,page,limit:60,q:query,card_type:cardType}});
+    if(generation!==drawGeneration||routeTicket!==routeGeneration||owner!==String(state.user?.id||'')||routeName()!=='sets'||Number(routeArg())!==Number(id))return;
+    page=Number(s.page||1);
     setView(`<div class="set-header"><div><span class="set-kicker">${esc(s.folder_name||'THƯ VIỆN')}</span><h1>${esc(s.title)}</h1><p>${esc(s.description||'Không có mô tả.')} · ${fmt(s.card_total||0)} flashcard</p></div><div class="set-actions"><a class="btn primary" href="#review" data-review-set="${s.id}">↻ Học bộ này</a><a class="btn soft" href="#practice/${Number(s.id)}">✦ Luyện dùng từ</a><button class="btn soft" id="add-card">＋ Thêm từ</button><button class="btn soft" id="edit-set">Sửa bộ</button><a class="btn ghost" href="api.php?action=export_set&id=${s.id}&format=csv">CSV</a><a class="btn ghost" href="api.php?action=export_set&id=${s.id}&format=txt">TXT</a><a class="btn ghost" href="api.php?action=export_set&id=${s.id}&format=json">JSON</a><button class="btn danger" id="del-set">Xóa</button></div></div>
     <div class="mistake-filter-row">${types.map(([v,l])=>`<button class="mistake-filter-chip ${cardType===v?'active':''}" data-set-type="${v}">${l}</button>`).join('')}</div>
     <div class="toolbar"><div class="search"><input id="set-card-search" value="${esc(query)}" placeholder="Tìm từ, nghĩa hoặc ví dụ trong bộ này"></div><span class="set-kicker">Trang ${fmt(s.page)}/${fmt(s.pages)} · ${fmt(s.card_total)} kết quả</span></div>
-    ${s.cards.length?`<div class="table-wrap"><table class="cards-table"><thead><tr><th>TỪ</th><th>NGHĨA</th><th>LOẠI / VÍ DỤ</th><th>SRS</th><th></th></tr></thead><tbody>${s.cards.map(c=>`<tr><td class="term-cell"><b>${esc(c.term)}</b>${ipaHtml(c.ipa)}<small>${esc(c.part_of_speech)}</small></td><td>${esc(c.definition)}<br><small style="color:var(--muted)">${esc(c.cefr)}</small></td><td><span class="admin-pill" style="margin-bottom:4px">${esc(cardTypeLabel(c.card_type||'VOCABULARY'))}</span><br><small>${esc(c.example_en||c.pattern||'—')}</small></td><td><span class="state ${esc(c.state||'new')}">${esc(c.state||'new')}</span><br><small style="color:var(--muted)">${c.due_at?new Date(c.due_at.replace(' ','T')).toLocaleDateString('vi-VN'):'Chưa học'}</small></td><td><div class="actions-inline"><button class="btn tiny soft" data-speak="${esc(c.term)}" aria-label="Nghe ${esc(c.term)}">Nghe</button><button class="btn tiny soft" data-edit-card="${c.id}">Sửa</button><button class="btn tiny danger" data-del-card="${c.id}" aria-label="Xóa ${esc(c.term)}">×</button></div></td></tr>`).join('')}</tbody></table></div><div class="bank-pager"><button class="btn tiny soft" id="set-prev" ${s.page<=1?'disabled':''}>← Trước</button><span>Trang ${fmt(s.page)}/${fmt(s.pages)}</span><button class="btn tiny soft" id="set-next" ${s.page>=s.pages?'disabled':''}>Sau →</button></div>`:`<div class="empty"><div><div class="bubble-icon">Aa</div><h3>${query?'Không tìm thấy từ phù hợp':'Bộ từ đang trống'}</h3><p>${query?'Thử một từ khóa khác.':'Thêm thủ công hoặc import hàng loạt từ file.'}</p>${query?'':'<button class="btn primary" id="add-card-empty">＋ Thêm flashcard</button>'}</div></div>`}`);
+    ${s.cards.length?`<div class="table-wrap"><table class="cards-table"><thead><tr><th>TỪ</th><th>NGHĨA</th><th>LOẠI / VÍ DỤ</th><th>SRS</th><th></th></tr></thead><tbody>${s.cards.map(c=>`<tr><td class="term-cell"><button type="button" class="card-detail-trigger" data-view-card="${esc(c.id)}" aria-haspopup="dialog" aria-label="Xem thẻ: ${esc(c.term)}">${esc(c.term)}</button>${ipaHtml(c.ipa)}<small>${esc(c.part_of_speech)}</small></td><td>${esc(c.definition)}<br><small style="color:var(--muted)">${esc(c.cefr)}</small></td><td><span class="admin-pill" style="margin-bottom:4px">${esc(cardTypeLabel(c.card_type||'VOCABULARY'))}</span><br><small>${esc(c.example_en||c.pattern||'—')}</small></td><td><span class="state ${esc(c.state||'new')}">${esc(c.state||'new')}</span><br><small style="color:var(--muted)">${c.due_at?new Date(c.due_at.replace(' ','T')).toLocaleDateString('vi-VN'):'Chưa học'}</small></td><td><div class="actions-inline"><button class="btn tiny soft" data-speak="${esc(c.term)}" aria-label="Nghe ${esc(c.term)}">Nghe</button><button class="btn tiny soft" data-edit-card="${c.id}">Sửa</button><button class="btn tiny danger" data-del-card="${c.id}" aria-label="Xóa ${esc(c.term)}">×</button></div></td></tr>`).join('')}</tbody></table></div><div class="bank-pager"><button class="btn tiny soft" id="set-prev" ${s.page<=1?'disabled':''}>← Trước</button><span>Trang ${fmt(s.page)}/${fmt(s.pages)}</span><button class="btn tiny soft" id="set-next" ${s.page>=s.pages?'disabled':''}>Sau →</button></div>`:`<div class="empty"><div><div class="bubble-icon">Aa</div><h3>${query?'Không tìm thấy từ phù hợp':'Bộ từ đang trống'}</h3><p>${query?'Thử một từ khóa khác.':'Thêm thủ công hoặc import hàng loạt từ file.'}</p>${query?'':'<button class="btn primary" id="add-card-empty">＋ Thêm flashcard</button>'}</div></div>`}`);
     $('#add-card')?.addEventListener('click',()=>cardModal(s));$('#add-card-empty')?.addEventListener('click',()=>cardModal(s));$('#edit-set').onclick=()=>setModal(s);$('#del-set').onclick=async()=>{if(!confirm('Xóa toàn bộ bộ từ và tiến độ liên quan?'))return;try{await api('set_delete',{method:'POST',data:{id:s.id}});toast('Đã xóa bộ từ.');navigate('sets');}catch(e){toast(e.message,'error')}};
+    $$('[data-view-card]').forEach(b=>b.onclick=()=>{if(owner!==String(state.user?.id||''))return;const card=s.cards.find(c=>String(c.id)===b.dataset.viewCard);if(card)cardDetailsModal(card,b);});
     $$('[data-speak]').forEach(b=>b.onclick=()=>speak(b.dataset.speak));$$('[data-edit-card]').forEach(b=>b.onclick=()=>cardModal(s,s.cards.find(c=>String(c.id)===b.dataset.editCard)));$$('[data-del-card]').forEach(b=>b.onclick=async()=>{if(!confirm('Xóa flashcard này?'))return;try{await api('card_delete',{method:'POST',data:{id:b.dataset.delCard}});await draw();}catch(e){toast(e.message,'error')}});$('[data-review-set]')?.addEventListener('click',()=>{sessionStorage.setItem('studySet',String(s.id));sessionStorage.setItem('planSet',String(s.id));});
     $$('[data-set-type]').forEach(b=>b.onclick=()=>{cardType=b.dataset.setType;page=1;draw();});
     $('#set-prev')?.addEventListener('click',()=>{page=Math.max(1,page-1);draw()});$('#set-next')?.addEventListener('click',()=>{page++;draw()});let timer;$('#set-card-search')?.addEventListener('input',e=>{clearTimeout(timer);timer=setTimeout(()=>{query=e.target.value.trim();page=1;draw()},250)});

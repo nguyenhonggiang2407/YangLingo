@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v56 source",
+  "source": "YangLingo v57 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -66,5 +66,6 @@
   "v53": "Improve long book-title layout and sourced pronunciation context. Guarded private learning-content maintenance preserves every existing identity and progress record; personal examples and database are excluded.",
   "v54": "Keep browser speech aligned with reviewed examples and clarify deadline translations while preserving learning history.",
   "v55": "Document verified context and usage maintenance for existing learning cards while preserving review history.",
-  "v56": "Document contextual irregular-form learning maintenance without changing learning history."
+  "v56": "Document contextual irregular-form learning maintenance without changing learning history.",
+  "v57": "Read-only library card details with stored IPA, EN-VI examples, usage notes, separate browser speech and notebook navigation; keyboard/mobile review and 60 behavior checks; study state preserved."
 }

@@ -21,6 +21,7 @@ Người học thường lưu từ vựng ở một nơi, làm bài luyện ở 
 - **Daily Essentials · 64 từ & cụm dùng ngay:** book riêng **8 bài × 8 thẻ** cho lớp học, ở chung, đi chợ, đi xe và nhắn tin. Có ví dụ Anh–Việt, ghi chú cách dùng và gợi ý nói; 39 từ đơn có IPA Anh–Mỹ được ghi nguồn. [Nội dung và cách học](docs/DAILY_ESSENTIALS.md).
 - **Phiên âm dưới từ:** hiển thị nguyên IPA và nhãn US/UK đã lưu, giữ ký hiệu của thẻ cũ. Bài gõ/nghe chỉ hiện IPA sau khi kiểm tra hoặc xem đáp án; ký hiệu IPA dạng `/.../` nhận diện được trong nghĩa cũ cũng được che ở phần gợi ý. [Nguồn, phiên bản và giấy phép](pronunciation-sources.html) được đóng gói riêng; không tải toàn bộ từ điển hay tệp âm thanh.
 - **Nhãn thẻ rõ ràng:** phân biệt từ vựng, cụm từ, cấu trúc câu, ngữ pháp và bài nghe trong lượt ôn, giúp người học hiểu mình đang cần nhớ từ hay cả cách dùng.
+- **Đọc lại một thẻ trong thư viện:** bấm vào từ hoặc câu để mở nghĩa, IPA đã lưu, ví dụ Anh–Việt và ghi chú cách dùng. Nghe riêng từ hoặc câu ví dụ; mở sổ tay để tự viết câu của mình. Xem thẻ không thay đổi lịch ôn hay kết quả học. [Cách dùng](docs/CARD_DETAILS.md).
 - **Sổ tay & cách học:** ghi chú riêng theo tài khoản, câu tự viết, tìm kiếm, ghim, lưu trữ và khôi phục. Tám mục hướng dẫn ngắn có câu tự kiểm tra và nguồn tham khảo; đáp án mở sau khi người học bấm xem. [Cách dùng và giới hạn](docs/LEARNING_NOTEBOOK.md).
 - **Ba cách luyện từ:** nhớ từ nghĩa Việt, điền từ vào câu, nghe rồi viết. Chọn 5 hoặc 10 thẻ, phối hợp cả ba cách, xem giải thích và thử lại từ chưa nhớ. Âm thanh dùng giọng đọc của trình duyệt; thiết bị chưa hỗ trợ chuyển sang luyện nhớ từ.
 - **Thử dùng từ trong 30 giây:** gợi ý, câu mẫu, đồng hồ và tự kiểm tra giúp người học nói về tình huống của mình. Phần này không chấm phát âm. Kết quả buổi luyện từ lưu trong trình duyệt theo tài khoản; lịch SRS cập nhật qua luồng ôn bài.
@@ -85,9 +86,12 @@ node tests/learning_ux_test.cjs
 node tests/pronunciation_ux_test.cjs
 node tests/notebook_navigation_test.cjs
 node tests/practice_state_test.cjs
+node tests/card_details_test.cjs
 ```
 
 Cài đặt mới của bản công khai v49 đã được kiểm tra với PHP 8.0.30/PDO và MariaDB 10.4.32: **15 migration, gồm migration 009 và sổ tay 016, cùng 12 SQL content seed chạy thành công** trên database trống trước khi tạo tài khoản. Chạy lại schema và khởi động ứng dụng không nhân đôi dữ liệu; sổ tay lưu và đọc lại tiếng Việt đúng. Kiểm tra catalog trước đó đã cài đủ 13 book: Everyday English có 60 thẻ, Student English có 120 thẻ; đồng bộ lại giữ nguyên book/thẻ/SRS của dữ liệu kiểm tra.
+
+Chi tiết thẻ có 60 kiểm tra hành vi trên các hàm giao diện thật: ký hiệu HTML hiển thị như văn bản, dữ liệu theo tài khoản, phản hồi đến muộn, đóng/thay thế hộp thoại, bàn phím và không ghi tiến độ khi đọc. Bản thử dữ liệu hư cấu đã được xem trên màn hình máy tính và 375 px, gồm từ, cụm từ, ngữ pháp, câu nghe và nội dung dài. Những kiểm tra này không khẳng định đã bao phủ mọi trình đọc màn hình hoặc giọng đọc của thiết bị.
 
 Kiểm tra tích hợp bằng `php tests/db_integration_test.php` cần cấu hình trỏ đến database thử nghiệm riêng; có thể áp dụng schema/migration/seed. Báo cáo lịch sử ở `TEST_REPORT.md` và `docs/` ghi phạm vi của từng phiên bản. Các kết quả này kiểm tra phần mềm, không đo mức tiến bộ tiếng Anh của người dùng.
 
