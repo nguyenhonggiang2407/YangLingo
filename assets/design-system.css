@@ -201,3 +201,9 @@ html[data-theme=light] .connected-rule-card,html[data-theme=light] .mistake-card
 .pl-feedback .yl-ipa{margin-top:0}
 .fill-target{font-size:22px;margin:0}
 @media(max-width:600px){.yl-ipa{font-size:14px;gap:6px}.flash-face .yl-ipa{margin-bottom:10px}}
+
+/* Book titles get a full row; management buttons wrap below them. */
+.set-header{grid-template-columns:minmax(0,1fr);gap:16px}
+.set-header>div:first-child{min-width:0}
+.set-header h1{overflow-wrap:anywhere}
+.set-actions{justify-content:flex-start;min-width:0}

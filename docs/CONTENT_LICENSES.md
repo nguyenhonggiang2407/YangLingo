@@ -28,3 +28,6 @@ Một số cách đọc được kiểm tra riêng trên trang phát âm chính 
 ## Daily Essentials
 
 Book JSON `daily-essentials-a1-a2` có 64 thẻ với nghĩa, ví dụ, ghi chú và gợi ý nói tự biên soạn, được cấp phép MIT trong `assets/licenses/DAILY-ESSENTIALS-ORIGINAL-LICENSE.txt`. Hai mươi mục IPA được chọn từ dữ liệu mở giữ cả ba thông báo giấy phép gốc. Mười chín cách đọc ngắn được ghi nguồn riêng từ Cambridge và Collins theo đúng nghĩa/từ loại; không sao chép ví dụ, định nghĩa hoặc âm thanh của các nhà xuất bản. Nguồn từng từ nằm trong `assets/flashbooks/daily-essentials-pronunciation-sources.json`. Không tạo IPA cho 25 cụm/mẫu câu bằng cách ghép phiên âm từ đơn.
+
+
+Thirteen further single-word US pronunciation facts in the -ed learning material are linked individually on the pronunciation-source page. Selection distinguishes verb live from adjective live, learned meaning knowledgeable, aged meaning very old, and a before-noun pronunciation of beloved. Short pronunciation facts and authored explanations do not redistribute publisher examples or audio; publisher content is not covered by the software license.
