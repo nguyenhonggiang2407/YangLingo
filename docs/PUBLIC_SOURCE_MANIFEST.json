@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v54 source",
+  "source": "YangLingo v55 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -64,5 +64,6 @@
   "v51": "Guarded in-place revision of 326 existing learning cards, preserving identities, books, owners, schedules, progress and private notebook rows. Generic verification metadata only; personal learning content remains private.",
   "v52": "Verified revision of 85 listening-chunk cards and 50 grammar cards, preserving existing book/card identities, pronunciation fields, schedules, progress and private notebook rows. Personal content and recovery data remain excluded from this repository.",
   "v53": "Improve long book-title layout and sourced pronunciation context. Guarded private learning-content maintenance preserves every existing identity and progress record; personal examples and database are excluded.",
-  "v54": "Keep browser speech aligned with reviewed examples and clarify deadline translations while preserving learning history."
+  "v54": "Keep browser speech aligned with reviewed examples and clarify deadline translations while preserving learning history.",
+  "v55": "Document verified context and usage maintenance for existing learning cards while preserving review history."
 }
