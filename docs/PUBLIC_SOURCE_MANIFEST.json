@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v50 source",
+  "source": "YangLingo v51 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -60,5 +60,6 @@
   "v47": "Align cache versions for app, pronunciation and practice so browser caches cannot reuse the pre-guard helper. No owner learning data changed.",
   "v48": "Reviewed private Book6 vocabulary plus grammar and finance contexts; three sourced US readings. Published only pronunciation references, never owner card data. Exact IDs/books/SRS preserved.",
   "v49": "Private user-scoped notebook and eight original concise study/reference guides; 115 DB/HTTP checks, fresh install 48 checks, delayed-navigation regression and mobile UI verified. Old cards/books/owner/SRS preserved; personal notes excluded.",
-  "v50": "Daily Essentials separate book with 64 original cards in eight short lessons; 39 source-attributed single-word US IPA, 25 chunks without synthesized IPA. Actual 41 isolated DB checks; live idempotent install, eight lesson/speaking APIs, all existing card/book fields and protected rows verified unchanged. Personal data excluded."
+  "v50": "Daily Essentials separate book with 64 original cards in eight short lessons; 39 source-attributed single-word US IPA, 25 chunks without synthesized IPA. Actual 41 isolated DB checks; live idempotent install, eight lesson/speaking APIs, all existing card/book fields and protected rows verified unchanged. Personal data excluded.",
+  "v51": "Guarded in-place revision of 326 existing learning cards, preserving identities, books, owners, schedules, progress and private notebook rows. Generic verification metadata only; personal learning content remains private."
 }
