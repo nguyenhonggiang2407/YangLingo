@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v64 source",
+  "source": "YangLingo v65 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -74,5 +74,6 @@
   "v61": "Adds14 sourced US IPA to existing WebEnglish cards; preserves existing content, book/card IDs and learning progress. Generic seed now has34 sourced single words, with14 phrase/hyphen blanks retained; no audio files.",
   "v62": "Practice feedback opens an explicit-save, owner-bound personal sentence draft; preserve the unrated session and hide the action before answers are revealed. No learning content or progress changes.",
   "v63": "Original lightweight book-and-conversation SVG brand for web and favicon; learning data preserved",
-  "v64": "Accent-insensitive Vietnamese lookup across visible study-guide text; stored IPA and usage retained in explicit card-to-notebook drafts. Original learning data preserved; no private content published."
+  "v64": "Accent-insensitive Vietnamese lookup across visible study-guide text; stored IPA and usage retained in explicit card-to-notebook drafts. Original learning data preserved; no private content published.",
+  "v65": "Practice pause keeps the active question and visible storage warning when browser persistence fails; explicit retry resumes the same unrated feedback. No content or learning record changes."
 }
