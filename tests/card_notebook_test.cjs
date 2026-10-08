@@ -72,13 +72,24 @@ async function draftFlow(){
   for(const invalid of [null,{},[],{term:' '},{term:42}]){const e=environment();check(e.module.fromCard(invalid)===false&&e.calls.length===0&&e.navigation.length===0,'invalid card rejected without side effects');}
   const anon=environment();anon.state.user=null;check(anon.module.fromCard(card)===false&&anon.calls.length===0,'anonymous card action denied');
 }
+async function copiedCardContext(){
+  const ipa='US /əˈweɪk/ · GB /əˈweɪk/',explanation='Awoke = V2.\nAwoken = V3; dùng sau have/has.';
+  const input={...card,ipa,explanation},original=JSON.stringify(input),env=environment(),f=await open(env,input),body=f.elements.body.value;
+  check(body.includes('IPA: '+ipa)&&body.includes('Lưu ý cách dùng: '+explanation),'IPA and explanation preserve source wording, dialect labels and internal newlines');
+  const labels=['Thẻ: ','IPA: ','Nghĩa: ','Lưu ý cách dùng: ','Ví dụ Anh: ','Bản dịch: '];
+  check(labels.every((label,i)=>body.includes(label)&&(i===0||body.indexOf(labels[i-1])<body.indexOf(label))),'card context follows term, IPA, meaning, usage and bilingual examples');
+  check(f.elements.own_sentence.value===''&&JSON.stringify(input)===original&&env.posts().length===0,'added context leaves sentence empty, source unchanged and opening read-only');
+  for(const value of [undefined,null,'',' \n\t ',42,false,[],{text:'not a source string'}]){const e=environment(),form=await open(e,{...card,ipa:value,explanation:value});check(!form.elements.body.value.includes('IPA: ')&&!form.elements.body.value.includes('Lưu ý cách dùng: '),'blank and nonstring IPA/explanation are omitted: '+String(value));}
+}
 async function escapingAndLimits(){
-  const attack='</textarea><img src=x onerror="bad()"><script>bad()</script> & \' "';const env=environment(),f=await open(env,{...card,term:attack,definition:attack,example_en:attack,example_vi:attack});
+  const attack='</textarea><img src=x onerror="bad()"><script>bad()</script> & \' "';const env=environment(),f=await open(env,{...card,term:attack,definition:attack,ipa:attack,explanation:attack,example_en:attack,example_vi:attack});
   check(f.elements.title.value===attack&&f.elements.body.value.includes(attack),'escaped fields preserve learner text literally');
+  check(f.elements.body.value.includes('IPA: '+attack)&&f.elements.body.value.includes('Lưu ý cách dùng: '+attack),'malicious IPA and explanation remain literal draft text');
   check(!env.view.querySelector('img')&&!env.view.querySelector('script'),'card text cannot inject DOM elements');
   const long=environment(),g=await open(long,{...card,term:'😀'.repeat(200),definition:'長'.repeat(4000),example_en:'X'.repeat(5000)});
   check(g.elements.title.value.length<=160&&g.elements.body.value.length<=2000,'draft fits existing title/body limits with room for edits');
   check(!/[\uD800-\uDBFF]$/.test(g.elements.title.value)&&!/[\uD800-\uDBFF]$/.test(g.elements.body.value),'clipping does not split surrogate pairs');
+  for(const field of ['ipa','explanation']){const e=environment(),form=await open(e,{...card,definition:'',ipa:'',explanation:'',example_en:'',example_vi:'',[field]:'😀'.repeat(1500)}),body=form.elements.body.value;check(body.length<=2000&&body.includes(field==='ipa'?'IPA: ':'Lưu ý cách dùng: '),'long '+field+' is copied within the existing draft limit');check(!/[\uD800-\uDBFF]$/.test(body)&&form.elements.own_sentence.value==='','long '+field+' clips without splitting a surrogate pair or filling the own sentence');}
   for(const[field,value]of [['title','   '],['body','\n '],['title','x'.repeat(161)],['body','x'.repeat(2501)],['own_sentence','x'.repeat(501)]]){const e=environment(),form=await open(e);form.elements[field].value=value;await submit(form);check(e.posts().length===0&&!form.querySelector('#note-error').hidden,'empty or oversized '+field+' blocked before POST');}
 }
 async function intentionalSaveAndStale(){
@@ -102,4 +113,4 @@ async function mutationsAndIntegration(){
   const stale=environment();stale.sandbox.cardDetailsModal(card,stale.opener);stale.state.user={id:8};stale.modal.querySelector('#card-detail-write-sentence').onclick();check(!stale.modal.innerHTML&&stale.navigation.length===0&&stale.posts().length===0,'stale card modal cannot hand content to another owner');
   const plain=environment();plain.sandbox.cardDetailsModal(card,plain.opener);plain.modal.querySelector('#card-detail-notebook').onclick();await plain.module.view();check(!plain.form()&&plain.posts().length===0,'existing Mở sổ tay still opens no composer and creates nothing');
 }
-(async()=>{await draftFlow();await escapingAndLimits();await intentionalSaveAndStale();await mutationsAndIntegration();console.log(`PASS: ${checks} real-module card/notebook behavior checks (draft, escaping, validation, ownership, disposal, form races, focus and intentional saves).`);})().catch(error=>{console.error(error);process.exitCode=1;});
+(async()=>{await draftFlow();await copiedCardContext();await escapingAndLimits();await intentionalSaveAndStale();await mutationsAndIntegration();console.log(`PASS: ${checks} real-module card/notebook behavior checks (draft context, escaping, validation, ownership, disposal, form races, focus and intentional saves).`);})().catch(error=>{console.error(error);process.exitCode=1;});

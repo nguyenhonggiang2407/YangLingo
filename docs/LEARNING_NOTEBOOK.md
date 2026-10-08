@@ -13,7 +13,7 @@ Tìm kiếm xét tiêu đề, nội dung và câu tự viết. Các ký hiệu `
 
 ## Học theo một bước nhỏ
 
-Tab **Cách học & tra nhanh** có tám mục: buổi học nhỏ, tự kiểm tra và ôn giãn cách, nghe rồi thử viết, cách ghi sổ tay, a/an, danh từ không đếm được, say/tell và borrow/lend. Có tìm kiếm, ví dụ Anh–Việt và câu tự kiểm tra. Thử trả lời trước khi bấm **Xem cách trả lời**.
+Tab **Cách học & tra nhanh** có tám mục: buổi học nhỏ, tự kiểm tra và ôn giãn cách, nghe rồi thử viết, cách ghi sổ tay, a/an, danh từ không đếm được, say/tell và borrow/lend. Tìm cụm từ có hoặc không dấu; khoảng trắng liên tiếp được gộp. Tìm kiếm xét tiêu đề, nội dung, nhóm, các bước, ví dụ Anh–Việt và câu hỏi đang hiển thị, không xét đáp án hay nguồn tham khảo. Thử trả lời trước khi bấm **Xem cách trả lời**.
 
 Các hướng dẫn thực hành được biên soạn cho giao diện YangLingo. Những quy tắc ngữ pháp và phần tham khảo về kỹ thuật học có liên kết nguồn tại từng mục. Ví dụ và câu hỏi do dự án biên soạn; không chép bài viết hay từ điển.
 
@@ -32,7 +32,7 @@ Các hướng dẫn thực hành được biên soạn cho giao diện YangLingo
 
 ## Viết câu từ một thẻ
 
-Sau khi kiểm tra hoặc xem đáp án trong **Luyện nhớ & dùng từ**, chọn **Ghi câu của tôi** ngay dưới phản hồi. Bạn cũng có thể mở chi tiết thẻ trong thư viện rồi chọn thao tác này. Buổi luyện được giữ lại khi trình duyệt lưu thành công; quay lại **Luyện nhớ & dùng từ → Tiếp tục buổi luyện** để tiếp tục đúng lượt. Nếu chưa lưu được buổi luyện, ứng dụng giữ bạn tại phản hồi và báo lý do, chưa chuyển sang sổ tay. Sổ tay mở một bản nháp với từ và tham khảo ngắn từ nghĩa, ví dụ Anh–Việt. Ô **Câu của tôi** bắt đầu trống để bạn tự thử dùng từ. Sửa tham khảo hoặc thêm điều mình nhầm rồi bấm **Lưu ghi chú** khi muốn lưu.
+Sau khi kiểm tra hoặc xem đáp án trong **Luyện nhớ & dùng từ**, chọn **Ghi câu của tôi** ngay dưới phản hồi. Bạn cũng có thể mở chi tiết thẻ trong thư viện rồi chọn thao tác này. Buổi luyện được giữ lại khi trình duyệt lưu thành công; quay lại **Luyện nhớ & dùng từ → Tiếp tục buổi luyện** để tiếp tục đúng lượt. Nếu chưa lưu được buổi luyện, ứng dụng giữ bạn tại phản hồi và báo lý do, chưa chuyển sang sổ tay. Sổ tay mở một bản nháp với từ và tham khảo ngắn từ IPA, nghĩa, lưu ý cách dùng và ví dụ Anh–Việt khi thẻ có nội dung văn bản ở các trường này. IPA và lưu ý được lấy từ thẻ, không suy đoán giọng đọc hay thêm nhãn phương ngữ; phần tham khảo vẫn giới hạn 2.000 ký tự. Ô **Câu của tôi** bắt đầu trống để bạn tự thử dùng từ. Sửa tham khảo hoặc thêm điều mình nhầm rồi bấm **Lưu ghi chú** khi muốn lưu.
 
 Mở bản nháp chưa tạo ghi chú. **Hủy nháp** hoặc rời trang sẽ bỏ nội dung chưa lưu; bản nháp không được giữ qua lần tải lại. **Mở sổ tay** vẫn chỉ mở danh sách ghi chú. Các thao tác này không sửa thẻ nguồn, book, lịch ôn hay điểm tiến bộ.
 
