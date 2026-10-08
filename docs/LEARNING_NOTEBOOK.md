@@ -32,7 +32,7 @@ Các hướng dẫn thực hành được biên soạn cho giao diện YangLingo
 
 ## Viết câu từ một thẻ
 
-Trong thư viện, bấm từ để mở chi tiết rồi chọn **Ghi câu của tôi**. Sổ tay mở một bản nháp với từ và tham khảo ngắn từ nghĩa, ví dụ Anh–Việt. Ô **Câu của tôi** bắt đầu trống để bạn tự thử dùng từ. Sửa tham khảo hoặc thêm điều mình nhầm rồi bấm **Lưu ghi chú** khi muốn lưu.
+Sau khi kiểm tra hoặc xem đáp án trong **Luyện nhớ & dùng từ**, chọn **Ghi câu của tôi** ngay dưới phản hồi. Bạn cũng có thể mở chi tiết thẻ trong thư viện rồi chọn thao tác này. Buổi luyện được giữ lại khi trình duyệt lưu thành công; quay lại **Luyện nhớ & dùng từ → Tiếp tục buổi luyện** để tiếp tục đúng lượt. Nếu chưa lưu được buổi luyện, ứng dụng giữ bạn tại phản hồi và báo lý do, chưa chuyển sang sổ tay. Sổ tay mở một bản nháp với từ và tham khảo ngắn từ nghĩa, ví dụ Anh–Việt. Ô **Câu của tôi** bắt đầu trống để bạn tự thử dùng từ. Sửa tham khảo hoặc thêm điều mình nhầm rồi bấm **Lưu ghi chú** khi muốn lưu.
 
 Mở bản nháp chưa tạo ghi chú. **Hủy nháp** hoặc rời trang sẽ bỏ nội dung chưa lưu; bản nháp không được giữ qua lần tải lại. **Mở sổ tay** vẫn chỉ mở danh sách ghi chú. Các thao tác này không sửa thẻ nguồn, book, lịch ôn hay điểm tiến bộ.
 

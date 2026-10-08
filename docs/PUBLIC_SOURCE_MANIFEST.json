@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v61 source",
+  "source": "YangLingo v62 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -71,5 +71,6 @@
   "v58": "Attribute 12 individually verified US base-verb pronunciation facts; fill only blank IPA fields while preserving existing pronunciation and study data; text and browser speech, no audio files.",
   "v59": "Explicit card-to-notebook draft, bounded reference text, empty learner sentence and owner/form guards after CSRF refresh; no personal card export.",
   "v60": "48 original web-English cards in six short lessons, individually mapped sentence tasks, sourced US IPA, validated owner-isolated idempotent install; no private learning data.",
-  "v61": "Adds14 sourced US IPA to existing WebEnglish cards; preserves existing content, book/card IDs and learning progress. Generic seed now has34 sourced single words, with14 phrase/hyphen blanks retained; no audio files."
+  "v61": "Adds14 sourced US IPA to existing WebEnglish cards; preserves existing content, book/card IDs and learning progress. Generic seed now has34 sourced single words, with14 phrase/hyphen blanks retained; no audio files.",
+  "v62": "Practice feedback opens an explicit-save, owner-bound personal sentence draft; preserve the unrated session and hide the action before answers are revealed. No learning content or progress changes."
 }

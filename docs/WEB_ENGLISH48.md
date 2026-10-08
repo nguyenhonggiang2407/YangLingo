@@ -15,7 +15,7 @@ Mở **Khám phá book**, tìm **English for Web** rồi thêm vào thư viện.
 
 Trong **Luyện nhớ & dùng từ**, chọn book và một bài. Thử nhớ trước khi xem đáp án. Sau **Kiểm tra** hoặc **Xem đáp án / chưa nhớ**, đọc ví dụ Anh–Việt và gợi ý **Thử dùng từ** để tự đặt câu. Gợi ý này không phải ô gõ câu riêng của bài luyện.
 
-Muốn lưu câu, mở **Thư viện của tôi → book → bấm vào từ → Ghi câu của tôi**. Nháp sổ tay có phần tham khảo; ô câu tự viết luôn để trống. Chỉ **Lưu ghi chú** mới lưu. Ghi chú giúp tra lại câu bạn viết; nó không tự chấm đúng ngữ pháp và không tự thay lịch SRS. Với từ chưa nhớ, đánh giá theo khả năng nhớ thực tế và ôn khi đến hạn.
+Muốn viết và lưu câu, chọn **Ghi câu của tôi** ngay dưới phản hồi đã mở của bài luyện; hoặc mở chi tiết thẻ trong thư viện. Chỉ chuyển sang sổ tay sau khi trình duyệt giữ được buổi luyện. Quay lại **Luyện nhớ & dùng từ → Tiếp tục buổi luyện** để tiếp tục đúng lượt; mở nháp không tự chọn mức nhớ hay chuyển câu. Nháp sổ tay có phần tham khảo; ô câu tự viết luôn để trống. Chỉ **Lưu ghi chú** mới lưu. Ghi chú giúp tra lại câu bạn viết; nó không tự chấm đúng ngữ pháp và không tự thay lịch SRS. Với từ chưa nhớ, đánh giá theo khả năng nhớ thực tế và ôn khi đến hạn.
 
 Mỗi bài có nhiệm vụ nói và một mẫu ngắn để đối chiếu sau khi tự thử. Khoảng 10 phút là gợi ý bắt đầu, không phải lời hứa về thời gian hoặc hiệu quả. A2/B1 là định hướng biên soạn câu ví dụ; các thuật ngữ kỹ thuật không được chứng nhận CEFR riêng, và đây không phải danh sách từ bắt buộc cho mọi người.
 
