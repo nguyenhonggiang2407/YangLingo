@@ -14,3 +14,5 @@ IPA xuất hiện ngay dưới từ khi thẻ có dữ liệu. Thẻ chưa có p
 Với động từ bất quy tắc, **Nghe ví dụ** đọc câu ví dụ, còn **Nghe từ / câu** đọc mục từ. Nội dung âm thanh riêng đã lưu cho các dạng động từ được giữ trong các luồng học hiện có.
 
 Hộp thoại hỗ trợ Tab/Shift+Tab, Escape, nút Đóng và trả tiêu điểm về từ đã chọn. Nội dung dài xuống dòng trên màn hình hẹp. Kiểm tra JavaScript dùng các hàm thật của giao diện để kiểm tra escaping, quyền sở hữu của dữ liệu hiển thị, phản hồi chậm, điều hướng, vòng tiêu điểm và thao tác chỉ đọc. Kiểm tra này không thay thế thử nghiệm với mọi trình đọc màn hình hoặc mọi giọng đọc của thiết bị.
+
+**Ghi câu của tôi** mở một bản nháp trong sổ tay với tham khảo ngắn từ thẻ và ô câu tự viết để trống. Chỉ bấm **Lưu ghi chú** mới lưu; hủy hoặc rời trang bỏ nháp. **Mở sổ tay** vẫn chỉ mở trang sổ tay. Xem [cách viết câu và giới hạn](LEARNING_NOTEBOOK.md#viết-câu-từ-một-thẻ).

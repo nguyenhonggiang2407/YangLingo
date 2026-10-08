@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v58 source",
+  "source": "YangLingo v59 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -68,5 +68,6 @@
   "v55": "Document verified context and usage maintenance for existing learning cards while preserving review history.",
   "v56": "Document contextual irregular-form learning maintenance without changing learning history.",
   "v57": "Read-only library card details with stored IPA, EN-VI examples, usage notes, separate browser speech and notebook navigation; keyboard/mobile review and 60 behavior checks; study state preserved.",
-  "v58": "Attribute 12 individually verified US base-verb pronunciation facts; fill only blank IPA fields while preserving existing pronunciation and study data; text and browser speech, no audio files."
+  "v58": "Attribute 12 individually verified US base-verb pronunciation facts; fill only blank IPA fields while preserving existing pronunciation and study data; text and browser speech, no audio files.",
+  "v59": "Explicit card-to-notebook draft, bounded reference text, empty learner sentence and owner/form guards after CSRF refresh; no personal card export."
 }

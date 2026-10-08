@@ -29,3 +29,11 @@ Các hướng dẫn thực hành được biên soạn cho giao diện YangLingo
 - Không khẳng định ứng dụng đã được nghiên cứu đo mức tăng hiệu quả học. Người học cần điều chỉnh số từ và thời gian theo khả năng thực tế.
 
 `database/migrations/016_learning_notebook.sql` thêm bảng riêng; không sửa các bảng book, thẻ hoặc lịch sử. `lib/LearningNotebook.php` khóa việc tạo theo người dùng để hai tab không vượt giới hạn. Dữ liệu cá nhân, cấu hình thật và bản sao lưu nằm ngoài repository.
+
+## Viết câu từ một thẻ
+
+Trong thư viện, bấm từ để mở chi tiết rồi chọn **Ghi câu của tôi**. Sổ tay mở một bản nháp với từ và tham khảo ngắn từ nghĩa, ví dụ Anh–Việt. Ô **Câu của tôi** bắt đầu trống để bạn tự thử dùng từ. Sửa tham khảo hoặc thêm điều mình nhầm rồi bấm **Lưu ghi chú** khi muốn lưu.
+
+Mở bản nháp chưa tạo ghi chú. **Hủy nháp** hoặc rời trang sẽ bỏ nội dung chưa lưu; bản nháp không được giữ qua lần tải lại. **Mở sổ tay** vẫn chỉ mở danh sách ghi chú. Các thao tác này không sửa thẻ nguồn, book, lịch ôn hay điểm tiến bộ.
+
+Nội dung từ thẻ là tham khảo, không phải phần chấm câu tự viết. Bản nháp gắn với tài khoản và được dùng một lần. Trước khi thử lại yêu cầu lưu sau khi làm mới phiên, giao diện kiểm tra lại tài khoản, trang và đúng biểu mẫu còn mở; bản nháp của tài khoản trước không được gửi lại dưới tài khoản khác.

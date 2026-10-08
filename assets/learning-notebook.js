@@ -11,13 +11,30 @@
     {id:'say-tell',title:'say / tell: có người nhận không?',category:'Ngữ pháp',text:'Say something; say something to someone. Tell someone something; tell someone to do something. Một số cụm như tell the truth hay tell a story không cần nêu người nghe ngay sau tell.',example:'Mai told me to check the room number.',translation:'Mai bảo tôi kiểm tra số phòng.',question:'Chọn said hoặc told: She ___ me the answer.',answer:'told: She told me the answer. Với say, có thể viết She said the answer to me, nhưng tell me the answer tự nhiên hơn trong ngữ cảnh này.',sources:[['Oxford Learner’s Dictionaries: tell, phần cách dùng say/tell','https://www.oxfordlearnersdictionaries.com/us/definition/english/tell']]},
     {id:'borrow-lend',title:'borrow / lend: ai nhận, ai cho?',category:'Ngữ pháp',text:'Borrow là nhận để dùng tạm: borrow something from someone. Lend là cho người khác dùng tạm: lend someone something hoặc lend something to someone. Quá khứ của lend là lent.',example:'Can I borrow your ruler? — Yes, I can lend it to you.',translation:'Mình mượn thước của bạn được không? — Được, mình có thể cho bạn mượn.',question:'Bạn nhận sách từ Lan để dùng tạm. Điền: I ___ a book from Lan.',answer:'borrowed: I borrowed a book from Lan. Lan lent me a book diễn tả cùng việc từ phía người cho mượn.',sources:[['Oxford Learner’s Dictionaries: lend và phân biệt borrow/lend','https://www.oxfordlearnersdictionaries.com/definition/english/lend']]}
   ];
-  let generation = 0, timer = null;
-  function dispose(){ generation++; clearTimeout(timer); timer=null; }
+  let generation = 0, timer = null, pendingCardDraft = null;
+  function clip(value,max){let out='';for(const char of value){if(out.length+char.length>max)break;out+=char;}return out;}
+  function cardDraft(card){
+    if(!card||typeof card!=='object'||Array.isArray(card)||typeof card.term!=='string'||!card.term.trim())return null;
+    const text=value=>typeof value==='string'?value.trim():'';
+    const parts=[['Thẻ',card.term],['Nghĩa',card.definition],['Ví dụ Anh',card.example_en],['Bản dịch',card.example_vi]].filter(([,value])=>text(value)).map(([label,value])=>label+': '+text(value));
+    const type=card.card_type||'VOCABULARY',kind=type==='GRAMMAR'?'grammar':['LISTENING','LISTENING_CHUNK'].includes(type)?'listening':['COLLOCATION','SENTENCE_PATTERN'].includes(type)?'phrase':type==='VOCABULARY'?'word':'other';
+    return {title:clip(text(card.term),160),body:clip(parts.join('\n'),2000),own_sentence:'',kind,is_pinned:0};
+  }
+  function fromCard(card){
+    const core=window.YLCore,owner=String(core?.state.user?.id||''),draft=cardDraft(card);
+    if(!owner||!draft)return false;
+    pendingCardDraft={owner,draft};core.navigate('notebook');return true;
+  }
+  function dispose(){
+    generation++; clearTimeout(timer); timer=null;
+    if(pendingCardDraft&&(location.hash!=='#notebook'||pendingCardDraft.owner!==String(window.YLCore?.state.user?.id||'')))pendingCardDraft=null;
+  }
   function active(token){return token===generation && window.YLCore.state.user && location.hash.split('/')[0]==='#notebook';}
   async function view(){
     dispose(); const token=generation, core=window.YLCore, {esc,api,setView,toast}=core;
-    const owner=String(core.state.user.id), stillHere=()=>active(token)&&String(core.state.user?.id)===owner;
+    const owner=String(core.state.user.id),viewRoute=location.hash, stillHere=()=>active(token)&&location.hash===viewRoute&&String(core.state.user?.id)===owner;
     const isGuide=core.routeArg()==='guide';
+    const draft=!isGuide&&pendingCardDraft?.owner===owner?pendingCardDraft.draft:null;pendingCardDraft=null;
     setView(`<div class="notebook-page"><div class="page-head"><div><span class="eyebrow">NHỚ MỘT ĐIỂM, DÙNG MỘT CÂU</span><h1>Sổ tay & cách học</h1><p>Ghi điều bạn hay quên và thử dùng trong câu của mình.</p></div><a class="btn soft" href="#practice">Luyện một bài nhỏ →</a></div><nav class="notebook-tabs" aria-label="Sổ tay và hướng dẫn"><a class="btn ${isGuide?'soft':'primary'}" href="#notebook" ${isGuide?'':'aria-current="page"'}>Sổ tay của tôi</a><a class="btn ${isGuide?'primary':'soft'}" href="#notebook/guide" ${isGuide?'aria-current="page"':''}>Cách học & tra nhanh</a></nav><div id="notebook-content"></div></div>`);
     const root=document.querySelector('#notebook-content');
     if(isGuide){
@@ -48,25 +65,35 @@
       }catch(e){if(stillHere()&&current===request){results.innerHTML=`<div class="panel"><h2>Chưa tải được sổ tay</h2><p>${esc(e.message)}</p><button class="btn soft" id="notes-retry">Thử lại</button></div>`;results.querySelector('#notes-retry').onclick=load;}}
       finally{if(stillHere()&&current===request)results.setAttribute('aria-busy','false');}
     }
-    async function mutate(button,action,data){button.disabled=true;try{await api(action,{method:'POST',data});if(stillHere()){toast('Đã cập nhật ghi chú.');await load();}}catch(e){if(stillHere())toast(e.message,'error');}finally{if(button.isConnected)button.disabled=false;}}
-    function edit(note=null){
+    async function mutate(button,action,data){if(!stillHere()||!button.isConnected)return;button.disabled=true;try{await api(action,{method:'POST',data,canRetry:()=>stillHere()&&button.isConnected});if(stillHere()){toast('Đã cập nhật ghi chú.');await load();}}catch(e){if(stillHere())toast(e.message,'error');}finally{if(button.isConnected)button.disabled=false;}}
+    function edit(note=null,seed=null){
+      if(!stillHere())return;
       const editor=root.querySelector('#note-editor');
-      editor.innerHTML=`<section class="panel notebook-editor"><h2>${note?'Sửa ghi chú':'Ghi một điểm cần nhớ'}</h2><form id="note-form" class="form-stack"><label class="field">Tiêu đề<input name="title" maxlength="160" value="${esc(note?.title||'')}" required placeholder="Ví dụ: borrow / lend"></label><label class="field">Loại<select name="kind">${Object.entries(kinds).map(([k,v])=>`<option value="${k}" ${note?.kind===k?'selected':''}>${v}</option>`).join('')}</select></label><label class="field">Điều cần nhớ<textarea name="body" maxlength="2500" rows="4" required placeholder="Mình nhầm gì? Cách dùng đúng là gì?">${esc(note?.body||'')}</textarea></label><label class="field">Câu của tôi <span class="practice-note">(tùy chọn)</span><textarea name="own_sentence" maxlength="500" rows="2" placeholder="Một câu gắn với việc học hoặc đời sống của bạn">${esc(note?.own_sentence||'')}</textarea></label><label class="notebook-checkbox"><input type="checkbox" name="is_pinned" ${Number(note?.is_pinned)?'checked':''}> Ghim để xem trước</label><p class="practice-note">Câu tự viết chưa được chấm đúng sai tự động.</p><p id="note-error" role="alert" hidden></p><div class="notebook-actions"><button type="submit" class="btn primary">Lưu ghi chú</button><button type="button" class="btn ghost" id="note-cancel">Hủy</button></div></form></section>`;
-      const form=editor.querySelector('#note-form');form.elements.title.focus();editor.querySelector('#note-cancel').onclick=()=>{editor.innerHTML='';root.querySelector('#note-new').focus();};
+      const values=note||seed;
+      editor.innerHTML=`<section class="panel notebook-editor"><h2>${note?'Sửa ghi chú':seed?'Viết câu với thẻ này':'Ghi một điểm cần nhớ'}</h2>${seed?'<p class="practice-note">Nội dung thẻ là gợi ý. Thêm câu của bạn rồi nhấn Lưu ghi chú. Hủy hoặc rời trang sẽ bỏ bản nháp chưa lưu.</p>':''}<form id="note-form" class="form-stack"><label class="field">Tiêu đề<input name="title" maxlength="160" value="${esc(values?.title||'')}" required placeholder="Ví dụ: borrow / lend"></label><label class="field">Loại<select name="kind">${Object.entries(kinds).map(([k,v])=>`<option value="${k}" ${values?.kind===k?'selected':''}>${v}</option>`).join('')}</select></label><label class="field">Điều cần nhớ<textarea name="body" maxlength="2500" rows="4" required placeholder="Mình nhầm gì? Cách dùng đúng là gì?">${esc(values?.body||'')}</textarea></label><label class="field">Câu của tôi <span class="practice-note">(tùy chọn)</span><textarea name="own_sentence" maxlength="500" rows="2" placeholder="Một câu gắn với việc học hoặc đời sống của bạn">${esc(values?.own_sentence||'')}</textarea></label><label class="notebook-checkbox"><input type="checkbox" name="is_pinned" ${Number(values?.is_pinned)?'checked':''}> Ghim để xem trước</label><p class="practice-note">Câu tự viết chưa được chấm đúng sai tự động.</p><p id="note-error" role="alert" hidden></p><div class="notebook-actions"><button type="submit" class="btn primary">Lưu ghi chú</button><button type="button" class="btn ghost" id="note-cancel">${seed?'Hủy nháp':'Hủy'}</button></div></form></section>`;
+      const form=editor.querySelector('#note-form'),cancel=editor.querySelector('#note-cancel');
+      const stillEditing=()=>stillHere()&&form.isConnected&&editor.querySelector('#note-form')===form;
+      if(seed)editor.scrollIntoView({block:'start'});
+      (seed?form.elements.own_sentence:form.elements.title).focus();
+      cancel.onclick=()=>{if(!stillEditing()||cancel.disabled)return;editor.innerHTML='';root.querySelector('#note-new').focus();};
       form.onsubmit=async e=>{
-        e.preventDefault();if(!form.reportValidity())return;
+        e.preventDefault();if(!stillEditing()||!form.reportValidity())return;
         const submit=form.querySelector('[type="submit"]'),error=form.querySelector('#note-error');if(submit.disabled)return;submit.disabled=true;error.hidden=true;
         const data={title:form.elements.title.value.trim(),body:form.elements.body.value.trim(),own_sentence:form.elements.own_sentence.value.trim(),kind:form.elements.kind.value,is_pinned:form.elements.is_pinned.checked?1:0};if(note)data.id=note.id;
-        try{await api('notebook_save',{method:'POST',data});if(!stillHere())return;editor.innerHTML='';toast('Đã lưu vào sổ tay của bạn.');await load();root.querySelector('#note-new').focus();}
-        catch(err){if(stillHere()&&form.isConnected){error.textContent=err.message;error.hidden=false;error.scrollIntoView({block:'nearest'});}}
-        finally{if(submit.isConnected)submit.disabled=false;}
+        const invalid=!data.title?'title':!data.body?'body':[...data.title].length>160?'title':[...data.body].length>2500?'body':[...data.own_sentence].length>500?'own_sentence':null;
+        if(invalid){error.textContent='Hãy điền tiêu đề và điều cần nhớ, giữ nội dung trong giới hạn của từng ô.';error.hidden=false;form.elements[invalid].focus();submit.disabled=false;return;}
+        cancel.disabled=true;
+        try{await api('notebook_save',{method:'POST',data,canRetry:stillEditing});if(!stillEditing())return;editor.innerHTML='';toast('Đã lưu vào sổ tay của bạn.');await load();if(stillHere()&&!editor.querySelector('#note-form'))root.querySelector('#note-new').focus();}
+        catch(err){if(stillEditing()){error.textContent=err.message;error.hidden=false;error.scrollIntoView({block:'nearest'});}}
+        finally{if(submit.isConnected)submit.disabled=false;if(cancel.isConnected)cancel.disabled=false;}
       };
     }
     root.querySelector('#note-new').onclick=()=>edit();
     root.querySelector('#note-search').oninput=e=>{q=e.target.value.trim();page=1;clearTimeout(timer);++request;timer=setTimeout(load,250);};
     root.querySelector('#note-kind').onchange=e=>{kind=e.target.value;page=1;clearTimeout(timer);load();};
     root.querySelector('#note-archive').onchange=e=>{archived=Number(e.target.value);page=1;clearTimeout(timer);load();};
+    if(draft)edit(null,draft);
     await load();
   }
-  window.YLNotebook={view,dispose};
+  window.YLNotebook={view,dispose,fromCard};
 })();
