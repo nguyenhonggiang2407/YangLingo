@@ -22,7 +22,7 @@ foreach($seed['lessons'] as $i=>$lesson)foreach($lesson['cards'] as $card){
 }
 $check($rows===$expected,'every row matches independently assembled seed+prompt mapping');
 $check(count($prompts['prompts'])===48&&count($book['sentence_prompts'])===48,'48 consumed companion prompts');
-$check($ipa===20&&count($topics)===6&&array_unique(array_values($topics))===[8],'20 sourced word IPA/6x8 topics');
+$check($ipa===34&&count($topics)===6&&array_unique(array_values($topics))===[8],'34 sourced word IPA/6x8 topics');
 foreach(['manual'=>['size'=>30,'lessons'=>[]],'everyday_english_a1_a2_book'=>10,'student_life_work_a2_b1_book'=>10,'daily_essentials_a1_a2_book'=>8] as $source=>$expectedSettings){
     $settings=$call('flashbookLessonSettings',['source_type'=>$source],30);
     $check(is_array($expectedSettings)?$settings===$expectedSettings:$settings['size']===$expectedSettings&&!isset($settings['estimated_minutes']),'existing grouping/minutes fallback '.$source);

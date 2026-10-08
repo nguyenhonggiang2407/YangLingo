@@ -23,7 +23,7 @@ Mỗi bài có nhiệm vụ nói và một mẫu ngắn để đối chiếu sau
 
 Các tệp chung nằm trong `assets/flashbooks/english-for-web-a2-b1/`. Seed và 48 nhiệm vụ riêng được kiểm tra theo bài và đúng từ/cụm. Khi tạo book, nhiệm vụ được thêm vào đoạn **Thử dùng từ** trong ghi chú cách dùng của thẻ; seed gốc vẫn giữ nguyên. Không có owner/card ID hoặc lịch học cá nhân trong các tệp chung.
 
-20 từ đơn có IPA **US**, gồm 11 mục giữ đúng ký hiệu từ dữ liệu mở và 9 sự kiện phát âm từ Cambridge. 14 từ đơn còn lại chưa có IPA trong phiên bản này; 14 mục là cụm hoặc từ có gạch nối cũng chưa có IPA, không ghép phiên âm từ các từ rời. Nút đọc dùng giọng trình duyệt và phụ thuộc thiết bị. Book không kèm tệp âm thanh.
+34 từ đơn trong bộ học liệu chuẩn có IPA **US**, gồm 12 mục giữ đúng ký hiệu từ dữ liệu mở và 22 sự kiện phát âm từ Cambridge. Required chọn một cách đọc nguyên mục từ en_US; giữ ký hiệu của nguồn và không tự ghép hậu tố. 14 mục là cụm hoặc từ có gạch nối vẫn chưa có IPA, không ghép phiên âm từ các từ rời. Nút đọc dùng giọng trình duyệt và phụ thuộc thiết bị. Book không kèm tệp âm thanh.
 
 - [Bảng nguồn phát âm](../assets/flashbooks/english-for-web-a2-b1/pronunciation-sources.json) ghi từng cách đọc, URL và bản dữ liệu ghim. Giữ nguyên các ký hiệu của nguồn; các nguồn có thể dùng quy ước trình bày IPA khác nhau.
 - [Các điểm từ vựng và kỹ thuật đã đối chiếu](../assets/flashbooks/english-for-web-a2-b1/content-references.json) gồm nguồn MDN, GitHub và từ điển cho những điểm cụ thể như parameter/argument, HTTP request/response và xác thực định dạng email.

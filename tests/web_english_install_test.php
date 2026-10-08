@@ -63,7 +63,7 @@ try{
     $mapped=[];
     foreach($expected as $i=>$want){$got=[];foreach($want as $field=>$value){$got[$field]=$cards[$i][$field];if($got[$field]!==$value)throw new RuntimeException('Stored mapping mismatch '.$i.' '.$field);}$mapped[]=$got;}
     $check($mapped===$expected,'all48 stored content fields exactly match seed+consumed prompt mapping');
-    $check(count(array_filter($cards,fn($c)=>str_starts_with($c['ipa'],'US /')))===20&&count(array_filter($cards,fn($c)=>$c['ipa']===''))===28,'20 exact sourced IPA/28 untouched blanks');
+    $check(count(array_filter($cards,fn($c)=>str_starts_with($c['ipa'],'US /')))===34&&count(array_filter($cards,fn($c)=>$c['ipa']===''))===14,'34 exact sourced IPA/14 untouched blanks');
     $check(array_count_values(array_column($cards,'card_type'))===['VOCABULARY'=>38,'COLLOCATION'=>8,'LISTENING_CHUNK'=>2],'three authored genres retained');
     $check((int)$db->one('SELECT COUNT(*) n FROM srs_progress WHERE card_id IN (SELECT id FROM flashcards WHERE set_id=?)',[$sid])['n']===0,'installation creates no SRS progress');
     $again=$repo->installFlashcardBook($uid,'english-for-web-a2-b1');

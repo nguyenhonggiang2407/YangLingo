@@ -28,7 +28,7 @@ Gợi ý khoảng 10 phút mỗi bài chỉ là ước lượng để bắt đ�
 - `pronunciation-sources.json`: đối chiếu nguồn phiên âm theo từng từ và bản nguồn dữ liệu mở đã ghim.
 - `content-references.json`: các nguồn chính thống đã dùng để kiểm tra một số điểm từ vựng và kỹ thuật cần phân biệt.
 
-20 từ đơn có IPA gắn nhãn US: 11 từ từ dữ liệu mở có giấy phép và 9 sự kiện phát âm từ nguồn xuất bản chính thống. 14 từ đơn khác chưa được điền IPA trong đề xuất này. Cụm nhiều từ không được ghép phiên âm từ các từ rời. Học liệu không kèm tệp âm thanh; chức năng đọc bằng trình duyệt, nếu được tích hợp, phụ thuộc giọng có sẵn trên thiết bị.
+34 từ đơn có IPA gắn nhãn US: 12 mục từ dữ liệu mở có giấy phép và 22 sự kiện phát âm từ Cambridge. IPA giữ đúng quy ước của từng nguồn; required chọn một cách đọc nguyên mục từ en_US, không tự ghép hậu tố hoặc đổi ký hiệu của nguồn. 14 mục là cụm hoặc từ có gạch nối vẫn chưa có IPA; không ghép phiên âm từ các từ rời. Học liệu không kèm tệp âm thanh; chức năng đọc bằng trình duyệt, nếu được tích hợp, phụ thuộc giọng có sẵn trên thiết bị.
 
 Các ví dụ, bản dịch, ghi chú và nhiệm vụ được tự biên soạn bằng tình huống hư cấu. Chúng không chứa tài khoản thật hoặc minh chứng thành tích nghề nghiệp. Nguồn tham khảo hỗ trợ các điểm cụ thể được ghi rõ; không phải mọi câu đều được nhà xuất bản từ điển kiểm duyệt.
 

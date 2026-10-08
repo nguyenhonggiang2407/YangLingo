@@ -37,7 +37,8 @@
           "cefr": "B1",
           "example_en": "The overview explains what the demo app does.",
           "example_vi": "Phần tổng quan giải thích ứng dụng minh họa dùng để làm gì.",
-          "explanation": "An overview of + chủ đề là phần mô tả bao quát. Đọc overview để nắm ý chính trước khi xem từng bước hoặc từng chức năng."
+          "explanation": "An overview of + chủ đề là phần mô tả bao quát. Đọc overview để nắm ý chính trước khi xem từng bước hoặc từng chức năng.",
+          "ipa": "US /ˈoʊ.vɚ.vjuː/"
         },
         {
           "term": "requirement",
@@ -58,7 +59,8 @@
           "cefr": "B1",
           "example_en": "Adding a profile photo is optional in our demo.",
           "example_vi": "Thêm ảnh hồ sơ là tùy chọn trong bản minh họa của nhóm tôi.",
-          "explanation": "Optional đứng trước danh từ, như an optional field, hoặc sau be. Từ này nói người dùng có thể chọn, khác với required là bắt buộc trong ngữ cảnh đó."
+          "explanation": "Optional đứng trước danh từ, như an optional field, hoặc sau be. Từ này nói người dùng có thể chọn, khác với required là bắt buộc trong ngữ cảnh đó.",
+          "ipa": "US /ˈɑːp.ʃən.əl/"
         },
         {
           "term": "required",
@@ -68,7 +70,8 @@
           "cefr": "B1",
           "example_en": "An email address is required to create a demo account.",
           "example_vi": "Cần có địa chỉ email để tạo tài khoản minh họa.",
-          "explanation": "Be required to + động từ nêu việc được yêu cầu làm. Trong tài liệu, a required field là ô phải điền; câu ví dụ chỉ mô tả quy tắc của ứng dụng minh họa này."
+          "explanation": "Be required to + động từ nêu việc được yêu cầu làm. Trong tài liệu, a required field là ô phải điền; câu ví dụ chỉ mô tả quy tắc của ứng dụng minh họa này.",
+          "ipa": "US /ɹiˈkwaɪɝd/"
         },
         {
           "term": "parameter",
@@ -221,7 +224,8 @@
           "cefr": "B1",
           "example_en": "The username appears at the top of the demo dashboard.",
           "example_vi": "Tên người dùng xuất hiện ở đầu bảng điều khiển minh họa.",
-          "explanation": "Username viết liền là một danh từ; nó không nhất thiết là tên thật. Khi báo lỗi giao diện, có thể nói the username is missing thay vì gửi thông tin đăng nhập thật."
+          "explanation": "Username viết liền là một danh từ; nó không nhất thiết là tên thật. Khi báo lỗi giao diện, có thể nói the username is missing thay vì gửi thông tin đăng nhập thật.",
+          "ipa": "US /ˈjuː.zɚ.neɪm/"
         },
         {
           "term": "sign in",
@@ -241,7 +245,8 @@
           "cefr": "B1",
           "example_en": "This guest account has access to the sample reports.",
           "example_vi": "Tài khoản khách này có quyền truy cập các báo cáo mẫu.",
-          "explanation": "Have access to + tài nguyên là có thể truy cập tài nguyên đó; access ở nghĩa này thường không đếm được. Access còn là động từ: access the file, không thêm to ngay sau động từ."
+          "explanation": "Have access to + tài nguyên là có thể truy cập tài nguyên đó; access ở nghĩa này thường không đếm được. Access còn là động từ: access the file, không thêm to ngay sau động từ.",
+          "ipa": "US /ˈæk.ses/"
         },
         {
           "term": "permission",
@@ -262,7 +267,8 @@
           "cefr": "B1",
           "example_en": "Only authorized editors can change the sample report.",
           "example_vi": "Chỉ những người biên tập được cấp quyền mới có thể thay đổi báo cáo mẫu.",
-          "explanation": "Authorized + người hoặc tài khoản mô tả đối tượng được cho phép làm việc nào đó. Trong phần mô tả quyền, hỏi rõ authorized to do what để không nhầm đăng nhập thành có quyền làm mọi việc."
+          "explanation": "Authorized + người hoặc tài khoản mô tả đối tượng được cho phép làm việc nào đó. Trong phần mô tả quyền, hỏi rõ authorized to do what để không nhầm đăng nhập thành có quyền làm mọi việc.",
+          "ipa": "US /ˈɑː.θɚ.aɪzd/"
         },
         {
           "term": "read-only",
@@ -311,7 +317,8 @@
           "cefr": "B1",
           "example_en": "The filename must end in .json for this import task.",
           "example_vi": "Tên tệp phải kết thúc bằng .json trong tác vụ nhập dữ liệu này.",
-          "explanation": "Filename viết liền chỉ tên tệp. End in + phần cuối mô tả đuôi tên; đây là quy tắc của tác vụ mẫu, không có nghĩa mọi tệp hoặc mọi hệ thống đều cần đuôi .json."
+          "explanation": "Filename viết liền chỉ tên tệp. End in + phần cuối mô tả đuôi tên; đây là quy tắc của tác vụ mẫu, không có nghĩa mọi tệp hoặc mọi hệ thống đều cần đuôi .json.",
+          "ipa": "US /ˈfaɪl.neɪm/"
         },
         {
           "term": "path",
@@ -332,7 +339,8 @@
           "cefr": "B1",
           "example_en": "The sample file uses the JSON format.",
           "example_vi": "Tệp mẫu dùng định dạng JSON.",
-          "explanation": "Format là danh từ trong câu này: in JSON format hoặc the JSON format. Format còn là động từ định dạng, nhưng ở đây bạn đang nói dữ liệu được biểu diễn theo dạng nào."
+          "explanation": "Format là danh từ trong câu này: in JSON format hoặc the JSON format. Format còn là động từ định dạng, nhưng ở đây bạn đang nói dữ liệu được biểu diễn theo dạng nào.",
+          "ipa": "US /ˈfɔːr.mæt/"
         },
         {
           "term": "save changes",
@@ -352,7 +360,8 @@
           "cefr": "B1",
           "example_en": "This import will overwrite the existing demo settings.",
           "example_vi": "Lần nhập này sẽ ghi đè các thiết lập minh họa đang có.",
-          "explanation": "Overwrite + tệp hoặc dữ liệu đi trực tiếp với đối tượng bị thay. Khác append là thêm vào phần đang có; đọc rõ hành động của tác vụ trước khi diễn đạt là ghi đè hay thêm dữ liệu."
+          "explanation": "Overwrite + tệp hoặc dữ liệu đi trực tiếp với đối tượng bị thay. Khác append là thêm vào phần đang có; đọc rõ hành động của tác vụ trước khi diễn đạt là ghi đè hay thêm dữ liệu.",
+          "ipa": "US /ˌoʊ.vɚˈraɪt/"
         },
         {
           "term": "missing",
@@ -392,7 +401,8 @@
           "cefr": "B1",
           "example_en": "Can you reproduce the error using these three steps?",
           "example_vi": "Bạn có thể làm lỗi xuất hiện lại bằng ba bước này không?",
-          "explanation": "Reproduce an error trong kiểm thử là làm lỗi xảy ra lại, không phải sửa lỗi. Dùng steps to reproduce để đặt tên phần hướng dẫn từng bước trong một báo cáo lỗi."
+          "explanation": "Reproduce an error trong kiểm thử là làm lỗi xảy ra lại, không phải sửa lỗi. Dùng steps to reproduce để đặt tên phần hướng dẫn từng bước trong một báo cáo lỗi.",
+          "ipa": "US /ˌriː.prəˈduːs/"
         },
         {
           "term": "expected",
@@ -402,7 +412,8 @@
           "cefr": "B1",
           "example_en": "The expected result is a page with three sample cards.",
           "example_vi": "Kết quả mong đợi là một trang có ba thẻ mẫu.",
-          "explanation": "Expected result là kết quả theo yêu cầu hoặc cách bạn dự kiến hệ thống hoạt động. Nêu rõ kết quả này rồi so với actual result để người đọc thấy chỗ khác biệt."
+          "explanation": "Expected result là kết quả theo yêu cầu hoặc cách bạn dự kiến hệ thống hoạt động. Nêu rõ kết quả này rồi so với actual result để người đọc thấy chỗ khác biệt.",
+          "ipa": "US /ɪkˈspek.tɪd/"
         },
         {
           "term": "actual",
@@ -412,7 +423,8 @@
           "cefr": "B1",
           "example_en": "The actual result is a blank page.",
           "example_vi": "Kết quả thực tế là một trang trống.",
-          "explanation": "Actual result là điều bạn quan sát được, khác với expected result. Actual không có nghĩa đang diễn ra ở thời điểm hiện tại; dùng current khi muốn nói hiện tại hoặc hiện hành."
+          "explanation": "Actual result là điều bạn quan sát được, khác với expected result. Actual không có nghĩa đang diễn ra ở thời điểm hiện tại; dùng current khi muốn nói hiện tại hoặc hiện hành.",
+          "ipa": "US /ˈæk.tʃu.əl/"
         },
         {
           "term": "issue",
@@ -463,7 +475,8 @@
           "cefr": "B1",
           "example_en": "We used a workaround to finish the demo while the bug was being fixed.",
           "example_vi": "Chúng tôi dùng một cách né lỗi để hoàn thành bản minh họa trong khi lỗi đang được sửa.",
-          "explanation": "A workaround cho phép làm việc theo cách khác khi cách thông thường gặp trở ngại. Nó thường là giải pháp tạm; nếu báo cho nhóm, nói rõ bạn đang dùng cách nào thay vì gọi đó là bản sửa lỗi hoàn chỉnh."
+          "explanation": "A workaround cho phép làm việc theo cách khác khi cách thông thường gặp trở ngại. Nó thường là giải pháp tạm; nếu báo cho nhóm, nói rõ bạn đang dùng cách nào thay vì gọi đó là bản sửa lỗi hoàn chỉnh.",
+          "ipa": "US /ˈwɝː.kə.raʊnd/"
         }
       ]
     },
@@ -491,7 +504,8 @@
           "cefr": "B1",
           "example_en": "Could you review my changes before we merge them?",
           "example_vi": "Bạn có thể xem xét các thay đổi của tôi trước khi nhóm gộp chúng không?",
-          "explanation": "Review đi trực tiếp với đối tượng: review the code, review my changes. Could you + động từ là cách nhờ lịch sự; nêu rõ phần muốn xem giúp đồng đội biết cần chú ý điều gì."
+          "explanation": "Review đi trực tiếp với đối tượng: review the code, review my changes. Could you + động từ là cách nhờ lịch sự; nêu rõ phần muốn xem giúp đồng đội biết cần chú ý điều gì.",
+          "ipa": "US /rɪˈvjuː/"
         },
         {
           "term": "branch",
