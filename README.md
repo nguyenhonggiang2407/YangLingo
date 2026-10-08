@@ -1,5 +1,7 @@
 # YangLingo
 
+<img src="assets/yanglingo-logo.svg" alt="YangLingo: cuốn sách và hội thoại" width="64" height="64" />
+
 **Học tiếng Anh theo bài ngắn, luyện nhớ chủ động và ôn đúng lúc.**
 
 YangLingo is a PHP and MySQL English-learning web application. It brings vocabulary books, spaced review, contextual practice and an explainable daily study plan into one place.
@@ -122,3 +124,5 @@ Giữ nguyên [LICENSE](LICENSE) MIT đã có. PDF/Google Sheet được cung c�
 IPA bổ sung dùng dữ liệu General American của [IPA-dict](https://github.com/open-dict-data/ipa-dict), nguồn chuyển đổi cmudict-ipa và đối chiếu CMUdict. Giữ đủ thông báo giấy phép MIT/CMU trong `assets/licenses/`, cùng phiên bản nguồn ở [trang ghi nguồn](pronunciation-sources.html). Bản công khai không chứa database hay kế hoạch chỉnh thẻ riêng của người dùng.
 
 TOEIC và Aptis mô tả dạng luyện tập; YangLingo không phải dịch vụ thi hoặc chấm điểm chính thức.
+
+Logo cuốn sách và hội thoại là SVG gốc, dùng cùng giấy phép MIT của dự án. Logo được dùng trong web và favicon SVG; các biểu tượng PNG/iOS dự phòng hiện có được giữ lại.
