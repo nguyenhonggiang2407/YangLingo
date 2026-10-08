@@ -1,0 +1,564 @@
+{
+  "schema_version": 1,
+  "code": "english-for-web-a2-b1",
+  "source_type": "english_for_web_a2_b1_book",
+  "title": "English for Web · Đọc tài liệu & làm việc nhóm",
+  "subtitle": "48 thẻ · 6 bài nhỏ · ngữ cảnh web",
+  "description": "Sáu tình huống nhỏ để đọc tài liệu, hiểu thông báo, nói về tài khoản và tệp, báo lỗi, nhờ xem xét thay đổi. Ví dụ và nhiệm vụ dùng ứng dụng hư cấu. A2–B1 và nhãn thẻ là mức định hướng biên soạn, không phải danh sách CEFR được chứng nhận hay bộ từ bắt buộc. Đây là book bổ sung riêng.",
+  "cover": "WE",
+  "category": "English cho lập trình web",
+  "folder_name": "English cho sinh viên",
+  "level": "hướng A2–B1",
+  "lesson_size": 8,
+  "estimated_minutes": 10,
+  "lessons": [
+    {
+      "title": "Đọc tài liệu từng phần",
+      "objective": "Nắm phần tổng quan, yêu cầu và mô tả một hàm đơn giản.",
+      "speaking_prompt": "Chọn một ứng dụng minh họa: nói tài liệu có phần nào, một điều bắt buộc/tùy chọn và tên một tham số. Dùng ba hoặc bốn câu của bạn.",
+      "speaking_model": "I read the documentation. The overview explains the app. Adding a photo is optional. The search function has one parameter named query.",
+      "cards": [
+        {
+          "term": "documentation",
+          "definition": "Tài liệu hướng dẫn hoặc mô tả phần mềm",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "Read the documentation before installing the demo app.",
+          "example_vi": "Đọc tài liệu hướng dẫn trước khi cài ứng dụng minh họa.",
+          "explanation": "Documentation thường không đếm được: read the documentation, không dùng a documentation. Document là một tài liệu riêng, có thể đếm được.",
+          "ipa": "US /ˌdɑː.kjə.menˈteɪ.ʃən/"
+        },
+        {
+          "term": "overview",
+          "definition": "Phần tổng quan",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The overview explains what the demo app does.",
+          "example_vi": "Phần tổng quan giải thích ứng dụng minh họa dùng để làm gì.",
+          "explanation": "An overview of + chủ đề là phần mô tả bao quát. Đọc overview để nắm ý chính trước khi xem từng bước hoặc từng chức năng."
+        },
+        {
+          "term": "requirement",
+          "definition": "Yêu cầu hoặc điều kiện cần đáp ứng",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "A stable connection is a requirement for this online demo.",
+          "example_vi": "Kết nối ổn định là một điều kiện cần cho bản minh họa trực tuyến này.",
+          "explanation": "A requirement for + công việc hoặc hệ thống nêu điều cần có. Requirements ở số nhiều có thể là danh sách yêu cầu; đối chiếu với optional là tùy chọn.",
+          "ipa": "US /ɹɪˈkwaɪɹmənt/"
+        },
+        {
+          "term": "optional",
+          "definition": "Tùy chọn; không bắt buộc",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "Adding a profile photo is optional in our demo.",
+          "example_vi": "Thêm ảnh hồ sơ là tùy chọn trong bản minh họa của nhóm tôi.",
+          "explanation": "Optional đứng trước danh từ, như an optional field, hoặc sau be. Từ này nói người dùng có thể chọn, khác với required là bắt buộc trong ngữ cảnh đó."
+        },
+        {
+          "term": "required",
+          "definition": "Được yêu cầu; bắt buộc trong ngữ cảnh đó",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "An email address is required to create a demo account.",
+          "example_vi": "Cần có địa chỉ email để tạo tài khoản minh họa.",
+          "explanation": "Be required to + động từ nêu việc được yêu cầu làm. Trong tài liệu, a required field là ô phải điền; câu ví dụ chỉ mô tả quy tắc của ứng dụng minh họa này."
+        },
+        {
+          "term": "parameter",
+          "definition": "Tham số trong phần định nghĩa hàm",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The search function has one parameter named query.",
+          "example_vi": "Hàm tìm kiếm có một tham số tên là query.",
+          "explanation": "Trong ngữ cảnh hàm, parameter là tên tham số được khai báo; argument là giá trị truyền vào khi gọi. Có thể nói a parameter hoặc two parameters.",
+          "ipa": "US /pəˈræm.ə.t̬ɚ/"
+        },
+        {
+          "term": "return value",
+          "definition": "Giá trị mà hàm trả về",
+          "part_of_speech": "noun phrase",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The return value is a list of matching items.",
+          "example_vi": "Giá trị trả về là một danh sách các mục khớp với nội dung tìm kiếm.",
+          "explanation": "The return value of a function nói kết quả hàm trả về. Đừng chỉ dựa vào nội dung in ra màn hình để kết luận đó là giá trị trả về; xem phần return và mô tả của hàm."
+        },
+        {
+          "term": "compatible with",
+          "definition": "Tương thích với",
+          "part_of_speech": "adjective phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "B1",
+          "example_en": "This plugin is compatible with version two of our demo app.",
+          "example_vi": "Tiện ích này tương thích với phiên bản hai của ứng dụng minh họa.",
+          "explanation": "Dùng compatible with + hệ thống, thiết bị hoặc phiên bản. With nối với thứ có thể dùng cùng; trong tài liệu hãy nhìn rõ số phiên bản thay vì chỉ đoán từ tên phần mềm."
+        }
+      ]
+    },
+    {
+      "title": "Yêu cầu & thông báo lỗi",
+      "objective": "Phân biệt yêu cầu và phản hồi; mô tả một lỗi mà không đoán nguyên nhân.",
+      "speaking_prompt": "Đóng vai đang kiểm thử một trang: nói yêu cầu gì được gửi, phản hồi hoặc mã nhận lại và việc muốn thử tiếp. Tạo tình huống hư cấu.",
+      "speaking_model": "The browser sends a request. The server sends a response. The status code is 404 for this test page. Please retry the request.",
+      "cards": [
+        {
+          "term": "request",
+          "definition": "Yêu cầu gửi tới hệ thống; trong bài này là yêu cầu HTTP",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The browser sends a request to load the demo page.",
+          "example_vi": "Trình duyệt gửi một yêu cầu để tải trang minh họa.",
+          "explanation": "Send a request to + nơi nhận, hoặc a request for + dữ liệu cần lấy. Trong trao đổi HTTP, request do phía khách gửi; response là phản hồi nhận lại.",
+          "ipa": "US /rɪˈkwest/"
+        },
+        {
+          "term": "response",
+          "definition": "Phản hồi của hệ thống",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The server sends a response with the requested data.",
+          "example_vi": "Máy chủ gửi một phản hồi chứa dữ liệu đã được yêu cầu.",
+          "explanation": "A response to a request là phản hồi cho một yêu cầu. Response ở đây là danh từ đếm được; with the data nói phản hồi chứa dữ liệu gì, không có nghĩa mọi phản hồi đều thành công.",
+          "ipa": "US /rɪˈspɑːns/"
+        },
+        {
+          "term": "status code",
+          "definition": "Mã trạng thái của phản hồi",
+          "part_of_speech": "noun phrase",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The status code is 404 because the test page does not exist.",
+          "example_vi": "Mã trạng thái là 404 vì trang thử nghiệm không tồn tại.",
+          "explanation": "Trong HTTP, status code giúp diễn đạt kết quả xử lý yêu cầu. 404 nói không tìm thấy tài nguyên được yêu cầu; riêng mã này không có nghĩa toàn bộ máy chủ đã ngừng hoạt động."
+        },
+        {
+          "term": "valid",
+          "definition": "Hợp lệ theo quy tắc đang kiểm tra",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The form accepts a valid email address.",
+          "example_vi": "Biểu mẫu chấp nhận địa chỉ email có định dạng hợp lệ.",
+          "explanation": "Valid + danh từ, như valid input, nói dữ liệu đáp ứng quy tắc kiểm tra. Định dạng email hợp lệ chưa tự chứng minh người gửi sở hữu địa chỉ đó; cần nhìn loại kiểm tra đang được nói tới.",
+          "ipa": "US /ˈvæɫɪd/"
+        },
+        {
+          "term": "invalid",
+          "definition": "Không hợp lệ theo quy tắc đang kiểm tra",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The form rejects the invalid date 32 March.",
+          "example_vi": "Biểu mẫu từ chối ngày không hợp lệ là ngày 32 tháng Ba.",
+          "explanation": "Invalid là tính từ đối lập với valid trong ngữ cảnh dữ liệu. Có thể nói invalid input hoặc an invalid date; thêm lý do cụ thể để người nghe biết cần sửa gì.",
+          "ipa": "US /ɪnˈvæl.ɪd/"
+        },
+        {
+          "term": "not found",
+          "definition": "Không tìm thấy",
+          "part_of_speech": "status phrase",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "A2",
+          "example_en": "The browser shows \"Not found\" for that test page.",
+          "example_vi": "Trình duyệt hiển thị thông báo “Không tìm thấy” cho trang thử nghiệm đó.",
+          "explanation": "Not found là cụm rút gọn thường thấy trong thông báo; nó chưa phải một câu đầy đủ. Khi báo lỗi cho đồng đội, thêm đối tượng: the page was not found hoặc the file was not found."
+        },
+        {
+          "term": "timed out",
+          "definition": "Đã hết thời gian chờ",
+          "part_of_speech": "verb phrase",
+          "card_type": "LISTENING_CHUNK",
+          "cefr": "B1",
+          "example_en": "The request timed out while I was testing the demo.",
+          "example_vi": "Yêu cầu đã hết thời gian chờ khi tôi đang kiểm thử bản minh họa.",
+          "explanation": "Timed out là quá khứ của time out. Cụm này nói thao tác không hoàn tất trong thời gian cho phép; không tự xác định nguyên nhân. Timeout viết liền có thể là danh từ, như a timeout."
+        },
+        {
+          "term": "retry",
+          "definition": "Thử thực hiện lại",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "Please retry the request after checking the connection.",
+          "example_vi": "Hãy thử gửi lại yêu cầu sau khi kiểm tra kết nối.",
+          "explanation": "Retry có thể đi trực tiếp với công việc cần làm lại: retry the request. Trong thông báo, Retry cũng có thể là nhãn nút; danh từ a retry nói một lần thử lại.",
+          "ipa": "US /ɹiˈtɹaɪ/"
+        }
+      ]
+    },
+    {
+      "title": "Tài khoản & quyền thao tác",
+      "objective": "Mô tả tài khoản minh họa, quyền truy cập và thao tác đăng nhập/đăng xuất.",
+      "speaking_prompt": "Dùng tài khoản hư cấu để nói trang nào chỉ cho xem và ai được sửa. Viết một lời nhắc đăng nhập hoặc đăng xuất; không dùng thông tin đăng nhập thật.",
+      "speaking_model": "I use a demo account. Please sign in to view the sample report. The guest account has access to a read-only page. Remember to sign out.",
+      "cards": [
+        {
+          "term": "account",
+          "definition": "Tài khoản dùng trong một dịch vụ hoặc ứng dụng",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "I use a demo account to test the profile page.",
+          "example_vi": "Tôi dùng một tài khoản minh họa để kiểm thử trang hồ sơ.",
+          "explanation": "A user account là tài khoản người dùng; create an account là tạo tài khoản. Trong câu này account không mang nghĩa tài khoản ngân hàng; danh từ đi kèm và tình huống giúp chọn nghĩa.",
+          "ipa": "US /əˈkaʊnt/"
+        },
+        {
+          "term": "username",
+          "definition": "Tên người dùng hoặc tên đăng nhập",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The username appears at the top of the demo dashboard.",
+          "example_vi": "Tên người dùng xuất hiện ở đầu bảng điều khiển minh họa.",
+          "explanation": "Username viết liền là một danh từ; nó không nhất thiết là tên thật. Khi báo lỗi giao diện, có thể nói the username is missing thay vì gửi thông tin đăng nhập thật."
+        },
+        {
+          "term": "sign in",
+          "definition": "Đăng nhập",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A2",
+          "example_en": "Please sign in with your demo account to view your notes.",
+          "example_vi": "Hãy đăng nhập bằng tài khoản minh họa để xem ghi chú của bạn.",
+          "explanation": "Sign in là động từ viết hai từ. Sign in with + tài khoản nói cách đăng nhập; sign in to + dịch vụ nói nơi đăng nhập. Sign-in có gạch nối có thể đứng trước danh từ, như sign-in page."
+        },
+        {
+          "term": "access",
+          "definition": "Quyền hoặc khả năng truy cập",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "This guest account has access to the sample reports.",
+          "example_vi": "Tài khoản khách này có quyền truy cập các báo cáo mẫu.",
+          "explanation": "Have access to + tài nguyên là có thể truy cập tài nguyên đó; access ở nghĩa này thường không đếm được. Access còn là động từ: access the file, không thêm to ngay sau động từ."
+        },
+        {
+          "term": "permission",
+          "definition": "Sự cho phép; quyền thực hiện một hành động",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "You need permission to edit the shared document.",
+          "example_vi": "Bạn cần được cho phép để chỉnh sửa tài liệu dùng chung.",
+          "explanation": "Permission to + động từ nêu hành động được cho phép; ask for permission là xin phép. Trong hệ thống, permissions ở số nhiều có thể là nhiều quyền riêng như xem và sửa.",
+          "ipa": "US /pɚˈmɪʃ.ən/"
+        },
+        {
+          "term": "authorized",
+          "definition": "Được cho phép hoặc được cấp quyền",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "Only authorized editors can change the sample report.",
+          "example_vi": "Chỉ những người biên tập được cấp quyền mới có thể thay đổi báo cáo mẫu.",
+          "explanation": "Authorized + người hoặc tài khoản mô tả đối tượng được cho phép làm việc nào đó. Trong phần mô tả quyền, hỏi rõ authorized to do what để không nhầm đăng nhập thành có quyền làm mọi việc."
+        },
+        {
+          "term": "read-only",
+          "definition": "Chỉ đọc; không cho sửa trong phạm vi được nói tới",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The guest dashboard is read-only in this demo.",
+          "example_vi": "Bảng điều khiển dành cho khách chỉ cho xem trong bản minh họa này.",
+          "explanation": "Read-only có gạch nối khi dùng làm tính từ: a read-only file. Nó nói giới hạn chỉnh sửa, không tự nói tệp có công khai hay bí mật; xem rõ đối tượng và quyền trong tài liệu."
+        },
+        {
+          "term": "sign out",
+          "definition": "Đăng xuất",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A2",
+          "example_en": "Remember to sign out after using the demo on a shared computer.",
+          "example_vi": "Nhớ đăng xuất sau khi dùng bản minh họa trên máy tính dùng chung.",
+          "explanation": "Sign out là động từ; sign out of + tài khoản hoặc dịch vụ nói rõ đăng xuất khỏi đâu. Sign out và sign in diễn tả hai thao tác đối nhau, không dùng sign off thay cho mọi tình huống đăng xuất."
+        }
+      ]
+    },
+    {
+      "title": "Tệp & dữ liệu mẫu",
+      "objective": "Nói rõ tên, vị trí, định dạng và hành động thực hiện với tệp.",
+      "speaking_prompt": "Mô tả một tệp mẫu bằng ba câu: tệp ở đâu, dùng định dạng gì và bạn sẽ lưu, xuất hoặc ghi đè thứ gì. Dùng tên và dữ liệu hư cấu.",
+      "speaking_model": "The sample table is in the data folder. It uses the CSV format. We can export the table as a CSV file.",
+      "cards": [
+        {
+          "term": "folder",
+          "definition": "Thư mục để nhóm tệp",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "Create a folder for the demo images.",
+          "example_vi": "Tạo một thư mục cho các ảnh minh họa.",
+          "explanation": "Put a file in a folder hoặc move a file to a folder nêu vị trí và nơi chuyển tới. A folder chứa các tệp; tên thư mục chưa tự cho biết tên từng tệp bên trong.",
+          "ipa": "US /ˈfoʊl.dɚ/"
+        },
+        {
+          "term": "filename",
+          "definition": "Tên tệp",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The filename must end in .json for this import task.",
+          "example_vi": "Tên tệp phải kết thúc bằng .json trong tác vụ nhập dữ liệu này.",
+          "explanation": "Filename viết liền chỉ tên tệp. End in + phần cuối mô tả đuôi tên; đây là quy tắc của tác vụ mẫu, không có nghĩa mọi tệp hoặc mọi hệ thống đều cần đuôi .json."
+        },
+        {
+          "term": "path",
+          "definition": "Đường dẫn đến một tệp hoặc vị trí",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The path to the image is written in the sample configuration.",
+          "example_vi": "Đường dẫn đến ảnh được ghi trong cấu hình mẫu.",
+          "explanation": "The path to + tệp chỉ vị trí cần tìm. Trong tài liệu web, hãy phân biệt đường dẫn tương đối với đường dẫn đầy đủ và nhìn điểm bắt đầu của ví dụ; không đoán từ tên tệp riêng lẻ.",
+          "ipa": "US /ˈpæθ/"
+        },
+        {
+          "term": "format",
+          "definition": "Định dạng của dữ liệu hoặc tệp",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The sample file uses the JSON format.",
+          "example_vi": "Tệp mẫu dùng định dạng JSON.",
+          "explanation": "Format là danh từ trong câu này: in JSON format hoặc the JSON format. Format còn là động từ định dạng, nhưng ở đây bạn đang nói dữ liệu được biểu diễn theo dạng nào."
+        },
+        {
+          "term": "save changes",
+          "definition": "Lưu các thay đổi",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A2",
+          "example_en": "Remember to save changes before closing the editor.",
+          "example_vi": "Nhớ lưu các thay đổi trước khi đóng trình chỉnh sửa.",
+          "explanation": "Save changes là lưu phần vừa sửa. Before + V-ing nêu việc cần làm trước một hành động khác; changes ở số nhiều có thể gồm nhiều sửa đổi nhỏ trong cùng một tệp."
+        },
+        {
+          "term": "overwrite",
+          "definition": "Ghi đè; thay nội dung đang có bằng nội dung mới",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "This import will overwrite the existing demo settings.",
+          "example_vi": "Lần nhập này sẽ ghi đè các thiết lập minh họa đang có.",
+          "explanation": "Overwrite + tệp hoặc dữ liệu đi trực tiếp với đối tượng bị thay. Khác append là thêm vào phần đang có; đọc rõ hành động của tác vụ trước khi diễn đạt là ghi đè hay thêm dữ liệu."
+        },
+        {
+          "term": "missing",
+          "definition": "Bị thiếu; không có ở vị trí cần có",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "A2",
+          "example_en": "The preview shows a warning because an image is missing.",
+          "example_vi": "Bản xem trước hiển thị cảnh báo vì thiếu một ảnh.",
+          "explanation": "Missing đứng sau be hoặc trước danh từ: the image is missing, a missing image. Khi báo lỗi, nêu rõ thứ gì thiếu và thiếu ở đâu; missing không luôn có nghĩa người dùng quên làm việc đó.",
+          "ipa": "US /ˈmɪsɪŋ/"
+        },
+        {
+          "term": "export",
+          "definition": "Xuất dữ liệu ra một tệp hoặc hệ thống khác",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "We can export the sample table as a CSV file.",
+          "example_vi": "Chúng tôi có thể xuất bảng mẫu thành tệp CSV.",
+          "explanation": "Export something as + định dạng nêu dạng tệp tạo ra; export something to + nơi nhận nêu đích đến. Đây là động từ xuất dữ liệu, không phải danh từ hàng xuất khẩu.",
+          "ipa": "US /ˈek.spɔːrt/"
+        }
+      ]
+    },
+    {
+      "title": "Báo lỗi để người khác làm theo",
+      "objective": "Đối chiếu kết quả mong đợi/thực tế và yêu cầu tái hiện lỗi.",
+      "speaking_prompt": "Chọn một lỗi giao diện hư cấu. Viết kết quả mong đợi, kết quả thực tế và hai bước để đồng đội làm lỗi xuất hiện lại. Sau đó đọc thành tiếng.",
+      "speaking_model": "The expected result is a page with three cards. The actual result is a blank page. To reproduce the error, first open the demo page. Then click the search button.",
+      "cards": [
+        {
+          "term": "reproduce",
+          "definition": "Làm xuất hiện lại một lỗi hoặc hiện tượng",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "Can you reproduce the error using these three steps?",
+          "example_vi": "Bạn có thể làm lỗi xuất hiện lại bằng ba bước này không?",
+          "explanation": "Reproduce an error trong kiểm thử là làm lỗi xảy ra lại, không phải sửa lỗi. Dùng steps to reproduce để đặt tên phần hướng dẫn từng bước trong một báo cáo lỗi."
+        },
+        {
+          "term": "expected",
+          "definition": "Được mong đợi hoặc dự kiến",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The expected result is a page with three sample cards.",
+          "example_vi": "Kết quả mong đợi là một trang có ba thẻ mẫu.",
+          "explanation": "Expected result là kết quả theo yêu cầu hoặc cách bạn dự kiến hệ thống hoạt động. Nêu rõ kết quả này rồi so với actual result để người đọc thấy chỗ khác biệt."
+        },
+        {
+          "term": "actual",
+          "definition": "Thực tế; thật sự xảy ra",
+          "part_of_speech": "adjective",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The actual result is a blank page.",
+          "example_vi": "Kết quả thực tế là một trang trống.",
+          "explanation": "Actual result là điều bạn quan sát được, khác với expected result. Actual không có nghĩa đang diễn ra ở thời điểm hiện tại; dùng current khi muốn nói hiện tại hoặc hiện hành."
+        },
+        {
+          "term": "issue",
+          "definition": "Một mục ghi nhận vấn đề hoặc việc cần theo dõi",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "I opened an issue to describe the broken search button.",
+          "example_vi": "Tôi tạo một mục ghi nhận vấn đề để mô tả nút tìm kiếm bị lỗi.",
+          "explanation": "Open an issue là tạo mục theo dõi trong công cụ quản lý dự án. Issue có thể ghi lỗi, ý tưởng hoặc việc cần làm; câu này nói một lỗi cụ thể, không biến mọi issue thành bug.",
+          "ipa": "US /ˈɪʃu/"
+        },
+        {
+          "term": "check the logs",
+          "definition": "Kiểm tra các bản ghi hoạt động",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "B1",
+          "example_en": "Let's check the logs for more details about the failed request.",
+          "example_vi": "Hãy kiểm tra các bản ghi hoạt động để biết thêm chi tiết về yêu cầu bị lỗi.",
+          "explanation": "Log ở đây là bản ghi do hệ thống tạo; logs là số nhiều. Check the logs for + thông tin nêu thứ cần tìm, không có nghĩa log luôn giải thích đầy đủ nguyên nhân."
+        },
+        {
+          "term": "step by step",
+          "definition": "Từng bước một",
+          "part_of_speech": "adverb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "A2",
+          "example_en": "I wrote the instructions step by step.",
+          "example_vi": "Tôi viết hướng dẫn từng bước một.",
+          "explanation": "Step by step viết ba từ khi bổ nghĩa cho hành động. Trước danh từ, dùng step-by-step có gạch nối: a step-by-step guide. Các bước nên được kể theo thứ tự người khác có thể làm theo."
+        },
+        {
+          "term": "narrow down",
+          "definition": "Thu hẹp phạm vi để tập trung vào ít khả năng hơn",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "B1",
+          "example_en": "These tests help us narrow down the cause of the error.",
+          "example_vi": "Các kiểm thử này giúp chúng tôi thu hẹp phạm vi tìm nguyên nhân lỗi.",
+          "explanation": "Narrow down the cause là loại bớt khả năng để tập trung điều tra. Với đại từ it, dùng narrow it down; thu hẹp phạm vi chưa luôn có nghĩa đã tìm ra một nguyên nhân chắc chắn."
+        },
+        {
+          "term": "workaround",
+          "definition": "Cách đi vòng hoặc né vấn đề để tiếp tục công việc",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "We used a workaround to finish the demo while the bug was being fixed.",
+          "example_vi": "Chúng tôi dùng một cách né lỗi để hoàn thành bản minh họa trong khi lỗi đang được sửa.",
+          "explanation": "A workaround cho phép làm việc theo cách khác khi cách thông thường gặp trở ngại. Nó thường là giải pháp tạm; nếu báo cho nhóm, nói rõ bạn đang dùng cách nào thay vì gọi đó là bản sửa lỗi hoàn chỉnh."
+        }
+      ]
+    },
+    {
+      "title": "Xem xét thay đổi & triển khai",
+      "objective": "Nhờ xem xét thay đổi và mô tả các bước gộp, kiểm thử, triển khai.",
+      "speaking_prompt": "Đóng vai gửi cập nhật cho nhóm: nói bạn đã đề xuất thay đổi gì, nhờ ai xem xét và dự định triển khai ở môi trường nào. Đây là bài luyện ngôn ngữ, không phải báo cáo thành tích thật.",
+      "speaking_model": "I opened a pull request for the new feature. Could you review my changes? We will merge them after the review. We plan to deploy the demo to the test environment.",
+      "cards": [
+        {
+          "term": "pull request",
+          "definition": "Đề nghị đưa các thay đổi vào một nhánh khác để thảo luận và xem xét",
+          "part_of_speech": "noun phrase",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "I opened a pull request for the new search feature.",
+          "example_vi": "Tôi tạo một đề nghị đưa thay đổi vào nhánh khác cho chức năng tìm kiếm mới.",
+          "explanation": "Open a pull request là đề xuất thay đổi để người khác xem xét trước khi gộp. Trong hội thoại kỹ thuật có thể nói PR; thao tác này chưa tự có nghĩa thay đổi đã được merge."
+        },
+        {
+          "term": "review",
+          "definition": "Xem xét và đưa nhận xét về nội dung hoặc thay đổi",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "Could you review my changes before we merge them?",
+          "example_vi": "Bạn có thể xem xét các thay đổi của tôi trước khi nhóm gộp chúng không?",
+          "explanation": "Review đi trực tiếp với đối tượng: review the code, review my changes. Could you + động từ là cách nhờ lịch sự; nêu rõ phần muốn xem giúp đồng đội biết cần chú ý điều gì."
+        },
+        {
+          "term": "branch",
+          "definition": "Nhánh làm việc trong hệ thống quản lý phiên bản",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "I created a branch for the new search feature.",
+          "example_vi": "Tôi tạo một nhánh làm việc cho chức năng tìm kiếm mới.",
+          "explanation": "Create a branch for + công việc nêu mục đích của nhánh. Trong Git, branch giúp tổ chức một hướng thay đổi; tên nhánh không tự có nghĩa nội dung là bí mật hoặc đã được chấp nhận.",
+          "ipa": "US /ˈbɹæntʃ/"
+        },
+        {
+          "term": "merge",
+          "definition": "Gộp các thay đổi",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "We will merge these changes after the review.",
+          "example_vi": "Nhóm tôi sẽ gộp các thay đổi này sau khi xem xét.",
+          "explanation": "Merge A into B nói gộp A vào B, như merge a branch into the main branch. Cần nhìn thứ tự A/B để biết đích nhận thay đổi; review và merge là hai việc khác nhau.",
+          "ipa": "US /ˈmɝdʒ/"
+        },
+        {
+          "term": "resolve",
+          "definition": "Giải quyết một vấn đề hoặc xung đột",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "We need to resolve the conflict before merging.",
+          "example_vi": "Chúng tôi cần giải quyết xung đột trước khi gộp thay đổi.",
+          "explanation": "Resolve + vấn đề đi trực tiếp: resolve a conflict, resolve an issue. Trong Git, conflict nói các thay đổi cần được xử lý trước khi hoàn tất việc gộp; đừng nhầm resolve với từ result là kết quả.",
+          "ipa": "US /rɪˈzɑːlv/"
+        },
+        {
+          "term": "deploy",
+          "definition": "Triển khai phần mềm vào môi trường có thể chạy hoặc sử dụng",
+          "part_of_speech": "verb",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "We plan to deploy the demo after the tests pass.",
+          "example_vi": "Chúng tôi dự định triển khai bản minh họa sau khi các kiểm thử đạt.",
+          "explanation": "Deploy something to + môi trường nêu nơi triển khai. Viết mã hoặc tạo commit chưa tự là deploy; câu này nói kế hoạch của nhóm mẫu, không bảo đảm cứ kiểm thử đạt là mọi triển khai đều thành công.",
+          "ipa": "US /dɪˈpɫɔɪ/"
+        },
+        {
+          "term": "environment",
+          "definition": "Môi trường chạy hoặc kiểm thử phần mềm",
+          "part_of_speech": "noun",
+          "card_type": "VOCABULARY",
+          "cefr": "B1",
+          "example_en": "The error appears only in the test environment.",
+          "example_vi": "Lỗi chỉ xuất hiện trong môi trường kiểm thử.",
+          "explanation": "In the test environment chỉ nơi hoặc cấu hình kiểm thử; the production environment là môi trường sử dụng thực tế. Nêu môi trường khi báo lỗi giúp người nghe không nhầm kết quả của hai nơi.",
+          "ipa": "US /ɪnˈvaɪɹənmənt/"
+        },
+        {
+          "term": "roll back",
+          "definition": "Đưa hệ thống hoặc thay đổi về trạng thái trước đó",
+          "part_of_speech": "verb phrase",
+          "card_type": "COLLOCATION",
+          "cefr": "B1",
+          "example_en": "We may need to roll back the last release.",
+          "example_vi": "Nhóm tôi có thể cần đưa hệ thống về trạng thái trước bản phát hành gần nhất.",
+          "explanation": "Roll back viết hai từ khi là động từ; a rollback là danh từ chỉ việc quay lại. Roll back a release nói về bước trở về phiên bản trước; việc dữ liệu được khôi phục ra sao còn tùy quy trình của hệ thống."
+        }
+      ]
+    }
+  ]
+}

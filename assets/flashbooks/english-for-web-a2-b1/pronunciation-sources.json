@@ -1,0 +1,460 @@
+{
+  "schema_version": 1,
+  "book_code": "english-for-web-a2-b1",
+  "single_headwords": 34,
+  "sourced_ipa": 20,
+  "licensed_headwords": 11,
+  "primary_facts": 9,
+  "unfilled_single_headwords": [
+    "access",
+    "actual",
+    "authorized",
+    "expected",
+    "filename",
+    "format",
+    "optional",
+    "overview",
+    "overwrite",
+    "reproduce",
+    "required",
+    "review",
+    "username",
+    "workaround"
+  ],
+  "phrase_ipa_generated": false,
+  "audio_files": false,
+  "pinned_sources": [
+    {
+      "commit": "43c3570eb3553bdd19fccd2bd0091534889af023",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "file": "en_US.txt",
+      "bytes": 3180267
+    },
+    {
+      "file": "CMUDICT-DICT.txt",
+      "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "commit": "74790861f652b15e4ac49015a90074ad62a27690",
+      "bytes": 3618488,
+      "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22"
+    },
+    {
+      "file": "CMUDICT-IPA-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/lingz/cmudict-ipa/629483e9a7fa5b9ff11bb83e3fda6dcc25c5c511/LICENSE",
+      "commit": "629483e9a7fa5b9ff11bb83e3fda6dcc25c5c511",
+      "sha256": "a504bede5a50d1ac19c38984d9bb33371927f72e714946a963bf40bb2de21188",
+      "bytes": 1082
+    }
+  ],
+  "license_scope": "Original teaching text MIT; open IPA retains exact third-party notices. Primary publisher pronunciation facts do not license their prose/examples/audio.",
+  "terms": [
+    {
+      "term": "account",
+      "ipa": "US /əˈkaʊnt/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 555,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 619,
+      "cmu_arpabet": [
+        "AH0",
+        "K",
+        "AW1",
+        "N",
+        "T"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "branch",
+      "ipa": "US /ˈbɹæntʃ/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 13585,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 14568,
+      "cmu_arpabet": [
+        "B",
+        "R",
+        "AE1",
+        "N",
+        "CH"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "deploy",
+      "ipa": "US /dɪˈpɫɔɪ/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 28820,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 30811,
+      "cmu_arpabet": [
+        "D",
+        "IH0",
+        "P",
+        "L",
+        "OY1"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "documentation",
+      "part_of_speech": "noun",
+      "ipa": "US /ˌdɑː.kjə.menˈteɪ.ʃən/",
+      "source_url": "https://dictionary.cambridge.org/us/pronunciation/english/documentation",
+      "source_label": "US",
+      "method": "Primary publisher indexed full text",
+      "note": "Exact US symbols/stress; only layout whitespace around final schwa removed from displayed /ˌdɑː.kjə.menˈteɪ.ʃ ə n/. No phoneme conversion.",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "environment",
+      "ipa": "US /ɪnˈvaɪɹənmənt/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 35811,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 38637,
+      "cmu_arpabet": [
+        "IH0",
+        "N",
+        "V",
+        "AY1",
+        "R",
+        "AH0",
+        "N",
+        "M",
+        "AH0",
+        "N",
+        "T"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "export",
+      "part_of_speech": "verb",
+      "ipa": "US /ˈek.spɔːrt/",
+      "source_url": "https://dictionary.cambridge.org/pronunciation/english/export",
+      "source_label": "US verb subsection",
+      "method": "Primary publisher indexed full text",
+      "note": "Exact first US verb form on pronunciation page. Publisher dictionary also lists a final-stress intermediate-US variant; this selection does not assert a universal noun/verb stress contrast. IT verb sense corroborated in primary entry https://dictionary.cambridge.org/us/dictionary/english/export .",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "folder",
+      "part_of_speech": "noun",
+      "ipa": "US /ˈfoʊl.dɚ/",
+      "source_url": "https://dictionary.cambridge.org/us/pronunciation/english/folder",
+      "source_label": "US",
+      "method": "Primary publisher indexed full text",
+      "note": "US noun; computer-folder sense independently read in primary dictionary entry.",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "invalid",
+      "part_of_speech": "adjective",
+      "ipa": "US /ɪnˈvæl.ɪd/",
+      "source_url": "https://dictionary.cambridge.org/us/pronunciation/english/invalid",
+      "source_label": "US adjective subsection",
+      "method": "Primary publisher indexed full text",
+      "note": "Adjective unacceptable/incorrect selected. Differently stressed noun/verb /ˈɪn.və.lɪd/ excluded.",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "issue",
+      "ipa": "US /ˈɪʃu/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 56880,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 61447,
+      "cmu_arpabet": [
+        "IH1",
+        "SH",
+        "UW0"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "merge",
+      "ipa": "US /ˈmɝdʒ/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 72728,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 78096,
+      "cmu_arpabet": [
+        "M",
+        "ER1",
+        "JH"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "missing",
+      "ipa": "US /ˈmɪsɪŋ/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 74466,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 79940,
+      "cmu_arpabet": [
+        "M",
+        "IH1",
+        "S",
+        "IH0",
+        "NG"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "parameter",
+      "part_of_speech": "noun",
+      "ipa": "US /pəˈræm.ə.t̬ɚ/",
+      "source_url": "https://dictionary.cambridge.org/us/pronunciation/english/parameter",
+      "source_label": "US",
+      "method": "Primary publisher indexed full text",
+      "note": "US transcription retains the publisher flap symbol and unstressed rhotic /ɚ/.",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "path",
+      "ipa": "US /ˈpæθ/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 84091,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 90175,
+      "cmu_arpabet": [
+        "P",
+        "AE1",
+        "TH"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "permission",
+      "part_of_speech": "noun",
+      "ipa": "US /pɚˈmɪʃ.ən/",
+      "source_url": "https://dictionary.cambridge.org/pronunciation/english/permission",
+      "source_label": "US",
+      "method": "Primary publisher indexed full text",
+      "note": "Exact US symbols/stress; only layout whitespace removed from displayed /pɚˈmɪʃ.ə n/. No phoneme conversion.",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "request",
+      "part_of_speech": "noun",
+      "ipa": "US /rɪˈkwest/",
+      "source_url": "https://dictionary.cambridge.org/us/pronunciation/english/request",
+      "source_label": "US",
+      "method": "Primary publisher indexed full text",
+      "note": "Exact displayed US pronunciation; noun context is an HTTP request.",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "requirement",
+      "ipa": "US /ɹɪˈkwaɪɹmənt/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 94240,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 101256,
+      "cmu_arpabet": [
+        "R",
+        "IH0",
+        "K",
+        "W",
+        "AY1",
+        "R",
+        "M",
+        "AH0",
+        "N",
+        "T"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "resolve",
+      "part_of_speech": "verb",
+      "ipa": "US /rɪˈzɑːlv/",
+      "source_url": "https://dictionary.cambridge.org/pronunciation/english/resolve",
+      "source_label": "US",
+      "method": "Primary publisher indexed full text",
+      "note": "US verb solving a conflict; primary fact replaces eligible open candidate /ɹiˈzɑɫv/ because first-vowel /i/ differs from preferred primary /ɪ/. No silent corpus conversion.",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "response",
+      "part_of_speech": "noun",
+      "ipa": "US /rɪˈspɑːns/",
+      "source_url": "https://dictionary.cambridge.org/pronunciation/english/response",
+      "source_label": "US",
+      "method": "Primary publisher indexed full text",
+      "note": "Exact US pronunciation; response to an HTTP request.",
+      "kind": "primary_publisher_pronunciation_fact",
+      "publisher": "Cambridge Dictionary",
+      "accessed_date": "2026-10-07",
+      "license_note": "Minimal pronunciation fact only; publisher definitions, examples and audio are not copied or licensed by the original teaching-text MIT notice."
+    },
+    {
+      "term": "retry",
+      "ipa": "US /ɹiˈtɹaɪ/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 94714,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 101872,
+      "cmu_arpabet": [
+        "R",
+        "IY0",
+        "T",
+        "R",
+        "AY1"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    },
+    {
+      "term": "valid",
+      "ipa": "US /ˈvæɫɪd/",
+      "dialect": "US",
+      "kind": "selected_licensed_exact_headword",
+      "publisher": "open-dict-data/ipa-dict, derived from CMU",
+      "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+      "ipa_source_sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+      "ipa_line": 118317,
+      "cmu_url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "cmu_sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+      "cmu_line": 126790,
+      "cmu_arpabet": [
+        "V",
+        "AE1",
+        "L",
+        "IH0",
+        "D"
+      ],
+      "note": "One IPA and one distinct CMU reading, exact pinned phones/stress; related corpora, not independent expert certification. Original source notation is retained.",
+      "licenses": [
+        "licenses/IPA-DICT-LICENSE.txt",
+        "licenses/CMUDICT-IPA-LICENSE.txt",
+        "licenses/CMUDICT-LICENSE.txt"
+      ]
+    }
+  ]
+}

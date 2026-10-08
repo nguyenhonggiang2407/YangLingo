@@ -19,6 +19,7 @@ Người học thường lưu từ vựng ở một nơi, làm bài luyện ở 
 - **Thư viện flashcard theo book và bài:** nghĩa Việt, ví dụ Anh–Việt, ghi chú cách dùng và lịch ôn SRS riêng. Book đóng gói được nhận diện theo nguồn để tránh tạo lại book và reset tiến độ khi đồng bộ.
 - **Student English · Học tập & công việc:** book riêng gồm **120 thẻ / 12 bài / 10 thẻ mỗi bài**, từ giảng đường và bài nhóm đến email, thực tập, phỏng vấn, quản lý thời gian và đời sống số. Mỗi bài có mục tiêu và gợi ý luyện nói. A2–B1 là mức gợi ý biên soạn.
 - **Daily Essentials · 64 từ & cụm dùng ngay:** book riêng **8 bài × 8 thẻ** cho lớp học, ở chung, đi chợ, đi xe và nhắn tin. Có ví dụ Anh–Việt, ghi chú cách dùng và gợi ý nói; 39 từ đơn có IPA Anh–Mỹ được ghi nguồn. [Nội dung và cách học](docs/DAILY_ESSENTIALS.md).
+- **English for Web · Đọc tài liệu & làm việc nhóm:** book riêng **6 bài × 8 thẻ**, có 48 nhiệm vụ tự viết câu cho tình huống đọc tài liệu, HTTP, tài khoản, tệp, báo lỗi và làm việc với thay đổi mã. 20 từ đơn có IPA US được ghi nguồn; bài gõ/nghe chỉ mở đáp án sau khi kiểm tra hoặc chủ động xem. [Nội dung, cách học và giới hạn](docs/WEB_ENGLISH48.md).
 - **Phiên âm dưới từ:** hiển thị nguyên IPA và nhãn US/UK đã lưu, giữ ký hiệu của thẻ cũ. Bài gõ/nghe chỉ hiện IPA sau khi kiểm tra hoặc xem đáp án; ký hiệu IPA dạng `/.../` nhận diện được trong nghĩa cũ cũng được che ở phần gợi ý. [Nguồn, phiên bản và giấy phép](pronunciation-sources.html) được đóng gói riêng; không tải toàn bộ từ điển hay tệp âm thanh.
 - **Nhãn thẻ rõ ràng:** phân biệt từ vựng, cụm từ, cấu trúc câu, ngữ pháp và bài nghe trong lượt ôn, giúp người học hiểu mình đang cần nhớ từ hay cả cách dùng.
 - **Đọc lại một thẻ trong thư viện:** bấm vào từ hoặc câu để mở nghĩa, IPA đã lưu, ví dụ Anh–Việt và ghi chú cách dùng. Nghe riêng từ hoặc câu ví dụ; **Ghi câu của tôi** mở nháp sổ tay có tham khảo và ô tự viết để trống, chỉ lưu khi bạn bấm Lưu ghi chú. Xem thẻ không thay đổi lịch ôn hay kết quả học. [Cách dùng](docs/CARD_DETAILS.md).
@@ -43,7 +44,7 @@ Daily Plan dùng **quy tắc có thể giải thích**, không phải mô hình 
 | `database/schema.sql` | Cấu trúc nền cho database mới |
 | `database/migrations/` | Migration chạy theo thứ tự tên, có checksum |
 | `database/seeds/` | Học liệu chung, được theo dõi riêng bằng checksum |
-| `assets/flashbooks/` | Nguồn book đóng gói, gồm hai book English bổ sung |
+| `assets/flashbooks/` | Nguồn các book đóng gói và học liệu English bổ sung |
 | `templates/`, `tests/`, `docs/` | Mẫu import, kiểm tra và tài liệu |
 | `storage/`, `uploads/` | Dữ liệu lúc chạy; Git chỉ giữ tệp bảo vệ thư mục |
 
@@ -76,6 +77,7 @@ Một số kiểm tra không cần database:
 php tests/student_life_work_book_test.php
 php tests/everyday_english_book_test.php
 php tests/daily_essentials_book_test.php
+php tests/web_english_book_test.php
 php tests/srs_test.php
 php tests/adaptive_test.php
 php tests/importer_test.php
@@ -104,6 +106,8 @@ Kiểm tra hồi quy loại thẻ bằng `php tests/card_type_preservation_test.
 Sổ tay có kiểm tra tích hợp tại `tests/notebook_integration_test.php`, cần biến môi trường `YANG_NOTEBOOK_TEST_CONFIG` trỏ đến cấu hình database thử riêng trên máy, tên kết thúc `_qa` hoặc `_test`. Kiểm tra 115 hành vi DB/HTTP bao gồm quyền sở hữu, CSRF, validation, tìm ký hiệu theo nghĩa chữ, phân trang, lưu trữ/khôi phục và hai lần tạo đồng thời khi đã có 499 ghi chú. Dữ liệu mẫu được dọn; phần kiểm tra không tạo tiến độ SRS. Chi tiết cấu hình nằm trong đầu tệp kiểm tra. Giao diện đã được thử tạo/sửa/tải lại, ghi ký hiệu HTML như văn bản, tìm kiếm, ghim, lưu trữ/khôi phục, mở đáp án hướng dẫn và bố cục điện thoại.
 
 Bước ghi câu từ thẻ có 83 kiểm tra trên module thật và 6 kịch bản API làm mới phiên rồi thử lại. Kiểm tra chặn gửi nháp sang tài khoản khác, biểu mẫu đã thay hoặc trang đã rời; chỉ lưu khi người học gửi biểu mẫu, giữ nháp khi gặp lỗi và không xoá nhầm biểu mẫu mở sau. Bản thử hư cấu đã kiểm tra huỷ, lưu, tách tài khoản và bố cục 375 px. Phần máy chủ sổ tay không thay đổi trong bản này.
+
+English for Web có 81 kiểm tra nội dung/bộ đọc, gồm 22 trường hợp dữ liệu không hợp lệ, và 46 kiểm tra tích hợp trên MariaDB riêng. Kiểm tra thêm lần đầu/lặp/đồng thời, tách tài khoản, nhóm bài 6 × 8, nhiệm vụ viết câu, thời lượng gợi ý và giữ nguyên dữ liệu cũ. Bộ kiểm tra dùng `php tests/web_english_install_test.php` với `YL_TEST_CONFIG_PATH` trỏ đến cấu hình database thử riêng, tên kết thúc `_qa` hoặc `_test`; nó tạo và dọn tài khoản hư cấu, không dùng cấu hình hosting thật. Giao diện dữ liệu hư cấu đã được kiểm tra trên điện thoại: bài nghe/nhớ không lộ đáp án sớm, chi tiết thẻ hiện nghĩa/ví dụ/ghi chú/nhiệm vụ, nháp sổ tay để trống câu tự viết.
 
 ## Bảo mật và dữ liệu
 

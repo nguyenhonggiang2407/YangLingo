@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "book_code": "english-for-web-a2-b1",
+  "prompts": [
+    {
+      "lesson": 1,
+      "term": "documentation",
+      "own_sentence_prompt": "Viết một câu nói bạn sẽ đọc tài liệu trước khi làm việc gì."
+    },
+    {
+      "lesson": 1,
+      "term": "overview",
+      "own_sentence_prompt": "Giới thiệu tổng quan một ứng dụng bạn đang học bằng một câu."
+    },
+    {
+      "lesson": 1,
+      "term": "requirement",
+      "own_sentence_prompt": "Nêu một điều kiện cần để chạy bản minh họa của bạn."
+    },
+    {
+      "lesson": 1,
+      "term": "optional",
+      "own_sentence_prompt": "Nói một mục nào trong biểu mẫu của bạn là tùy chọn."
+    },
+    {
+      "lesson": 1,
+      "term": "required",
+      "own_sentence_prompt": "Nêu một ô bắt buộc trong biểu mẫu và mục đích của ô đó."
+    },
+    {
+      "lesson": 1,
+      "term": "parameter",
+      "own_sentence_prompt": "Mô tả một tham số của hàm đơn giản bạn đã viết."
+    },
+    {
+      "lesson": 1,
+      "term": "return value",
+      "own_sentence_prompt": "Nói hàm tìm kiếm hoặc tính toán của bạn trả về gì."
+    },
+    {
+      "lesson": 1,
+      "term": "compatible with",
+      "own_sentence_prompt": "Viết một câu nói một tiện ích tương thích với phiên bản nào."
+    },
+    {
+      "lesson": 2,
+      "term": "request",
+      "own_sentence_prompt": "Nói trình duyệt gửi yêu cầu để lấy thông tin gì trong ứng dụng của bạn."
+    },
+    {
+      "lesson": 2,
+      "term": "response",
+      "own_sentence_prompt": "Mô tả một phản hồi mà ứng dụng của bạn nhận được."
+    },
+    {
+      "lesson": 2,
+      "term": "status code",
+      "own_sentence_prompt": "Viết một câu báo mã trạng thái của một trang thử nghiệm."
+    },
+    {
+      "lesson": 2,
+      "term": "valid",
+      "own_sentence_prompt": "Nêu một loại dữ liệu hợp lệ mà biểu mẫu của bạn chấp nhận."
+    },
+    {
+      "lesson": 2,
+      "term": "invalid",
+      "own_sentence_prompt": "Viết một thông báo ngắn nói dữ liệu nào không hợp lệ và vì sao."
+    },
+    {
+      "lesson": 2,
+      "term": "not found",
+      "own_sentence_prompt": "Nói rõ một trang hoặc tệp nào không được tìm thấy."
+    },
+    {
+      "lesson": 2,
+      "term": "timed out",
+      "own_sentence_prompt": "Kể một tình huống thử nghiệm mà thao tác hết thời gian chờ."
+    },
+    {
+      "lesson": 2,
+      "term": "retry",
+      "own_sentence_prompt": "Nhờ đồng đội thử lại một thao tác sau một bước kiểm tra cụ thể."
+    },
+    {
+      "lesson": 3,
+      "term": "account",
+      "own_sentence_prompt": "Nói bạn dùng tài khoản minh họa để kiểm thử trang nào."
+    },
+    {
+      "lesson": 3,
+      "term": "username",
+      "own_sentence_prompt": "Mô tả vị trí hiển thị tên người dùng trên một giao diện minh họa."
+    },
+    {
+      "lesson": 3,
+      "term": "sign in",
+      "own_sentence_prompt": "Nói bạn đăng nhập vào ứng dụng nào bằng tài khoản thử nghiệm."
+    },
+    {
+      "lesson": 3,
+      "term": "access",
+      "own_sentence_prompt": "Nêu một tài nguyên mẫu mà tài khoản khách được truy cập."
+    },
+    {
+      "lesson": 3,
+      "term": "permission",
+      "own_sentence_prompt": "Viết một câu nói cần quyền gì để thay đổi một tài liệu mẫu."
+    },
+    {
+      "lesson": 3,
+      "term": "authorized",
+      "own_sentence_prompt": "Nói nhóm người dùng nào được phép sửa báo cáo minh họa."
+    },
+    {
+      "lesson": 3,
+      "term": "read-only",
+      "own_sentence_prompt": "Mô tả một trang hoặc tệp chỉ cho xem trong ứng dụng minh họa."
+    },
+    {
+      "lesson": 3,
+      "term": "sign out",
+      "own_sentence_prompt": "Nhắc bạn cùng nhóm đăng xuất khỏi ứng dụng minh họa sau khi dùng."
+    },
+    {
+      "lesson": 4,
+      "term": "folder",
+      "own_sentence_prompt": "Nói bạn sẽ tạo thư mục nào để sắp xếp tệp của dự án mẫu."
+    },
+    {
+      "lesson": 4,
+      "term": "filename",
+      "own_sentence_prompt": "Nêu tên hoặc phần mở rộng mà một tác vụ nhập mẫu yêu cầu; dùng dữ liệu hư cấu."
+    },
+    {
+      "lesson": 4,
+      "term": "path",
+      "own_sentence_prompt": "Mô tả nơi tài liệu mẫu ghi đường dẫn ảnh, không dùng đường dẫn cá nhân."
+    },
+    {
+      "lesson": 4,
+      "term": "format",
+      "own_sentence_prompt": "Nói tệp mẫu của bạn dùng định dạng nào."
+    },
+    {
+      "lesson": 4,
+      "term": "save changes",
+      "own_sentence_prompt": "Viết một lời nhắc lưu thay đổi trước khi thực hiện việc tiếp theo."
+    },
+    {
+      "lesson": 4,
+      "term": "overwrite",
+      "own_sentence_prompt": "Mô tả một thao tác thử nghiệm sẽ ghi đè dữ liệu mẫu nào."
+    },
+    {
+      "lesson": 4,
+      "term": "missing",
+      "own_sentence_prompt": "Báo một thành phần còn thiếu trong bản xem trước của bạn."
+    },
+    {
+      "lesson": 4,
+      "term": "export",
+      "own_sentence_prompt": "Nói bạn muốn xuất một bảng mẫu thành định dạng gì."
+    },
+    {
+      "lesson": 5,
+      "term": "reproduce",
+      "own_sentence_prompt": "Hỏi đồng đội xem họ có làm lỗi mẫu xảy ra lại được không."
+    },
+    {
+      "lesson": 5,
+      "term": "expected",
+      "own_sentence_prompt": "Nêu kết quả bạn mong đợi khi bấm một nút trong ứng dụng mẫu."
+    },
+    {
+      "lesson": 5,
+      "term": "actual",
+      "own_sentence_prompt": "Mô tả kết quả thực tế của một lỗi giao diện hư cấu."
+    },
+    {
+      "lesson": 5,
+      "term": "issue",
+      "own_sentence_prompt": "Viết một câu nói bạn tạo mục theo dõi cho vấn đề nào."
+    },
+    {
+      "lesson": 5,
+      "term": "check the logs",
+      "own_sentence_prompt": "Nói bạn muốn tìm thông tin gì trong các bản ghi giả lập."
+    },
+    {
+      "lesson": 5,
+      "term": "step by step",
+      "own_sentence_prompt": "Kể hai bước để tái hiện một lỗi hư cấu, rồi thêm step by step trong lời giới thiệu."
+    },
+    {
+      "lesson": 5,
+      "term": "narrow down",
+      "own_sentence_prompt": "Nói một bước kiểm tra giúp bạn thu hẹp phạm vi tìm lỗi như thế nào."
+    },
+    {
+      "lesson": 5,
+      "term": "workaround",
+      "own_sentence_prompt": "Mô tả một cách làm thay thế tạm thời cho một vấn đề hư cấu."
+    },
+    {
+      "lesson": 6,
+      "term": "pull request",
+      "own_sentence_prompt": "Nói mục đích của một pull request cho dự án minh họa."
+    },
+    {
+      "lesson": 6,
+      "term": "review",
+      "own_sentence_prompt": "Nhờ một bạn xem xét một thay đổi cụ thể trong dự án mẫu."
+    },
+    {
+      "lesson": 6,
+      "term": "branch",
+      "own_sentence_prompt": "Nói bạn tạo nhánh riêng cho thay đổi nào."
+    },
+    {
+      "lesson": 6,
+      "term": "merge",
+      "own_sentence_prompt": "Nói bạn muốn gộp một nhánh vào nhánh nào sau khi được xem xét."
+    },
+    {
+      "lesson": 6,
+      "term": "resolve",
+      "own_sentence_prompt": "Nêu một việc nhóm cần giải quyết trước bước tiếp theo."
+    },
+    {
+      "lesson": 6,
+      "term": "deploy",
+      "own_sentence_prompt": "Nói bạn dự định triển khai bản minh họa ở đâu và sau bước nào."
+    },
+    {
+      "lesson": 6,
+      "term": "environment",
+      "own_sentence_prompt": "Mô tả một lỗi hư cấu chỉ xuất hiện trong môi trường thử nghiệm."
+    },
+    {
+      "lesson": 6,
+      "term": "roll back",
+      "own_sentence_prompt": "Nói khi nào nhóm mẫu có thể cần quay lại phiên bản trước."
+    }
+  ]
+}

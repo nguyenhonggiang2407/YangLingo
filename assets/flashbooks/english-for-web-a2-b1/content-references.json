@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "book_code": "english-for-web-a2-b1",
+  "accessed_date": "2026-10-07",
+  "scope": "Selected technical and lexical facts checked against primary sources. Teaching definitions, examples, translations and notes are original; no copied source passages or claim of certification of all48 cards.",
+  "references": [
+    {
+      "publisher": "MDN Web Docs",
+      "title": "Parameter",
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/Parameter",
+      "terms": ["parameter", "return value"],
+      "checked_fact": "A function parameter is a named variable declared by the function; the argument is the actual value passed in a call. The reference supports the parameter/argument distinction, not an assertion that every function must return a value."
+    },
+    {
+      "publisher": "MDN Web Docs",
+      "title": "Overview of HTTP",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+      "terms": ["request", "response", "status code"],
+      "checked_fact": "In an HTTP exchange, the client sends a request and the server replies with a response. The response includes a status code indicating the outcome. A response need not mean success or contain the requested data."
+    },
+    {
+      "publisher": "MDN Web Docs",
+      "title": "404 Not Found",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404",
+      "terms": ["status code", "not found"],
+      "checked_fact": "404 indicates that the requested resource was not found. It alone does not establish that the whole server has stopped or that the absence is permanent."
+    },
+    {
+      "publisher": "MDN Web Docs",
+      "title": "XMLHttpRequest: timeout property",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/timeout",
+      "terms": ["timed out"],
+      "checked_fact": "A request can be terminated when its configured time limit is reached. The teaching note describes the time-limit result without assigning a particular cause or HTTP status."
+    },
+    {
+      "publisher": "MDN Web Docs",
+      "title": "input type=email",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/email",
+      "terms": ["valid", "read-only"],
+      "checked_fact": "Email-format validation does not confirm that an address exists or is owned by the person entering it. Read-only relates to editing, not whether a resource is private. A read-only input can still be changed by script."
+    },
+    {
+      "publisher": "GitHub Docs",
+      "title": "Pull requests",
+      "url": "https://docs.github.com/en/pull-requests/reference/pull-requests",
+      "terms": ["pull request", "review", "merge"],
+      "checked_fact": "Pull requests propose code changes and provide a place to discuss or review them before merging. Opening a pull request does not itself mean its changes have been merged."
+    },
+    {
+      "publisher": "GitHub Docs",
+      "title": "About issues",
+      "url": "https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/about-issues",
+      "terms": ["issue"],
+      "checked_fact": "Issues can track bugs, ideas or tasks. The card uses one bug example without treating every issue as a bug."
+    },
+    {
+      "publisher": "GitHub Docs",
+      "title": "Branches",
+      "url": "https://docs.github.com/en/pull-requests/reference/branches",
+      "terms": ["branch", "merge"],
+      "checked_fact": "Branches organize separate lines of work and are created from existing branches. A branch name does not by itself say that its content is private or accepted."
+    },
+    {
+      "publisher": "Oxford Learner's Dictionaries",
+      "title": "documentation noun",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/documentation",
+      "terms": ["documentation"],
+      "checked_fact": "Documentation is uncountable in the software-instructions sense selected here. The word document can refer to one countable item."
+    },
+    {
+      "publisher": "Cambridge Dictionary",
+      "title": "permission",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/permission",
+      "terms": ["permission"],
+      "checked_fact": "The general allowance sense is uncountable and supports permission to do something. The card separately explains plural permissions for individual system rights."
+    },
+    {
+      "publisher": "Cambridge Dictionary",
+      "title": "folder",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/folder",
+      "terms": ["folder"],
+      "checked_fact": "The selected countable computer sense groups files."
+    },
+    {
+      "publisher": "Cambridge Dictionary",
+      "title": "export",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/export",
+      "terms": ["export"],
+      "checked_fact": "The selected verb sense moves computer data into a different file or program. The separately cited US pronunciation page supplies a valid initial-stress verb form; no universal noun/verb stress rule is asserted."
+    },
+    {
+      "publisher": "Cambridge Dictionary",
+      "title": "resolve",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/resolve?topic=solving-and-solutions",
+      "terms": ["resolve"],
+      "checked_fact": "The selected verb sense concerns solving a problem or disagreement, consistent with resolving a conflict."
+    },
+    {
+      "publisher": "Cambridge Dictionary",
+      "title": "timeout",
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/timeout",
+      "terms": ["timed out"],
+      "checked_fact": "The primary Business IT entry supports the one-word noun timeout for an operation exceeding its allowed duration. The card distinguishes that noun from the verb phrase time out."
+    }
+  ],
+  "pronunciation_reference_file": "pronunciation-sources.json",
+  "no_source_prose_examples_or_audio_republished": true
+}

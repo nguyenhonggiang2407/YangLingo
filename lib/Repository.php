@@ -114,6 +114,10 @@ final class Repository {
             $book=$this->dailyEssentialsFlashbook();
             $settings['size']=(int)$book['lesson_size'];$settings['lessons']=$book['lessons'];
         }
+        if(($set['source_type']??'')==='english_for_web_a2_b1_book'){
+            $book=$this->webEnglishFlashbook();
+            $settings['size']=(int)$book['lesson_size'];$settings['lessons']=$book['lessons'];$settings['estimated_minutes']=(int)$book['estimated_minutes'];
+        }
         return $settings;
     }
     private function lessonCardIds(int $uid,int $setId,int $unit,int $size=20): array {
@@ -148,7 +152,7 @@ final class Repository {
             if(isset($settings['lessons'][$i])){
                 $lesson['title']=$settings['lessons'][$i]['title'];
                 $lesson['objective']=$settings['lessons'][$i]['objective'];
-                $lesson['estimated_minutes']=8;
+                $lesson['estimated_minutes']=(int)($settings['estimated_minutes']??8);
             }
             $out[]=$lesson;
         }
@@ -176,7 +180,7 @@ final class Repository {
         if(isset($settings['lessons'][$unit-1])){
             $lesson['title']=$settings['lessons'][$unit-1]['title'];
             $lesson['objective']=$settings['lessons'][$unit-1]['objective'];
-            $lesson['estimated_minutes']=8;
+            $lesson['estimated_minutes']=(int)($settings['estimated_minutes']??8);
             foreach(['speaking_prompt','speaking_model'] as $field){
                 if(isset($settings['lessons'][$unit-1][$field]))$lesson[$field]=(string)$settings['lessons'][$unit-1][$field];
             }
@@ -1115,6 +1119,65 @@ final class Repository {
         }
         return $rows;
     }
+    private function webEnglishFlashbook(): array {
+        static $book=null;
+        if($book!==null)return $book;
+        $dir=dirname(__DIR__).'/assets/flashbooks/english-for-web-a2-b1/';
+        try{
+            $raw=is_file($dir.'english-for-web-a2-b1.json')?file_get_contents($dir.'english-for-web-a2-b1.json'):false;
+            $promptRaw=is_file($dir.'practice-prompts.json')?file_get_contents($dir.'practice-prompts.json'):false;
+            if($raw===false||$promptRaw===false)throw new RuntimeException('Không đọc được book English for Web.');
+            $data=json_decode($raw,true,512,JSON_THROW_ON_ERROR);$prompts=json_decode($promptRaw,true,512,JSON_THROW_ON_ERROR);
+        }catch(JsonException $e){throw new RuntimeException('Dữ liệu book English for Web không hợp lệ.',0,$e);}
+        if(!is_array($data)||($data['schema_version']??0)!==1||($data['code']??'')!=='english-for-web-a2-b1'||($data['source_type']??'')!=='english_for_web_a2_b1_book'||($data['lesson_size']??0)!==8||!is_array($data['lessons']??null)||!array_is_list($data['lessons'])||count($data['lessons'])!==6)throw new RuntimeException('Cấu trúc book English for Web không hợp lệ.');
+        foreach(['title'=>180,'subtitle'=>220,'description'=>1000,'cover'=>12,'category'=>120,'folder_name'=>120,'level'=>30] as $field=>$max)if(!is_string($data[$field]??null)||trim($data[$field])===''||mb_strlen($data[$field])>$max)throw new RuntimeException('Thông tin book English for Web không hợp lệ: '.$field.'.');
+        if(!is_int($data['estimated_minutes']??null)||$data['estimated_minutes']<1||$data['estimated_minutes']>60)throw new RuntimeException('Thời lượng book English for Web không hợp lệ.');
+        if(!is_array($prompts)||($prompts['schema_version']??0)!==1||($prompts['book_code']??'')!==$data['code']||!is_array($prompts['prompts']??null)||!array_is_list($prompts['prompts'])||count($prompts['prompts'])!==48)throw new RuntimeException('Gợi ý đặt câu English for Web không hợp lệ.');
+        $promptMap=[];
+        foreach($prompts['prompts'] as $prompt){
+            if(!is_array($prompt)||!is_int($prompt['lesson']??null)||$prompt['lesson']<1||$prompt['lesson']>6||!is_string($prompt['term']??null)||trim($prompt['term'])===''||mb_strlen($prompt['term'])>255||!is_string($prompt['own_sentence_prompt']??null)||trim($prompt['own_sentence_prompt'])===''||mb_strlen($prompt['own_sentence_prompt'])>500)throw new RuntimeException('Gợi ý đặt câu English for Web thiếu nội dung.');
+            $key=$prompt['lesson'].'|'.$this->flashcardBookTermKey($prompt['term']);if(isset($promptMap[$key]))throw new RuntimeException('Gợi ý đặt câu English for Web bị trùng.');$promptMap[$key]=$prompt;
+        }
+        $terms=[];$matched=[];
+        foreach($data['lessons'] as $i=>$lesson){
+            if(!is_array($lesson)||!is_array($lesson['cards']??null)||!array_is_list($lesson['cards'])||count($lesson['cards'])!==8)throw new RuntimeException('Mỗi bài English for Web cần đủ 8 thẻ.');
+            foreach(['title'=>120,'objective'=>500,'speaking_prompt'=>1000,'speaking_model'=>2000] as $field=>$max)if(!is_string($lesson[$field]??null)||trim($lesson[$field])===''||mb_strlen($lesson[$field])>$max)throw new RuntimeException('Nội dung bài English for Web không hợp lệ: '.$field.'.');
+            foreach($lesson['cards'] as $card){
+                if(!is_array($card))throw new RuntimeException('Thẻ English for Web không hợp lệ.');
+                foreach(['term'=>255,'definition'=>1500,'part_of_speech'=>80,'example_en'=>1000,'example_vi'=>1000,'explanation'=>2500,'cefr'=>8,'card_type'=>32] as $field=>$max)if(!is_string($card[$field]??null)||trim($card[$field])===''||mb_strlen($card[$field])>$max)throw new RuntimeException('Nội dung thẻ English for Web không hợp lệ: '.$field.'.');
+                $allowed=['term','definition','part_of_speech','example_en','example_vi','explanation','cefr','card_type','ipa','pattern','collocations','word_family'];
+                if(array_diff(array_keys($card),$allowed))throw new RuntimeException('Thẻ English for Web có trường không được hỗ trợ.');
+                foreach(['pattern','collocations','word_family'] as $field)if(isset($card[$field])&&(!is_string($card[$field])||mb_strlen($card[$field])>1000))throw new RuntimeException('Thông tin mở rộng thẻ English for Web không hợp lệ.');
+                if(mb_strlen($card['term'])>255||!in_array($card['cefr'],['A2','B1'],true)||!in_array($card['card_type'],['VOCABULARY','COLLOCATION','SENTENCE_PATTERN','LISTENING_CHUNK'],true))throw new RuntimeException('Nội dung thẻ English for Web không hợp lệ.');
+                if(mb_stripos($card['example_en'],$card['term'])===false)throw new RuntimeException('Ví dụ cần chứa đúng từ hoặc cụm từ đang học.');
+                if(isset($card['ipa'])&&(!is_string($card['ipa'])||mb_strlen($card['ipa'])>255||!preg_match('/^US \/[^\/\r\n]+\/$/u',$card['ipa'])||!preg_match('/^[A-Za-z]+$/D',$card['term'])))throw new RuntimeException('Phiên âm English for Web không hợp lệ.');
+                $termKey=$this->flashcardBookTermKey($card['term']);if(isset($terms[$termKey]))throw new RuntimeException('Book English for Web có thẻ trùng.');$terms[$termKey]=true;
+                $key=($i+1).'|'.$termKey;
+                if(!isset($promptMap[$key])||$promptMap[$key]['term']!==$card['term'])throw new RuntimeException('Gợi ý đặt câu không khớp thẻ English for Web.');$matched[$key]=$promptMap[$key]['own_sentence_prompt'];
+            }
+        }
+        if(count($matched)!==48||count($matched)!==count($promptMap))throw new RuntimeException('Gợi ý đặt câu English for Web chưa đầy đủ.');
+        $data['sentence_prompts']=$matched;$book=$data;return $book;
+    }
+    private function webEnglishFlashbookRows(): array {
+        $book=$this->webEnglishFlashbook();$rows=[];
+        foreach($book['lessons'] as $i=>$lesson){
+            foreach($lesson['cards'] as $card){
+                $prompt=$book['sentence_prompts'][($i+1).'|'.$this->flashcardBookTermKey($card['term'])];
+                $rows[]=array_merge([
+                    'ipa'=>'','part_of_speech'=>'','card_type'=>'VOCABULARY','difficulty'=>($card['cefr']==='B1'?2:1),
+                    'pattern'=>'','collocations'=>'','word_family'=>''
+                ],$card,[
+                    'category'=>$lesson['title'],'topic'=>'English for Web','subtopic'=>$lesson['title'],'toeic_part'=>'',
+                    'notes'=>'Bài '.($i+1).' · '.$lesson['objective'],
+                    'explanation'=>$card['explanation']."\n\nThử dùng từ: ".$prompt,
+                    'audio_text'=>$card['example_en'],'tags'=>'english-for-web,a2-b1,lesson-'.($i+1),
+                    'source'=>'YangLingo English for Web · A2–B1'
+                ]);
+            }
+        }
+        return $rows;
+    }
     private function flashcardBookSpecs(): array {
         $specs=[
             'helen-part1-flashcards'=>[
@@ -1151,7 +1214,7 @@ final class Repository {
                 'source_type'=>'grammar_800_book','title'=>'TOEIC Grammar 800+ – Cấu trúc & Từ dễ nhầm','subtitle'=>'Word Forms · Giới từ · Từ nối · V-ing/to V · Confusing Words','description'=>'Chuyển các bảng/cụm/nguyên tắc có tính ghi nhớ trong PDF Grammar thành flashcard: word-form cues, cụm giới từ, verb/adjective + preposition, connectors, gerund/infinitive và từ dễ nhầm.','cover'=>'GR','source_handbook_code'=>'grammar-800'
             ]
         ];
-        foreach([$this->everydayEnglishFlashbook(),$this->studentLifeFlashbook(),$this->dailyEssentialsFlashbook()] as $book){
+        foreach([$this->everydayEnglishFlashbook(),$this->studentLifeFlashbook(),$this->dailyEssentialsFlashbook(),$this->webEnglishFlashbook()] as $book){
         $specs[$book['code']]=[
             'source_type'=>$book['source_type'],'title'=>$book['title'],'subtitle'=>$book['subtitle'],
             'description'=>$book['description'],'cover'=>$book['cover'],'source_handbook_code'=>'',
@@ -1178,6 +1241,7 @@ final class Repository {
             'everyday-english-a1-a2'=>$this->everydayEnglishFlashbookRows(),
             'student-life-work-a2-b1'=>$this->studentLifeFlashbookRows(),
             'daily-essentials-a1-a2'=>$this->dailyEssentialsFlashbookRows(),
+            'english-for-web-a2-b1'=>$this->webEnglishFlashbookRows(),
             default=>throw new InvalidArgumentException('Flashcard Book không hợp lệ.')
         };
     }

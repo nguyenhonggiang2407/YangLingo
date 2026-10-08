@@ -31,3 +31,7 @@ Book JSON `daily-essentials-a1-a2` có 64 thẻ với nghĩa, ví dụ, ghi chú
 
 
 Thirteen further single-word US pronunciation facts in the -ed learning material are linked individually on the pronunciation-source page. Selection distinguishes verb live from adjective live, learned meaning knowledgeable, aged meaning very old, and a before-noun pronunciation of beloved. Short pronunciation facts and authored explanations do not redistribute publisher examples or audio; publisher content is not covered by the software license.
+
+## English for Web
+
+Book `english-for-web-a2-b1` gồm 48 thẻ và 48 nhiệm vụ viết câu tự biên soạn trong tình huống hư cấu, theo giấy phép MIT ở `assets/flashbooks/english-for-web-a2-b1/LICENSE.original.txt`. 11 mục IPA giữ đúng dữ liệu mở được ghim, cùng đủ ba thông báo giấy phép IPA-dict/CMUdict-IPA/CMUdict trong thư mục `licenses/` của book. 9 cách đọc US khác là các sự kiện phát âm ngắn từ Cambridge, ghi riêng theo từ và từ loại; chúng không cấp lại giấy phép cho định nghĩa, ví dụ hoặc âm thanh của nhà xuất bản. Nguồn từng mục, hash/bản nguồn và giới hạn nằm trong `pronunciation-sources.json`; các điểm cách dùng đối chiếu MDN/GitHub/từ điển nằm trong `content-references.json`. 28 mục chưa có IPA được để trống; không ghép IPA từ đơn để khẳng định cách đọc cả cụm hoặc câu. Xem [cách học và giới hạn](WEB_ENGLISH48.md).
