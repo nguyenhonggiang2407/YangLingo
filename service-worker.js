@@ -1,4 +1,4 @@
-const CACHE='yanglingo-static-v65';
+const CACHE='yanglingo-static-v66';
 const STATIC=[
   './offline.html','./manifest.webmanifest','./assets/yanglingo-logo.svg','./assets/app.css','./assets/tools.css','./assets/features.js','./assets/app.js','./assets/design-system.css','./assets/interface.js','./assets/pronunciation.js','./assets/practice-lab.js','./assets/practice-lab.css',
   './assets/aptis-v5.js','./assets/adaptive.js','./assets/aptis-v5.css','./assets/quiz-navigation-v1.css','./assets/review-navigation-v1.css','./assets/review-navigation-v2.css','./assets/plan-lessons-v1.css',

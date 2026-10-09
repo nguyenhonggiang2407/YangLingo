@@ -99,6 +99,53 @@ async function checked(){const e=environment();await e.begin();e.answer(e.sessio
     check(e.writes.length===writes+1&&JSON.stringify(e.stored())===before&&e.posts().length===0&&e.navigations.length===0,'successful pause saves exact state once without a learning mutation');
     e.element('pl-resume').onclick();check(e.sessionJSON()===before&&e.element('pl-next')&&!e.element('pl-next').disabled,'checked feedback and its continuation restore unchanged');
   });
+  await scenario('successful pause and a fresh reload restore an unsubmitted literal draft without scoring',async()=>{
+    const e=environment();await e.begin();const before=JSON.parse(e.sessionJSON()),typed='  My <img src=x onerror="bad()"> guess & emoji😀  ',writes=e.writes.length;
+    e.element('pl-answer').value=typed;e.element('pl-pause').onclick();const paused=clone(e.stored());
+    check(e.session()===null&&e.element('pl-resume')&&e.writes.length===writes+1,'one successful explicit pause opens resumable setup');
+    check(paused.draft.pos===before.pos&&paused.draft.typed===typed&&paused.feedback===null&&paused.responses.every(r=>r===null),'draft retains literal input at this unscored position');
+    const withoutDraft=clone(paused);delete withoutDraft.draft;check(JSON.stringify(withoutDraft)===JSON.stringify(before),'queue, cards, retry and existing progress remain exact');
+    e.element('pl-resume').onclick();check(e.element('pl-answer').value===typed&&!e.element('pl-answer').disabled&&!e.element('pl-next'),'same-page resume restores an editable answer without checking it');
+    const reload=environment({saved:paused});await reload.resume();check(reload.element('pl-answer').value===typed&&!reload.view.querySelector('img')&&!reload.view.querySelector('script'),'new module context restores the same literal draft safely');
+    check(e.posts().length===0&&reload.posts().length===0&&reload.writes.length===0&&reload.session().responses.every(r=>r===null),'pause and reload do not grade, alter SRS or save a note');
+  });
+  await scenario('repeated successful pauses save the latest edit instead of a stale draft',async()=>{
+    const e=environment();await e.begin();e.element('pl-answer').value='first guess';e.element('pl-pause').onclick();e.element('pl-resume').onclick();
+    e.element('pl-answer').value='  revised guess  ';e.element('pl-pause').onclick();e.element('pl-resume').onclick();
+    check(e.element('pl-answer').value==='  revised guess  '&&e.stored().draft.typed==='  revised guess  ','second explicit pause replaces the earlier text exactly');
+    check(e.session().pos===0&&e.session().feedback===null&&e.session().responses[0]===null&&e.posts().length===0,'editing a draft does not advance or score');
+  });
+  await scenario('failed pause after editing a resumed draft preserves memory, DOM and prior storage until retry',async()=>{
+    const initial=savedSession({draft:{pos:0,typed:'older saved guess'}}),e=environment({saved:initial});await e.resume();
+    const before=e.sessionJSON(),stored=JSON.stringify(e.stored()),input=e.element('pl-answer');input.value='new unfinished guess';e.storage.fail=true;e.element('pl-pause').onclick();
+    check(e.sessionJSON()===before&&JSON.stringify(e.stored())===stored&&e.element('pl-answer')===input&&input.value==='new unfinished guess','failed pause keeps previous stored/session data and current edited input');
+    check(e.element('pl-save-note').textContent.includes('chưa lưu')&&e.session().feedback===null&&e.session().responses[0]===null,'v65 warning remains without an implicit score');
+    e.storage.fail=false;e.element('pl-pause').onclick();e.element('pl-resume').onclick();check(e.element('pl-answer').value==='new unfinished guess'&&e.stored().draft.typed==='new unfinished guess','explicit retry resumes the latest edit');
+  });
+  await scenario('checking an answer clears its draft and the next question starts empty',async()=>{
+    const e=environment({saved:savedSession({draft:{pos:0,typed:'unfinished first answer'}})});await e.resume();e.answer(cards[0].term);
+    check(!('draft'in e.session())&&!('draft'in e.stored())&&e.session().feedback.kind==='checked'&&e.session().responses[0].correct,'explicit check removes draft while retaining the checked response');
+    e.element('pl-pause').onclick();e.element('pl-resume').onclick();check(e.element('pl-answer').value===cards[0].term&&e.element('pl-answer').disabled&&e.element('pl-next'),'checked feedback still resumes unchanged');
+    e.element('pl-next').onclick();check(e.session().pos===1&&e.element('pl-answer').value===''&&e.session().feedback===null&&e.session().responses[1]===null&&!('draft'in e.session()),'previous answer does not leak into the next unscored question');
+  });
+  await scenario('revealing clears the draft but preserves typed feedback and pending self-evaluation',async()=>{
+    const e=environment({saved:savedSession({draft:{pos:0,typed:'my earlier guess'}})});await e.resume();e.reveal();
+    check(!('draft'in e.session())&&!('draft'in e.stored())&&e.session().feedback.typed==='my earlier guess'&&e.session().responses[0]===null,'reveal moves typed text into existing unscored feedback only');
+    e.element('pl-pause').onclick();e.element('pl-resume').onclick();check(e.element('pl-answer').value==='my earlier guess'&&e.element('pl-answer').disabled&&e.element('pl-self-no')&&e.session().responses[0]===null,'paused reveal retains pending self-evaluation');
+    e.element('pl-self-no').onclick();check(e.session().pos===1&&e.element('pl-answer').value===''&&!('draft'in e.session()),'advancing after self-evaluation starts a clean question');
+  });
+  await scenario('saved draft is bounded to the input limit and restores only at its own position',async()=>{
+    const e=environment();await e.begin();e.element('pl-answer').value='a'.repeat(501);e.element('pl-pause').onclick();
+    check(e.stored().draft.typed.length===500,'explicit pause stores at most the existing 500-character input limit');
+    const reload=environment({saved:e.stored()});await reload.resume();check(reload.element('pl-answer').value==='a'.repeat(500),'reload restores the bounded answer exactly');
+    const mismatch=environment({saved:savedSession({draft:{pos:1,typed:'UNRELATED_DRAFT_MARKER'}})});await mismatch.resume();check(mismatch.element('pl-answer').value===''&&!mismatch.view.innerHTML.includes('UNRELATED_DRAFT_MARKER'),'draft from another position is ignored');
+    mismatch.answer(cards[0].term);mismatch.element('pl-next').onclick();check(mismatch.element('pl-answer').value===''&&!('draft'in mismatch.session()),'ignored stale draft is not carried to its old position');
+  });
+  await scenario('starting a different session does not inherit a paused draft',async()=>{
+    const e=environment({saved:savedSession({draft:{pos:0,typed:'PAUSED_SESSION_DRAFT'}})});await e.init();e.element('pl-form').onsubmit({preventDefault(){}});await tick();
+    check(e.element('pl-answer').value===''&&!('draft'in e.session())&&!e.view.innerHTML.includes('PAUSED_SESSION_DRAFT'),'new session starts with an empty current answer');
+    check(e.session().pos===0&&e.session().feedback===null&&e.session().responses.every(r=>r===null)&&e.posts().length===0,'new session remains unscored with no SRS or notebook mutation');
+  });
   await scenario('unrevealed prompt has no notebook action, term or IPA',async()=>{const e=environment({sourceCards:[cards[1],cards[0],cards[2]]});await e.begin();check(e.session().cards[0].ipa===cards[1].ipa,'fixture target has existing IPA');check(!e.element('pl-write-sentence'),'no action before answer');check(!e.view.innerHTML.includes(cards[1].term)&&!e.view.innerHTML.includes('əˈweɪk'),'no new early answer or IPA');check(e.calls.every(c=>!c.options.method||c.options.method==='GET'),'only existing reads');});
   await scenario('checked answer opens actual composer without changing the session',async()=>{const e=await checked(),before=e.sessionJSON(),stored=clone(e.stored());check(e.session().cards[0].card_type==='COLLOCATION','new source card type retained');e.element('pl-write-sentence').onclick();check(e.location.hash==='#notebook'&&e.handoffs===1,'one actual handoff');check(e.sessionJSON()===before&&JSON.stringify(e.stored())===JSON.stringify(stored),'queue, pos, scores, retry and feedback exact');check(e.posts().length===0,'no implicit POST');await e.notebook();const form=e.element('note-form');check(form.elements.title.value==='follow up'&&form.elements.body.value.includes(cards[0].example_en)&&form.elements.body.value.includes(cards[0].example_vi),'right card and bilingual reference');check(form.elements.own_sentence.value===''&&form.elements.kind.value==='phrase','empty own sentence and correct category');check(e.document.activeElement===form.elements.own_sentence,'existing composer focuses own sentence');e.element('note-cancel').onclick();check(e.posts().length===0&&!e.element('note-form'),'cancel creates nothing');e.location.hash='#practice/37';await e.resume();check(e.sessionJSON()===before&&e.element('pl-write-sentence'),'resume exact checked feedback');});
   await scenario('reveal at the last initial card does not score, retry or finish',async()=>{const initial=savedSession({pos:2,responses:[{correct:true,source:'typed'},{correct:false,source:'typed'},null]});const e=environment({saved:initial});await e.resume();e.reveal();const before=e.sessionJSON();e.element('pl-write-sentence').onclick();check(e.sessionJSON()===before&&e.stored().responses[2]===null&&!e.stored().retryAdded&&e.stored().pos===2,'reveal stays unscored and same position');e.location.hash='#practice/37';await e.resume();check(e.sessionJSON()===before&&e.element('pl-self-no'),'resume pending self-evaluation, no finish');check(e.handoffs===1&&e.posts().length===0,'one handoff, no write');});
