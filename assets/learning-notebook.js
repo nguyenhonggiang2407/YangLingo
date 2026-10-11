@@ -86,10 +86,11 @@
         const data={title:form.elements.title.value.trim(),body:form.elements.body.value.trim(),own_sentence:form.elements.own_sentence.value.trim(),kind:form.elements.kind.value,is_pinned:form.elements.is_pinned.checked?1:0};if(note)data.id=note.id;
         const invalid=!data.title?'title':!data.body?'body':[...data.title].length>160?'title':[...data.body].length>2500?'body':[...data.own_sentence].length>500?'own_sentence':null;
         if(invalid){error.textContent='Hãy điền tiêu đề và điều cần nhớ, giữ nội dung trong giới hạn của từng ô.';error.hidden=false;form.elements[invalid].focus();submit.disabled=false;return;}
-        cancel.disabled=true;
+        const controls=['title','body','own_sentence','kind','is_pinned'].map(name=>form.elements[name]),label=submit.textContent;
+        controls.forEach(control=>control.disabled=true);cancel.disabled=true;submit.textContent='Đang lưu…';form.setAttribute('aria-busy','true');
         try{await api('notebook_save',{method:'POST',data,canRetry:stillEditing});if(!stillEditing())return;editor.innerHTML='';toast('Đã lưu vào sổ tay của bạn.');await load();if(stillHere()&&!editor.querySelector('#note-form'))root.querySelector('#note-new').focus();}
         catch(err){if(stillEditing()){error.textContent=err.message;error.hidden=false;error.scrollIntoView({block:'nearest'});}}
-        finally{if(submit.isConnected)submit.disabled=false;if(cancel.isConnected)cancel.disabled=false;}
+        finally{controls.forEach(control=>{if(control.isConnected)control.disabled=false;});if(form.isConnected)form.setAttribute('aria-busy','false');if(submit.isConnected){submit.disabled=false;submit.textContent=label;}if(cancel.isConnected)cancel.disabled=false;}
       };
     }
     root.querySelector('#note-new').onclick=()=>edit();

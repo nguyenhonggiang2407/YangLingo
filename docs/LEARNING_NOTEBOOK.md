@@ -11,6 +11,8 @@ Mở **Sổ tay & cách học** trong menu. Phần này giúp lưu một điểm
 
 Tìm kiếm xét tiêu đề, nội dung và câu tự viết. Các ký hiệu `%`, `_`, `!` được tìm như chữ thật. Mỗi trang có tối đa 20 ghi chú; ghi chú ghim nằm trước.
 
+Khi đang lưu, các ô tạm khóa để nội dung gửi đi khớp với biểu mẫu. Nếu lưu lỗi, câu của bạn vẫn còn; các ô mở lại để sửa và thử lưu lần nữa.
+
 ## Học theo một bước nhỏ
 
 Tab **Cách học & tra nhanh** có tám mục: buổi học nhỏ, tự kiểm tra và ôn giãn cách, nghe rồi thử viết, cách ghi sổ tay, a/an, danh từ không đếm được, say/tell và borrow/lend. Tìm cụm từ có hoặc không dấu; khoảng trắng liên tiếp được gộp. Tìm kiếm xét tiêu đề, nội dung, nhóm, các bước, ví dụ Anh–Việt và câu hỏi đang hiển thị, không xét đáp án hay nguồn tham khảo. Thử trả lời trước khi bấm **Xem cách trả lời**.

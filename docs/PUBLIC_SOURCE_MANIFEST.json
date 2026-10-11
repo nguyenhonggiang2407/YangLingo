@@ -1,5 +1,5 @@
 {
-  "source": "YangLingo v66 source",
+  "source": "YangLingo v67 source",
   "purpose": "Clean public source; fresh installation only",
   "excluded": [
     {
@@ -76,5 +76,6 @@
   "v63": "Original lightweight book-and-conversation SVG brand for web and favicon; learning data preserved",
   "v64": "Accent-insensitive Vietnamese lookup across visible study-guide text; stored IPA and usage retained in explicit card-to-notebook drafts. Original learning data preserved; no private content published.",
   "v65": "Practice pause keeps the active question and visible storage warning when browser persistence fails; explicit retry resumes the same unrated feedback. No content or learning record changes.",
-  "v66": "Retain an unanswered typed draft only when the learner explicitly pauses and saves practice; restore it without feedback or early answers."
+  "v66": "Retain an unanswered typed draft only when the learner explicitly pauses and saves practice; restore it without feedback or early answers.",
+  "v67": "Explicit notebook Save freezes editable fields while pending, shows saving status, and unlocks the unchanged draft after a failed response for correction and retry; no implicit save or grading."
 }
