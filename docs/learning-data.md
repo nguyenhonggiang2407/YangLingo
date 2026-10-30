@@ -23,7 +23,7 @@ Source: `database/seeds/adaptive_global_learning_1449.csv`
 | Existing migration 007 | 6 |
 | Existing seed 014 | 12 |
 | Added seed 015 | 82 |
-| **Final clean-install active total** | **100** |
+| **Clean-install active total** | **100** |
 
 Added seed 015 distribution: Linking 20, Weak Forms 16, Assimilation/Coalescence 14, Contractions 20, Reductions 12.
 
@@ -89,7 +89,7 @@ There are **140 normalized unique terms** because `Fasten` appears in two source
 
 ## Summary
 
-For the principal curriculum/practice sets requested in the final prompt:
+The principal curriculum and practice sets are:
 
 - Global Knowledge: **1,449**
 - Connected Speech: **100**

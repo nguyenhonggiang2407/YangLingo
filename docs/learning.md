@@ -1,6 +1,6 @@
 # YangLingo Learning System
 
-## v32 Daily Learning Loop
+## Daily Learning Loop
 
 ```text
 Due SRS
@@ -85,7 +85,7 @@ Listening Recognition is paired with 100 recognition cues across Linking, Weak F
 
 ## TOEIC 800+ Handbooks
 
-The three user-provided PDF handbooks plus the HELEN TOEIC Part 1 Google-Sheet vocabulary handbook are integrated as a source-preserving layer on top of the existing adaptive engine:
+The three PDF handbooks plus the HELEN TOEIC Part 1 Google-Sheet vocabulary handbook are integrated as a source-preserving layer on top of the existing adaptive engine:
 
 ```text
 Read source chapter
@@ -108,7 +108,7 @@ Both exam engines reuse the same study-event, Mistake Book and weakness infrastr
 
 ## Evaluation scope
 
-`docs/EVALUATION.md` tests algorithmic behavior with deterministic learner fixtures. It does not claim real-world educational efficacy.
+`docs/evaluation.md` tests algorithmic behavior with deterministic learner fixtures. It does not claim real-world educational efficacy.
 
 
 ### HELEN TOEIC Part 1 vocabulary

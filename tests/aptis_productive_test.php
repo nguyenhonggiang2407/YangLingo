@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);$root=dirname(__DIR__);$js=file_get_contents($root.'/assets/aptis-v5.js');$css=file_get_contents($root.'/assets/aptis-v5.css');
+declare(strict_types=1);$root=dirname(__DIR__);$js=file_get_contents($root.'/assets/aptis.js');$css=file_get_contents($root.'/assets/aptis.css');
 function okp(bool $v,string $m):void{if(!$v){fwrite(STDERR,"FAIL: $m\n");exit(1);}echo "PASS: $m\n";}
 okp(str_contains($js,"module:'writing',limit:64")&&str_contains($js,"module:'speaking',limit:64")&&str_contains($js,'productiveNav'),'Speaking/Writing expose Part 1–4 navigation and prompt rotation');
 foreach(['mediaHtml(q)','aptis-media-pair','speaking-phase-timer','MediaRecorder','aptis-retry','Task fulfilment','Pronunciation','Fluency','Organisation'] as $t)okp(str_contains($js,$t),"Speaking feature: $t");

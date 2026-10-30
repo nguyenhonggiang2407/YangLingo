@@ -2,7 +2,7 @@
 
 ## Source package
 
-This release integrates three user-provided PDFs plus one user-provided Google Sheet without replacing or silently rewriting their educational content:
+The handbook module uses three PDFs and one Google Sheet without replacing or silently rewriting their educational content:
 
 1. **TOEIC Grammar 800+** — complete grammar handbook for a beginner-to-800+ Reading path.
 2. **TOEIC Listening 100 câu 800+** — Part 1–4 learning material built around recognition, dictation and shadowing.

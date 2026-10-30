@@ -33,4 +33,4 @@ Các tệp chung nằm trong `assets/flashbooks/english-for-web-a2-b1/`. Seed v�
 
 Book dùng code `english-for-web-a2-b1` và source type `english_for_web_a2_b1_book` riêng. Nó dùng cơ chế thêm book hiện có với khoá theo người học, xác thực/phân quyền và CSRF hiện có. Không có migration, API mới hoặc bảng dữ liệu mới cho book này. Các bài của book này dùng 8 thẻ và gợi ý 10 phút; nhóm bài và thời lượng của book cũ giữ nguyên.
 
-Đọc [hướng dẫn sổ tay](LEARNING_NOTEBOOK.md) và [chi tiết thẻ](CARD_DETAILS.md) để hiểu lưu nháp, lưu thật và giới hạn giọng đọc.
+Đọc [hướng dẫn sổ tay](notebook.md) và [chi tiết thẻ](card-details.md) để hiểu lưu nháp, lưu thật và giới hạn giọng đọc.

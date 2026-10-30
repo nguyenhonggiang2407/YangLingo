@@ -41,7 +41,7 @@ DOCX/XLSX ZIP parsing enforces compressed/uncompressed entry limits, entry count
 
 ## Release hygiene
 
-The final build is scanned for real Gmail addresses, `config.local.php`, `.env`, logs, caches, node_modules, nested ZIPs and credential-like assignments. Security-test files may contain the literal words “secret/password/token” as audit patterns; those are not credentials.
+Before a release, check for real Gmail addresses, `config.local.php`, `.env`, logs, caches, node_modules, nested ZIPs and credential-like assignments. Security-test files may contain the literal words “secret/password/token” as audit patterns; those are not credentials.
 
 ## Remaining limitations
 

@@ -37,13 +37,13 @@ flowchart LR
 ## Core boundaries
 
 ### Browser/PWA
-`assets/app.js` owns the main SPA routes, `adaptive.js` owns Knowledge Map/Knowledge Hub interactions, and `aptis-v5.js` owns Aptis task rendering, productive-skill timers, local writing drafts and local Speaking recording. The service worker provides an offline shell, not an offline copy of authenticated API data.
+`assets/app.js` owns the main SPA routes, `adaptive.js` owns Knowledge Map/Knowledge Hub interactions, and `aptis.js` owns Aptis task rendering, productive-skill timers, local writing drafts and local Speaking recording. The service worker provides an offline shell, not an offline copy of authenticated API data.
 
 ### API controller
 `api.php` validates authentication/method/CSRF constraints and delegates learner/admin operations. It does not expose answer keys before graded submission for protected practice paths.
 
 ### Repository
-`Repository.php` remains the main persistence/application-data layer. A large final refactor was intentionally avoided because regression stability has higher priority. Independent adaptive scoring/workload logic is already extracted into `AdaptiveLearningService.php`.
+`Repository.php` remains the main persistence/application-data layer. Independent adaptive scoring/workload logic is already extracted into `AdaptiveLearningService.php`.
 
 ### AdaptiveLearningService
 Pure deterministic functions calculate workload and priority from backlog, retention, errors, recurrence, weakness, exam relevance and mastery. This separation makes the algorithm testable without a MariaDB driver.

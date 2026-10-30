@@ -6,10 +6,10 @@
 | --- | --- |
 | English bổ sung | `assets/flashbooks/everyday-english-a1-a2.json`, `student-life-work-a2-b1.json`; các bài ngắn Anh–Việt đóng gói cùng ứng dụng |
 | Ba handbook TOEIC 800+ được cung cấp | `assets/handbooks/toeic-verb-master-800-plus.pdf`, `toeic-listening-100-cau-800-plus.pdf`, `toeic-grammar-800-plus.pdf` |
-| HELEN TOEIC Part 1 Vocabulary | Snapshot `assets/handbooks/helen-toeic-part1-vocabulary.csv`; nguồn ghi ở `HELEN_PART1_VOCAB_INTEGRATION.md` |
+| HELEN TOEIC Part 1 Vocabulary | Snapshot `assets/handbooks/helen-toeic-part1-vocabulary.csv`; nguồn ghi ở `toeic-part1-vocabulary.md` |
 | Học liệu dẫn xuất | Một số CSV trong `assets/flashbooks/`, seed `021_toeic_800_handbooks.sql`, `022_helen_toeic_part1_vocabulary.sql`; provenance trong dữ liệu và tài liệu tích hợp |
 
-[HANDBOOKS_800_INTEGRATION.md](HANDBOOKS_800_INTEGRATION.md) mô tả PDF/Sheet được cung cấp và nguyên tắc giữ nội dung nguồn. Trường `source` hoặc tên nguồn trong tài liệu là thông tin xuất xứ, không tự tạo giấy phép phân phối lại.
+[toeic-handbooks.md](toeic-handbooks.md) mô tả PDF/Sheet được cung cấp và nguyên tắc giữ nội dung nguồn. Trường `source` hoặc tên nguồn trong tài liệu là thông tin xuất xứ, không tự tạo giấy phép phân phối lại.
 
 Trong tài liệu và metadata kiểm tra để chuẩn bị bản public, chưa thấy thông báo giấy phép phân phối lại riêng cho các PDF/Sheet nói trên và phần dẫn xuất. Source giữ tài nguyên để tính năng tham chiếu hiện có hoạt động; không thêm tuyên bố cấp phép mới cho tài nguyên đó. Khi tái sử dụng hoặc phân phối học liệu, cần kiểm tra quyền đối với nguồn tương ứng.
 
@@ -34,4 +34,4 @@ Thirteen further single-word US pronunciation facts in the -ed learning material
 
 ## English for Web
 
-Book `english-for-web-a2-b1` gồm 48 thẻ và 48 nhiệm vụ viết câu tự biên soạn trong tình huống hư cấu, theo giấy phép MIT ở `assets/flashbooks/english-for-web-a2-b1/LICENSE.original.txt`. 12 mục IPA giữ đúng dữ liệu mở được ghim, cùng đủ ba thông báo giấy phép IPA-dict/CMUdict-IPA/CMUdict trong thư mục `licenses/` của book. Required chọn một cách đọc nguyên mục từ en_US, giữ nguyên ký hiệu và không khẳng định tần suất của các biến thể. 22 cách đọc US khác là các sự kiện phát âm ngắn từ Cambridge, ghi riêng theo từ và từ loại; chúng không cấp lại giấy phép cho định nghĩa, ví dụ hoặc âm thanh của nhà xuất bản. Nguồn từng mục, hash/bản nguồn và giới hạn nằm trong `pronunciation-sources.json`; các điểm cách dùng đối chiếu MDN/GitHub/từ điển nằm trong `content-references.json`. 14 mục là cụm hoặc từ có gạch nối chưa có IPA được để trống; không ghép IPA từ đơn để khẳng định cách đọc cả cụm hoặc câu. Xem [cách học và giới hạn](WEB_ENGLISH48.md).
+Book `english-for-web-a2-b1` gồm 48 thẻ và 48 nhiệm vụ viết câu tự biên soạn trong tình huống hư cấu, theo giấy phép MIT ở `assets/flashbooks/english-for-web-a2-b1/LICENSE.original.txt`. 12 mục IPA giữ đúng dữ liệu mở được ghim, cùng đủ ba thông báo giấy phép IPA-dict/CMUdict-IPA/CMUdict trong thư mục `licenses/` của book. Required chọn một cách đọc nguyên mục từ en_US, giữ nguyên ký hiệu và không khẳng định tần suất của các biến thể. 22 cách đọc US khác là các sự kiện phát âm ngắn từ Cambridge, ghi riêng theo từ và từ loại; chúng không cấp lại giấy phép cho định nghĩa, ví dụ hoặc âm thanh của nhà xuất bản. Nguồn từng mục, hash/bản nguồn và giới hạn nằm trong `pronunciation-sources.json`; các điểm cách dùng đối chiếu MDN/GitHub/từ điển nằm trong `content-references.json`. 14 mục là cụm hoặc từ có gạch nối chưa có IPA được để trống; không ghép IPA từ đơn để khẳng định cách đọc cả cụm hoặc câu. Xem [cách học và giới hạn](english-for-web.md).

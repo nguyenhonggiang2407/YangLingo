@@ -52,4 +52,4 @@ Existing quiz, daily-assignment and practice-pack tables are retained. `Database
 - Stop if the checksum of an already-applied migration changes.
 - Back up the live database before every deployment.
 
-See root `DATABASE_MIGRATION_GUIDE.md` for the exact 003–007 upgrade sequence and rollback approach.
+See root `docs/migrations.md` for the exact 003–007 upgrade sequence and rollback approach.
