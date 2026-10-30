@@ -23,7 +23,6 @@
 | TOEIC Admin Question Bank | Implemented | Admin CRUD/soft archive |
 | Part 1–7 starter data | Implemented, intentionally small | migrations 006–007; local Part 1 illustrations |
 | Authentic Part 1–4 media corpus | Requires admin/licensed content | image/audio URLs supported |
-| AI Tutor / AI cards | Optional | External API only when configured |
 | XP/Streak/Stats | Implemented | `study_events` |
 | Leaderboard | Implemented | `study_events` |
 | Bulk TOEIC question import | Not implemented | Use Admin Question Bank |

@@ -32,11 +32,11 @@ Người học thường lưu từ vựng ở một nơi, làm bài luyện ở 
 - **Luyện TOEIC và Aptis:** các dạng câu hỏi, lịch sử làm bài và kiến thức liên quan; phần nói và viết Aptis có công cụ thực hành, tự đánh giá.
 - **Tài khoản và quản trị:** đăng ký, đăng nhập, phân quyền, quản lý nội dung, import TXT/CSV/XLSX/DOCX. Giao diện dùng trên điện thoại; PWA lưu phần giao diện ngoại tuyến.
 
-Daily Plan dùng **quy tắc có thể giải thích**, không phải mô hình học máy. Kết quả luyện và tự đánh giá không phải điểm thi chính thức. Chưa có nghiên cứu với nhóm người học để khẳng định mức tăng điểm hay hiệu quả ghi nhớ.
+Daily Plan dùng **quy tắc có thể giải thích** để ưu tiên bài ôn theo tiến độ học. Kết quả luyện và tự đánh giá không phải điểm thi chính thức. Chưa có nghiên cứu với nhóm người học để khẳng định mức tăng điểm hay hiệu quả ghi nhớ.
 
 ## Công nghệ và cấu trúc
 
-Ứng dụng chạy bằng **PHP 8.0+**, **MySQL/MariaDB**, PDO, JavaScript và CSS thuần. Node.js chỉ phục vụ kiểm tra JavaScript khi phát triển. Tích hợp AI qua cấu hình là tùy chọn; thư viện và luyện tập hoạt động khi không có khóa AI.
+Ứng dụng chạy bằng **PHP 8.0+**, **MySQL/MariaDB**, PDO, JavaScript và CSS thuần. Node.js chỉ phục vụ kiểm tra JavaScript khi phát triển.
 
 | Thành phần | Vai trò |
 | --- | --- |
@@ -55,7 +55,7 @@ Daily Plan dùng **quy tắc có thể giải thích**, không phải mô hình 
 PHP cần bật `pdo_mysql` và `mbstring` để chạy thiết lập. Cần database MySQL/MariaDB mới và tài khoản có quyền tạo/thay đổi bảng, tạo bảng tạm, đọc/ghi dữ liệu. PHP cần quyền ghi cấu hình cục bộ và `storage/` khi thiết lập.
 
 1. Tải hoặc clone repository; tạo một **database trống** cho YangLingo.
-2. Sao chép `config.example.php` thành `config.local.php`. Điền `app_url` là `http://127.0.0.1:8080` và thông tin database cục bộ. Để `openrouter_api_key` trống nếu không dùng AI. Git bỏ qua `config.local.php`.
+2. Sao chép `config.example.php` thành `config.local.php`. Điền `app_url` là `http://127.0.0.1:8080` và thông tin database cục bộ. Git bỏ qua `config.local.php`.
 3. Trong thư mục dự án, khởi động máy chủ phát triển:
 
    ```bash

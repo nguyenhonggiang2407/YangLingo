@@ -32,7 +32,7 @@
 - `toeic_questions`
 - `toeic_attempts`
 
-### AI
+### Hội thoại học tập
 - `ai_threads`
 - `ai_messages`
 

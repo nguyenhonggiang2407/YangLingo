@@ -38,11 +38,11 @@ flowchart LR
 
 ## Quy tắc học và giới hạn
 
-Daily Plan dùng quy tắc xác định từ thẻ đến hạn, bài tồn, độ nhớ gần đây và lỗi lặp lại. Hệ thống chưa có mô hình học máy được huấn luyện từ dữ liệu người dùng. SRS dùng mức tự đánh giá để tính lần ôn tiếp theo; Mistake Book và điểm yếu dùng sự kiện học thực tế.
+Daily Plan dùng quy tắc xác định từ thẻ đến hạn, bài tồn, độ nhớ gần đây và lỗi lặp lại. SRS dùng mức tự đánh giá để tính lần ôn tiếp theo; Mistake Book và điểm yếu dùng sự kiện học thực tế.
 
 Kiểm tra tự động xác minh hành vi phần mềm, chưa chứng minh hiệu quả giáo dục ở một nhóm người học. Speaking/Writing tự đánh giá không phải điểm TOEIC/Aptis chính thức. Mức A2–B1 của book mới là gợi ý biên soạn.
 
-`Repository.php` và `app.js` còn có thể chia nhỏ thêm. Nghe bằng giọng tổng hợp phụ thuộc hỗ trợ trình duyệt/thiết bị. AIClient là tích hợp tùy chọn; học và luyện cốt lõi hoạt động khi không có khóa AI.
+`Repository.php` và `app.js` còn có thể chia nhỏ thêm. Nghe bằng giọng tổng hợp phụ thuộc hỗ trợ trình duyệt/thiết bị.
 
 ## Tài khoản và cấu hình
 

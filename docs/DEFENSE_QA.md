@@ -53,8 +53,8 @@ Overdue, due today, relearning, unresolved mistakes, weak skills, hard cards r�
 ## 17. Vì sao backlog lớn thì giảm từ mới?
 Nếu tiếp tục thêm mới khi nhiều card đang nợ ôn, tải nhận thức và số lượng due sẽ phình nhanh, làm retention giảm.
 
-## 18. Adaptive Learning ở đây có phải Machine Learning không?
-Không. Đây là rule-based adaptive engine dùng backlog, recent accuracy, mistakes và skill evidence. Project không tuyên bố có mô hình ML.
+## 18. Adaptive Learning điều chỉnh theo những dữ liệu nào?
+Rule-based adaptive engine dùng backlog, độ chính xác gần đây, lỗi đã ghi nhận và kết quả từng kỹ năng để sắp xếp bài luyện.
 
 ## 19. Learner Profile tính gì?
 Nó tổng hợp tín hiệu học gần đây cho Vocabulary, Grammar, Listening, Reading, Speaking và Writing; đây là coaching metric, không phải điểm chứng chỉ.
@@ -108,7 +108,7 @@ Grammar, Vocabulary, Reading, Listening, Speaking và Writing.
 Không. Adaptive pack có thêm task như sentence ordering và nhiều vocabulary task types; Speaking/Writing là prompt tự thực hiện.
 
 ## 36. Speaking được chấm chính thức không?
-Không. App dùng recording/playback và self-assessment/rubric; nếu thêm AI thì chỉ gọi coaching feedback.
+Không. App dùng recording/playback và self-assessment/rubric để luyện tập; phản hồi không phải điểm thi chính thức.
 
 ## 37. Writing có điểm chính thức Aptis không?
 Không. Word count/rubric giúp luyện tập, không tuyên bố official score.
@@ -149,11 +149,11 @@ Archive dùng giới hạn ZipReader, document.xml tối đa 10 MB và output te
 ## 49. Có upload bất kỳ file extension nào không?
 Không nên coi filename là an toàn. Import flow chỉ xử lý format hỗ trợ và parser có giới hạn; storage directories còn có .htaccess.
 
-## 50. AI có bắt buộc không?
-Không. OpenRouter key là optional, core SRS/TOEIC/Aptis/analytics chạy deterministic.
+## 50. Phần học cốt lõi có cần dịch vụ bên ngoài không?
+Thư viện, SRS, TOEIC, Aptis và thống kê chạy bằng PHP/MySQL với các quy tắc xác định. Giọng đọc và nhận dạng giọng nói phụ thuộc hỗ trợ của trình duyệt.
 
-## 51. Tại sao không gọi weakness rule là AI?
-Vì không có learned model. Gọi đúng là rule-based analytics/adaptive rules giúp project trung thực về kỹ thuật.
+## 51. Weakness rule được xác định thế nào?
+Hệ thống tổng hợp lỗi, độ chính xác và mức độ lặp lại từ lịch sử học, rồi áp dụng ngưỡng xác định để đề xuất nội dung cần luyện.
 
 ## 52. Database integration test cuối có chạy không?
 Không trong build container final vì không có pdo_mysql/MySQL/MariaDB và apt package update bị timeout. Trạng thái là NOT EXECUTED.
@@ -194,8 +194,8 @@ Thêm DB integration CI với MariaDB, tách Repository/service modules có test
 ## 64. Adaptive Engine khác random practice ở đâu?
 Random practice chọn câu không dựa trên trạng thái học. Adaptive Engine dùng backlog SRS, lỗi, recurrence, weakness, exam relevance và mastery để xếp ưu tiên có thể giải thích.
 
-## 65. Vì sao không dùng Machine Learning?
-Dữ liệu người dùng hiện chưa đủ để huấn luyện/đánh giá một model đáng tin cậy. Rule engine deterministic phù hợp hơn với đồ án, dễ test, giải thích và chạy trên HelioHost.
+## 65. Vì sao chọn rule engine xác định?
+Các quy tắc có đầu vào và kết quả rõ ràng, phù hợp với dữ liệu hiện có, dễ kiểm thử, giải thích và vận hành trên HelioHost.
 
 ## 66. Trọng số Priority Score dựa trên đâu?
 Đó là trọng số thiết kế sản phẩm: lỗi lặp/recurred được ưu tiên mạnh, weakness và overdue tăng điểm, mastery giảm điểm. Chúng không phải tham số được “học” từ dữ liệu.

@@ -24,7 +24,7 @@ Weak concepts receive targeted practice rather than only more random questions. 
 
 ## Adaptive Practice
 
-Daily workload depends on review backlog, retention and weakness evidence. This is an explainable rule engine, not machine learning. It is deliberately simple enough to defend, test and run reliably on shared PHP/MySQL hosting.
+Daily workload depends on review backlog, retention and weakness evidence. The learning schedule uses an explainable rule engine. It is deliberately simple enough to defend, test and run reliably on shared PHP/MySQL hosting.
 
 ## Why one learning core for TOEIC and Aptis?
 
