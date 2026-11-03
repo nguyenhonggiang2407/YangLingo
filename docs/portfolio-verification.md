@@ -30,7 +30,7 @@ Get-ChildItem tests -Filter '*.cjs' | ForEach-Object {
 }
 ```
 
-Kiểm tra cú pháp và toàn bộ 12 tệp kiểm thử JavaScript `.cjs` vượt qua.
+Kiểm tra cú pháp và toàn bộ 10 tệp kiểm thử JavaScript `.cjs` vượt qua.
 Chúng kiểm tra các module thật bằng môi trường dữ liệu/DOM thử, gồm bảo vệ câu trả lời,
 bản nháp, định tuyến, lưu sổ tay, quyền sở hữu và phản hồi bất đồng bộ đến muộn.
 Đây không phải kiểm thử trình duyệt tương tác hoặc đo coverage.
