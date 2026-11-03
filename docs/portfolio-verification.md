@@ -44,7 +44,32 @@ trong lượt tải trang. Đã xem lại ảnh; chúng chỉ thể hiện trang
 
 ## Chưa kiểm chứng
 
-Môi trường không có PHP, MySQL/MariaDB hoặc Docker. Chưa chạy các bài PHP,
-cài database, migration/seed và các luồng học đã đăng nhập.
+Chưa thiết lập database thử riêng, chạy migration/seed hoặc các luồng học đã đăng nhập.
 Cần thực hiện các bước trong [testing.md](testing.md) trên database thử riêng;
 không dùng database thật để chạy integration tests.
+
+## Bổ sung kiểm tra PHP — 04/11/2026
+
+Đã tìm thấy PHP CLI 8.0.30 trong XAMPP ngoài PATH; nhận định trước đó rằng môi
+trường không có PHP đã được đính chính. Bản này đáp ứng yêu cầu PHP 8.0 trở lên
+trong README; có các extension `pdo_mysql`, `mbstring`, `zip` và `dom`.
+
+`php -l` vượt qua với toàn bộ **63 tệp PHP tracked**. Lint chỉ kiểm tra cú pháp,
+không thực thi source hoặc kết nối database. Bảy tệp kiểm thử dưới đây được đọc
+trước để xác nhận chỉ dùng logic thuần/tài nguyên local hoặc static audit, rồi
+chạy riêng bằng PHP CLI; cả bảy trả exit code 0:
+
+```powershell
+php tests/srs_test.php
+php tests/adaptive_test.php
+php tests/importer_test.php
+php tests/migration_integrity_test.php
+php tests/seed_audit_test.php
+php tests/security_test.php
+php tests/data_quality_test.php
+```
+
+Các bài migration/seed ở đây đọc và kiểm tra file, không chạy SQL. Các bài security
+chỉ đối chiếu điều kiện trong source, không thay thế kiểm thử bảo mật runtime.
+Không khởi tạo cấu hình/database, gọi installer hoặc chạy integration tests trong
+phần bổ sung này. Chưa build/chạy Docker.

@@ -90,6 +90,10 @@ Cấu hình và danh sách lệnh nằm trong [tài liệu kiểm thử](docs/te
 API kiểm tra tài khoản sở hữu dữ liệu; nội dung người dùng được escape khi hiển thị.
 Xem thêm [SECURITY.md](SECURITY.md).
 
+Kiểm tra ngày 04/11/2026 bằng PHP CLI 8.0.30: 63 tệp PHP qua lint và 7 bài logic/static
+audit không cần database vượt qua. Chưa chạy migration/seed hoặc kiểm thử database;
+[phạm vi kiểm chứng](docs/portfolio-verification.md) ghi rõ danh sách lệnh và giới hạn.
+
 ## Tài liệu
 
 - [Tổng quan](docs/overview.md)
