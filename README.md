@@ -11,6 +11,15 @@ Trang chính trả HTTP 200 và tiêu đề YangLingo khi kiểm tra ngày 03/11
 Kết quả này chỉ xác nhận trang vào; chưa xác nhận toàn bộ luồng đăng nhập và học
 trên hosting. [Phạm vi kiểm tra](docs/portfolio-verification.md) ghi riêng những gì đã chạy.
 
+<details>
+<summary>Ảnh trang vào trên hosting, desktop và mobile</summary>
+
+![Trang đăng nhập desktop](docs/screenshots/home-desktop.png)
+
+![Trang đăng nhập mobile](docs/screenshots/home-mobile.png)
+
+</details>
+
 ![Màn hình luyện từ](docs/images/practice.png)
 
 ## Chức năng

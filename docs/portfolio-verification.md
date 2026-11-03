@@ -2,7 +2,8 @@
 
 Đợt này giữ nguyên chức năng, dữ liệu, giấy phép MIT và các thông báo nguồn học liệu.
 Ảnh `docs/images/practice.png` và `notebook.jpg` là tài nguyên đã có trong repository;
-không phải ảnh vừa chụp lại từ hosting.
+không phải ảnh vừa chụp lại từ hosting. Hai ảnh mới trong `docs/screenshots/`
+được chụp trực tiếp từ trang đăng nhập hosting bằng Chromium ở 1440×1000 và 390×844.
 
 ## Điểm kỹ thuật có thể đọc từ source
 
@@ -38,10 +39,12 @@ bản nháp, định tuyến, lưu sổ tay, quyền sở hữu và phản hồi
 `https://yangcute.helioho.st/` trả HTTP 200, tiêu đề
 `YangLingo | Một chút mỗi ngày, tiếng Anh tiến xa` vào ngày kiểm tra.
 Không tạo tài khoản hoặc thay đổi dữ liệu trên hosting trong đợt này.
+Hai viewport không tràn ngang, không ghi nhận JavaScript page error hoặc request thất bại
+trong lượt tải trang. Đã xem lại ảnh; chúng chỉ thể hiện trang vào chưa đăng nhập.
 
 ## Chưa kiểm chứng
 
 Môi trường không có PHP, MySQL/MariaDB hoặc Docker. Chưa chạy các bài PHP,
-cài database, migration/seed và các luồng học đã đăng nhập. Chưa chụp ảnh desktop/mobile
-mới. Cần thực hiện các bước trong [testing.md](testing.md) trên database thử riêng;
+cài database, migration/seed và các luồng học đã đăng nhập.
+Cần thực hiện các bước trong [testing.md](testing.md) trên database thử riêng;
 không dùng database thật để chạy integration tests.
