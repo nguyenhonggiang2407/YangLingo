@@ -5,7 +5,11 @@
 Ứng dụng học tiếng Anh bằng flashcard, ôn tập cách quãng và các bài luyện ngắn.
 Backend dùng PHP/MySQL; giao diện dùng JavaScript và CSS thuần.
 
-[Demo](https://yangcute.helioho.st/)
+[Mở bản triển khai](https://yangcute.helioho.st/)
+
+Trang chính trả HTTP 200 và tiêu đề YangLingo khi kiểm tra ngày 03/11/2026.
+Kết quả này chỉ xác nhận trang vào; chưa xác nhận toàn bộ luồng đăng nhập và học
+trên hosting. [Phạm vi kiểm tra](docs/portfolio-verification.md) ghi riêng những gì đã chạy.
 
 ![Màn hình luyện từ](docs/images/practice.png)
 
